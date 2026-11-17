@@ -1,0 +1,21 @@
+{
+  "circuit": "G3_07",
+  "family": "qft-3qubit-8bit",
+  "backend": "gemini",
+  "example": "QFT",
+  "attempts": [
+    {
+      "n": 1,
+      "usage": {
+        "in": 4246,
+        "out": 5582,
+        "think": 12906
+      },
+      "lines": 248,
+      "lint_errors": 0,
+      "findings": []
+    }
+  ],
+  "final_lint_errors": 0,
+  "attempts_used": 1
+}

@@ -1,0 +1,13 @@
+{
+  "circuit_name": "QFT",
+  "perm_hints": [
+    {"step": 0, "gate": "h",  "qubits": [0],    "perm_required": false, "reason": "H targets qubit 0 (the default routing position) — no permutation needed"},
+    {"step": 1, "gate": "cs", "qubits": [1, 0], "perm_required": true,  "reason": "control qubit 1 is not in the default routing position — CompatiblePerm needed to route it in and to restore ordering afterward"},
+    {"step": 2, "gate": "cp", "qubits": [2, 0], "perm_required": true,  "reason": "control qubit 2 is not in the default routing position — CompatiblePerm needed"},
+    {"step": 3, "gate": "h",  "qubits": [1],    "perm_required": true,  "reason": "targets qubit 1, not qubit 0 — CompatiblePerm needed before and after"},
+    {"step": 4, "gate": "cs", "qubits": [2, 1], "perm_required": true,  "reason": "neither control qubit 2 nor target qubit 1 is in the default (q0) routing position — CompatiblePerm needed"},
+    {"step": 5, "gate": "h",  "qubits": [2],    "perm_required": true,  "reason": "targets qubit 2, not qubit 0 — CompatiblePerm needed before and after"},
+    {"step": 6, "gate": "swap", "qubits": [0, 2], "perm_required": true, "reason": "swaps qubits 0 and 2, which are not the wrapper's fixed default swap pair — CompatiblePerm needed to route and restore"}
+  ],
+  "note": "This circuit uses multiple distinct CompatiblePerm variants (see gate_library_QFT.json's usage_notes) -- which exact variant applies at a given point is part of what FULL additionally supplies via the pipeline attachment; MEDIUM only states whether a permutation is needed at all."
+}

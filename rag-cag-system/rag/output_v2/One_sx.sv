@@ -1,0 +1,46 @@
+module Circuit(
+  input         clock,
+                reset,
+  input  [15:0] io_in_QSV_0_0,
+                io_in_QSV_0_1,
+                io_in_QSV_1_0,
+                io_in_QSV_1_1,
+                io_in_QSV_2_0,
+                io_in_QSV_2_1,
+                io_in_QSV_3_0,
+                io_in_QSV_3_1,
+  input         io_in_valid,
+  output [15:0] io_out_QSV_0_0,
+                io_out_QSV_0_1,
+                io_out_QSV_1_0,
+                io_out_QSV_1_1,
+                io_out_QSV_2_0,
+                io_out_QSV_2_1,
+                io_out_QSV_3_0,
+                io_out_QSV_3_1,
+  output        io_out_valid
+);
+
+  SXGate2QubitVector16bit m (
+    .clock          (clock),
+    .reset          (reset),
+    .io_in_QSV_0_0  (io_in_QSV_0_0),
+    .io_in_QSV_0_1  (io_in_QSV_0_1),
+    .io_in_QSV_1_0  (io_in_QSV_1_0),
+    .io_in_QSV_1_1  (io_in_QSV_1_1),
+    .io_in_QSV_2_0  (io_in_QSV_2_0),
+    .io_in_QSV_2_1  (io_in_QSV_2_1),
+    .io_in_QSV_3_0  (io_in_QSV_3_0),
+    .io_in_QSV_3_1  (io_in_QSV_3_1),
+    .io_in_valid    (io_in_valid),
+    .io_out_QSV_0_0 (io_out_QSV_0_0),
+    .io_out_QSV_0_1 (io_out_QSV_0_1),
+    .io_out_QSV_1_0 (io_out_QSV_1_0),
+    .io_out_QSV_1_1 (io_out_QSV_1_1),
+    .io_out_QSV_2_0 (io_out_QSV_2_0),
+    .io_out_QSV_2_1 (io_out_QSV_2_1),
+    .io_out_QSV_3_0 (io_out_QSV_3_0),
+    .io_out_QSV_3_1 (io_out_QSV_3_1),
+    .io_out_valid   (io_out_valid)
+  );
+endmodule

@@ -1,0 +1,27 @@
+circuit,qubits,pass,scored_input,cover_inputs,transpositions_covered,transpositions_total,uncovered,all_within_tol,max_err_lsb,sim_verdict,anchor_ok
+G3_01,3,hsafe,000,010,3,3,,True,1,PASS,16/16
+G3_02,3,hsafe,000,010,3,3,,True,1,PASS,16/16
+G3_03,3,hsafe,010,010,3,3,,True,1,PASS,16/16
+G3_04,3,hsafe,010,010,3,3,,True,1,PASS,16/16
+G3_05,3,hsafe,000,010,3,3,,True,1,PASS,16/16
+G3_06,3,hsafe,000,001,3,3,,False,91,FAIL,16/16
+G3_07,3,hsafe,000,010,3,3,,True,1,PASS,16/16
+G3_08,3,hsafe,100,100,3,3,,True,1,PASS,16/16
+G5_01,5,hsafe,00011,00111 01000,10,10,,True,1,PASS,64/64
+G5_02,5,hsafe,00000,00010 01100,10,10,,True,1,PASS,64/64
+G5_04,5,hsafe,00000,00110 10010,10,10,,True,1,PASS,64/64
+G5_05,5,hsafe,00010,01010 00100,10,10,,True,1,PASS,64/64
+G5_06,5,hsafe,00000,00101 01001,10,10,,True,1,PASS,64/64
+U3_0,3,hsafe,000,010,3,3,,True,1,PASS,16/16
+U3_1,3,hsafe,000,010,3,3,,True,1,PASS,16/16
+U3_2,3,hsafe,010,001 010,3,3,,True,0,PASS,16/16
+U3_3,3,hsafe,000,010,3,3,,True,1,PASS,16/16
+U3_4,3,hsafe,000,100,3,3,,True,1,PASS,16/16
+U3_5,3,hsafe,000,100,3,3,,True,1,PASS,16/16
+V5_0,5,hsafe,00000,00110 01000,10,10,,True,1,PASS,64/64
+V5_1,5,hsafe,00000,00110 01010,10,10,,True,1,PASS,64/64
+V5_2,5,hsafe,00000,00101 01001,10,10,,True,1,PASS,64/64
+V5_4,5,hsafe,00000,00110 01010,10,10,,True,1,PASS,64/64
+V5_5,5,hsafe,00000,00110 01000,10,10,,True,1,PASS,64/64
+V5_6,5,hsafe,00000,00011,9,10,"[(2, 3)]",True,0,PASS,64/64
+V5_6,5,any,00000,00011 00100,10,10,,False,2,FAIL,

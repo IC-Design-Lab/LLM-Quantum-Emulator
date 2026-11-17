@@ -1,0 +1,24 @@
+measured vs transcribed (results/vivado/comparison.csv)
+
+reference      generated        | MEASURED (one method)  | TRANSCRIBED (two sources)
+                                |   ref   gen   delta |   ref   gen   delta
+Circuit0_06    Circuit_00_v2    |     5     5      +0 |     4     4      +0
+Circuit0_17    Circuit_01_v2    |     8     8      +0 |     7     7      +0
+Circuit0_2     Circuit_02_v2    |    11    11      +0 |     9    10      +1   <-- see below
+Circuit0_3     Circuit_03_v2    |    12    12      +0 |    10    11      +1   <-- see below
+Circuit0_4     Circuit_04_v2    |     9     9      +0 |     8     8      +0
+Circuit0_5     Circuit_05_v2    |    10    10      +0 |     9     9      +0
+Circuit1_0167  Circuit_06_v2    |     7     7      +0 |     6     6      +0
+Circuit1_23    Circuit_07_v2    |    11    11      +0 |     9    10      +1   <-- see below
+Circuit1_45    Circuit_08_v2    |     9     9      +0 |     8     8      +0
+QFT            QFT_v2           |    20    20      +0 |    19    19      +0
+Shor           ShorFixed        |    18    17      -1 |    17    16      -1
+
+  MEASURED split (exact/longer/shorter)    : (10, 0, 1)
+  TRANSCRIBED split (exact/longer/shorter) : (7, 3, 1)
+
+  Generated column: measured = transcribed +1 on every row -- a counting convention, which cancels in the delta.
+  Reference column: the same +1 on 8 of 11 rows. These do not share it, so the transcribed reference value is low by an extra cycle:
+    Circuit0_2     measured 11, transcribed 9  (offset +2, expected +1)
+    Circuit0_3     measured 12, transcribed 10  (offset +2, expected +1)
+    Circuit1_23    measured 11, transcribed 9  (offset +2, expected +1)

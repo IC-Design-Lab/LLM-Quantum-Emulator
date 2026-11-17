@@ -1,0 +1,274 @@
+{
+  "version": "1.0",
+  "circuit_name": "QFTcircuit_8bit_NC",
+  "description": "3-qubit Quantum Fourier Transform circuit (8-bit datapath): Hadamard and controlled-phase (CS, CT) gates in the QFT pattern, followed by a SWAP to reverse qubit order. Implemented in maximum-parallelism form with permutation layers.",
+  "qubits": [
+    {
+      "id": 0,
+      "name": "q0"
+    },
+    {
+      "id": 1,
+      "name": "q1"
+    },
+    {
+      "id": 2,
+      "name": "q2"
+    }
+  ],
+  "operations": [
+    {
+      "step": 0,
+      "gate": "H",
+      "targets": [
+        0
+      ],
+      "module": "HGate3QubitVector8bit",
+      "instance_name": "m",
+      "perm_required": false,
+      "pipeline_cycles": 5,
+      "reason": "Hadamard on qubit 0 (default position) - no permutation"
+    },
+    {
+      "step": 1,
+      "gate": "CS",
+      "controls": [
+        0
+      ],
+      "targets": [
+        1
+      ],
+      "module": "CSGate3QubitVector8bit",
+      "instance_name": "m_1",
+      "perm_required": false,
+      "pipeline_cycles": 1,
+      "reason": "Controlled-S on default (q1,q0) two-qubit position - no permutation"
+    },
+    {
+      "step": 2,
+      "gate": "CT",
+      "controls": [
+        0
+      ],
+      "targets": [
+        2
+      ],
+      "module": "CTGate3QubitVector8bit",
+      "instance_name": "m_3",
+      "perm_required": true,
+      "pipeline_cycles": 1,
+      "reason": "Controlled-T targets qubit 2 - CompatiblePerm before and after to map to default position"
+    },
+    {
+      "step": 3,
+      "gate": "H",
+      "targets": [
+        1
+      ],
+      "module": "HGate3QubitVector8bit",
+      "instance_name": "m_5",
+      "perm_required": true,
+      "pipeline_cycles": 5,
+      "reason": "Hadamard on qubit 1 - permutation used (shared bracket with following CS)"
+    },
+    {
+      "step": 4,
+      "gate": "CS",
+      "controls": [
+        1
+      ],
+      "targets": [
+        2
+      ],
+      "module": "CSGate3QubitVector8bit",
+      "instance_name": "m_6",
+      "perm_required": true,
+      "pipeline_cycles": 1,
+      "reason": "Controlled-S targeting qubit 2 - CompatiblePerm to map to default position"
+    },
+    {
+      "step": 5,
+      "gate": "H",
+      "targets": [
+        2
+      ],
+      "module": "HGate3QubitVector8bit",
+      "instance_name": "m_8",
+      "perm_required": true,
+      "pipeline_cycles": 5,
+      "reason": "Hadamard on qubit 2 - CompatiblePerm before and after"
+    },
+    {
+      "step": 6,
+      "gate": "SWAP",
+      "targets": [
+        0,
+        2
+      ],
+      "module": "SWGate3QubitVector8bit",
+      "instance_name": "m_10",
+      "perm_required": true,
+      "pipeline_cycles": 1,
+      "reason": "SWAP reversing qubit order (q0<->q2) - CompatiblePerm layers to align"
+    }
+  ],
+  "hardware_pipeline": [
+    {
+      "stage": 0,
+      "module": "HGate3QubitVector8bit",
+      "instance": "m",
+      "cycles": 5
+    },
+    {
+      "stage": 1,
+      "module": "CSGate3QubitVector8bit",
+      "instance": "m_1",
+      "cycles": 1
+    },
+    {
+      "stage": 2,
+      "module": "CompatiblePerm",
+      "instance": "m_2",
+      "cycles": 1
+    },
+    {
+      "stage": 3,
+      "module": "CTGate3QubitVector8bit",
+      "instance": "m_3",
+      "cycles": 1
+    },
+    {
+      "stage": 4,
+      "module": "CompatiblePerm_1",
+      "instance": "m_4",
+      "cycles": 1
+    },
+    {
+      "stage": 5,
+      "module": "HGate3QubitVector8bit",
+      "instance": "m_5",
+      "cycles": 5
+    },
+    {
+      "stage": 6,
+      "module": "CSGate3QubitVector8bit",
+      "instance": "m_6",
+      "cycles": 1
+    },
+    {
+      "stage": 7,
+      "module": "CompatiblePerm_2",
+      "instance": "m_7",
+      "cycles": 1
+    },
+    {
+      "stage": 8,
+      "module": "HGate3QubitVector8bit",
+      "instance": "m_8",
+      "cycles": 5
+    },
+    {
+      "stage": 9,
+      "module": "CompatiblePerm",
+      "instance": "m_9",
+      "cycles": 1
+    },
+    {
+      "stage": 10,
+      "module": "SWGate3QubitVector8bit",
+      "instance": "m_10",
+      "cycles": 1
+    },
+    {
+      "stage": 11,
+      "module": "CompatiblePerm_2",
+      "instance": "m_11",
+      "cycles": 1
+    },
+    {
+      "stage": 12,
+      "module": "CompatiblePerm",
+      "instance": "m_12",
+      "cycles": 1
+    }
+  ],
+  "total_pipeline_cycles": 25,
+  "pipeline_cycles_note": "Sum of nominal per-stage cycles; confirm against measured io_out_valid latency.",
+  "architecture_rules": {
+    "perm_rule": "Insert CompatiblePerm before AND after any gate whose target qubit is not in the default position (q0 for single-qubit; (q1,q0) for two-qubit gates)",
+    "perm_modules": [
+      "CompatiblePerm",
+      "CompatiblePerm_1",
+      "CompatiblePerm_2"
+    ],
+    "perm_note": "Different CompatiblePerm variants reorder different qubit positions (e.g. swap positions 3&2, 3&1, 2&1 at size 8). Use the specific variant that maps the target qubit to the default position.",
+    "wrapper_rule": "Use the 3QubitVector8bit wrapper modules - never primitive gates",
+    "valid_chain": "Each stage io_in_valid connects to previous stage io_out_valid",
+    "final_output": "Last stage outputs connect to top-level io_out ports"
+  },
+  "gate_library": {
+    "available_modules": [
+      {
+        "gate": "H",
+        "module": "HGate3QubitVector8bit",
+        "pipeline_cycles": 5,
+        "desc": "Hadamard across the 8-amplitude state vector"
+      },
+      {
+        "gate": "CS",
+        "module": "CSGate3QubitVector8bit",
+        "pipeline_cycles": 1,
+        "desc": "Controlled-S phase gate"
+      },
+      {
+        "gate": "CT",
+        "module": "CTGate3QubitVector8bit",
+        "pipeline_cycles": 1,
+        "desc": "Controlled-T phase gate"
+      },
+      {
+        "gate": "SWAP",
+        "module": "SWGate3QubitVector8bit",
+        "pipeline_cycles": 1,
+        "desc": "Swap two qubits"
+      },
+      {
+        "gate": "PERM",
+        "module": "CompatiblePerm (and _1, _2 variants)",
+        "pipeline_cycles": 1,
+        "desc": "Permutation layer to align target qubit to default position"
+      }
+    ]
+  },
+  "encoding": {
+    "format": "QSV - Quantum State Vector",
+    "num_qubits": 3,
+    "num_basis_states": 8,
+    "basis_states": "QSV_0..QSV_7 = amplitudes of |000>..|111>; each is two 8-bit signals (_0 real, _1 imag)",
+    "fixed_point": "8-bit fixed point (this circuit uses 8-bit datapath). Confirm exact Q-format with library owner."
+  },
+  "verilog_requirements": {
+    "module_name": "QFTcircuit_8bit_NC",
+    "top_level_ports": {
+      "inputs": [
+        "clock",
+        "reset",
+        "io_in_QSV_0_0 through io_in_QSV_7_1",
+        "io_in_valid"
+      ],
+      "outputs": [
+        "io_out_QSV_0_0 through io_out_QSV_7_1",
+        "io_out_valid"
+      ]
+    },
+    "port_mapping": "named only - never positional",
+    "forbidden": [
+      "unused/dead wires",
+      "initial blocks",
+      "positional port mapping",
+      "hardcoded delays (#)",
+      "$display/$monitor",
+      "instantiating primitive gates directly"
+    ]
+  }
+}

@@ -1,0 +1,202 @@
+[
+  {
+    "circuit": "G3_01",
+    "spec": "new_circuits\\specs\\G3_01.py",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4246,
+        "out": 2889,
+        "think": 4564
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G3_02",
+    "spec": "new_circuits\\specs\\G3_02.py",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4246,
+        "out": 2771,
+        "think": 10762
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G3_03",
+    "spec": "new_circuits\\specs\\G3_03.py",
+    "h_safe": false,
+    "input": "010",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4253,
+        "out": 6900,
+        "think": 21920
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G3_04",
+    "spec": "new_circuits\\specs\\G3_04.py",
+    "h_safe": true,
+    "input": "010",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4057,
+        "out": 5709,
+        "think": 22782
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G3_05",
+    "spec": "new_circuits\\specs\\G3_05.py",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4061,
+        "out": 5709,
+        "think": 10837
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G3_06",
+    "spec": "new_circuits\\specs\\G3_06.py",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4057,
+        "out": 3858,
+        "think": 6455
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G3_07",
+    "spec": "new_circuits\\specs\\G3_07.py",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4246,
+        "out": 5582,
+        "think": 12906
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G3_08",
+    "spec": "new_circuits\\specs\\G3_08.py",
+    "h_safe": false,
+    "input": "100",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4064,
+        "out": 9375,
+        "think": 23637
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  }
+]

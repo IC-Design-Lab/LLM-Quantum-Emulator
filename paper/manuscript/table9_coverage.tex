@@ -1,0 +1,15 @@
+\begin{table}[ht]
+\centering
+\caption{Covering-set re-simulation of every 3- and 5-qubit design. Each design is re-run from a set of H-safe basis inputs whose golden states jointly distinguish all $\binom{n}{2}$ qubit exchanges. \texttt{G3\_06} is the one design this catches: it passed 16/16 from its screened input and misses by 91~LSB from the covering set. Every other design is within 1~LSB on every component. \texttt{V5\_6} is the one design whose set is incomplete---no H-safe input distinguishes the 2--3 exchange---and it is treated separately in Table~\ref{tab:route}.}
+\label{tab:coverage}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Set & Family & Designs & Exchanges & Max err. (LSB) \\
+\midrule
+G3 & 3-qubit, generated & 8 & 3/3 & 91 \\
+U3 & 3-qubit, supplied & 6 & 3/3 & 1 \\
+G5 & 5-qubit, generated & 5 & 10/10 & 1 \\
+V5 & 5-qubit, supplied & 6 & 10/10 (1 at 9/10) & 1 \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,24 @@
+# RAG + CAG system — runtime dependencies.
+#
+# Pinned loosely by minor version: results were produced with Qiskit 2.5.0 and
+# gemini-3.5-flash at temperature 0. The model, not the library, is the version
+# that most affects a number here — see ../docs/setup.md.
+
+# Circuit handling and the golden statevector. Every verdict in results/ is a
+# comparison against a Statevector computed from the spec, so this is not optional.
+qiskit>=2.0
+numpy>=1.26
+
+# Generation backend.
+google-genai>=1.0
+
+# Qiskit pulls this in for the transpiler's DAG. Listed explicitly because it is
+# the one dependency that fails independently of Qiskit: where an Application
+# Control policy blocks the compiled extension, `import qiskit` dies even though
+# nothing here transpiles. qiskit_compat.py handles that case.
+rustworkx>=0.15
+
+# There is deliberately no embedding or vector-store dependency. The system does
+# no similarity search: family context is injected in full, and the single worked
+# example is selected by a structural metric over gate sequences. See the README
+# for why — similarity search was measured and dropped.

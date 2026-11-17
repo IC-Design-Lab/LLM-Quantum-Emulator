@@ -1,0 +1,7 @@
+qubits: 2
+family: 2qubit-16bit
+depth: 2
+gates:
+  h(q0)
+  x(q1)
+  swap(q0,1)

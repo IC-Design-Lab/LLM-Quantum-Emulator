@@ -1,0 +1,83 @@
+cff-version: 1.2.0
+title: Evaluating LLM-Generated Hardware for Quantum Circuit Simulation
+message: >-
+  If you use this software or its results, please cite it using the metadata
+  below.
+type: software
+authors:
+  - given-names: Krishna
+    family-names: Patel
+    affiliation: University of North Texas
+  - given-names: Sumera
+    family-names: Anjum
+    affiliation: University of North Texas
+  - given-names: Spencer
+    family-names: Buchanan
+    affiliation: University of Houston-Clear Lake
+  - given-names: Xuechen
+    family-names: Zhang
+    affiliation: Kennesaw State University
+  - given-names: Yunhe
+    family-names: Feng
+    affiliation: University of North Texas
+  - given-names: Xiaokun
+    family-names: Yang
+    affiliation: University of Houston-Clear Lake
+year: 2026
+repository-code: https://github.com/IC-Design-Lab/LLM-Quantum-Emulator
+abstract: >-
+  Two studies on generating the top-level SystemVerilog of an FPGA
+  quantum-circuit emulator with language models. The first characterises how
+  prompt-only generation fails across models, prompt detail and input format,
+  over 661 runs. The second supplies the family's gate map, exact port lists and
+  composition rulebook as preloaded context plus one structurally matched worked
+  example, reaching 53 of 55 circuits matching their golden state across 2-, 3-
+  and 5-qubit families. Correctness is decided by simulation against a
+  Qiskit-derived golden statevector rather than by comparison with a reference
+  implementation.
+keywords:
+  - large language models
+  - hardware description languages
+  - SystemVerilog
+  - quantum circuit simulation
+  - retrieval-augmented generation
+  - FPGA acceleration
+license: MIT
+# The MIT license does not extend to the SystemVerilog that is output of the lab's
+# Chisel generator or derived from it:
+#   generation-study/gate_library/*.sv
+#   generation-study/ground_truth/*.sv
+#   generation-study/experiment/ground_truth/*.sv
+#   generation-study/experiment/matched_arms/ground_truth/_lib_shared.sv
+#   generation-study/experiment/matched_arms/ground_truth/_lib_sx.sv
+#   generation-study/experiment/matched_arms/ground_truth/gate_library_flat_07_08.sv
+#   rag-cag-system/corpus/code_examples/*/*_ground_truth.sv
+#   rag-cag-system/results/vivado/synthesis-inputs/support/*_gen_support.sv
+#   rag-cag-system/rag/output_v2/ShorFixed.sv
+#   rag-cag-system/results/vivado/synthesis-inputs/designs/ShorFixed.sv
+# Everything else is covered. See docs/hardware-provenance.md.
+
+preferred-citation:
+  type: conference-paper
+  title: Evaluating LLM-Generated Hardware for Quantum Circuit Simulation
+  authors:
+    - given-names: Krishna
+      family-names: Patel
+      affiliation: University of North Texas
+    - given-names: Sumera
+      family-names: Anjum
+      affiliation: University of North Texas
+    - given-names: Spencer
+      family-names: Buchanan
+      affiliation: University of Houston-Clear Lake
+    - given-names: Xuechen
+      family-names: Zhang
+      affiliation: Kennesaw State University
+    - given-names: Yunhe
+      family-names: Feng
+      affiliation: University of North Texas
+    - given-names: Xiaokun
+      family-names: Yang
+      affiliation: University of Houston-Clear Lake
+  year: 2026
+  # doi: add once the paper is published

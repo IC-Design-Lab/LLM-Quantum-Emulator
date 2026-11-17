@@ -1,0 +1,51 @@
+{
+  "circuit": "G5_05",
+  "family": "shor-5qubit-8bit",
+  "backend": "gemini",
+  "example": "Shor",
+  "attempts": [
+    {
+      "n": 1,
+      "usage": {
+        "in": 9085,
+        "out": 36672,
+        "think": 7160
+      },
+      "lines": 1099,
+      "lint_errors": 3,
+      "findings": [
+        "[error] PORTS: instance `m_5` (CNGate5QubitVector8bit) leaves required ports unconnected: ['io_in_QSV_30_0', 'io_in_QSV_30_1', 'io_in_QSV_31_0', 'io_in_QSV_31_1']",
+        "[error] CHAIN: instance `m_5` does not consume the previous instance's outputs. Expected ['_m_4_io_out_QSV_0_0', '_m_4_io_out_QSV_0_1']..., got ['_m_4_io_out_QSV_0_0', '_m_4_io_out_QSV_0_1']...",
+        "[error] CHAIN: instance `m_6` does not consume the previous instance's outputs. Expected ['_m_4_io_out_QSV_30_0', '_m_4_io_out_QSV_30_1']..., got ['_m_5_io_out_QSV_0_0', '_m_5_io_out_QSV_0_1']..."
+      ]
+    },
+    {
+      "n": 2,
+      "usage": {
+        "in": 46062,
+        "out": 36674,
+        "think": 4705
+      },
+      "lines": 1099,
+      "lint_errors": 3,
+      "findings": [
+        "[error] PORTS: instance `m_1` (CompatiblePerm) leaves required ports unconnected: ['io_out_valid']",
+        "[error] PORTS: instance `m_3` (CompatiblePerm_1) leaves required ports unconnected: ['io_out_valid']",
+        "[error] PORTS: instance `m_4` (CompatiblePerm_2) leaves required ports unconnected: ['io_out_valid']"
+      ]
+    },
+    {
+      "n": 3,
+      "usage": {
+        "in": 45889,
+        "out": 36676,
+        "think": 3189
+      },
+      "lines": 1099,
+      "lint_errors": 0,
+      "findings": []
+    }
+  ],
+  "final_lint_errors": 0,
+  "attempts_used": 3
+}

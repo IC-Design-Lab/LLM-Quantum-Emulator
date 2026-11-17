@@ -1,0 +1,47 @@
+# vsim -c -voptargs="+acc" -lib C:\Users\krris\Downloads\LLM-Quantum-Emulator\sim\modelsim_build\work work.tb_cov_G3_03_hsafe_gen -do "do {C:\Users\krris\Downloads\LLM-Quantum-Emulator\sim\run.do}" 
+# Start time: 03:57:45 on Sep 17,2026
+# Loading sv_std.std
+# Loading work.tb_cov_G3_03_hsafe_gen
+# Loading work.QuantumCircuit
+# Loading work.HGate3QubitVector8bit
+# Loading work.HGate8bit
+# Loading work.HadamardGate
+# Loading work.SplitMultiplier
+# Loading work.SaturatedComplexAdder
+# Loading work.SaturatedAdder
+# Loading work.SaturatedComplexSubber
+# Loading work.SaturatedSubtractor
+# Loading work.CSGate3QubitVector8bit
+# Loading work.CSGate8bit
+# Loading work.ControlledSGate
+# Loading work.CompatiblePerm_2
+# Loading work.SwapPosition2and1atSize8
+# Loading work.tieVecLayer_1
+# Loading work.tieVec_4
+# Loading work.untieVecLayer_1
+# Loading work.untieVec_4
+# Loading work.rearrangeTo1stPosition_2
+# do {C:\Users\krris\Downloads\LLM-Quantum-Emulator\sim\run.do}
+# QuantumCircuit FUNCTIONAL verification, 1 input vector(s):
+#   input |010>:
+#   ok   |010> QSV_0_0 = 40
+#   ok   |010> QSV_0_1 = 00
+#   ok   |010> QSV_1_0 = 00
+#   ok   |010> QSV_1_1 = 40
+#   ok   |010> QSV_2_0 = c0
+#   ok   |010> QSV_2_1 = 00
+#   ok   |010> QSV_3_0 = 00
+#   ok   |010> QSV_3_1 = c0
+#   ok   |010> QSV_4_0 = 00
+#   ok   |010> QSV_4_1 = 00
+#   ok   |010> QSV_5_0 = 00
+#   ok   |010> QSV_5_1 = 00
+#   ok   |010> QSV_6_0 = 00
+#   ok   |010> QSV_6_1 = 00
+#   ok   |010> QSV_7_0 = 00
+#   ok   |010> QSV_7_1 = 00
+# RESULT: PASS  (generated hardware matches Qiskit)
+# ** Note: $finish    : C:/Users/krris/Downloads/LLM-Quantum-Emulator/rag-cag-system/new_circuits/tb/tb_cov_G3_03_hsafe_gen.v(109)
+#    Time: 1410 ns  Iteration: 1  Instance: /tb_cov_G3_03_hsafe_gen
+# End time: 03:57:46 on Sep 17,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

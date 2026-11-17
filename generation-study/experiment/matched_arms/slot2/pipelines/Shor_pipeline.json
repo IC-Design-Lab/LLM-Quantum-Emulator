@@ -1,0 +1,23 @@
+{
+  "circuit_name": "Shor",
+  "pipeline": [
+    {"stage": 0,  "module": "HGate5QubitVector8bit",  "instance": "m",    "cycles": 5},
+    {"stage": 1,  "module": "CompatiblePerm",          "instance": "m_1",  "cycles": 1},
+    {"stage": 2,  "module": "CNGate5QubitVector8bit", "instance": "m_2",  "cycles": 1},
+    {"stage": 3,  "module": "CompatiblePerm_1",        "instance": "m_3",  "cycles": 1},
+    {"stage": 4,  "module": "CompatiblePerm_2",        "instance": "m_4",  "cycles": 1},
+    {"stage": 5,  "module": "CNGate5QubitVector8bit", "instance": "m_5",  "cycles": 1},
+    {"stage": 6,  "module": "CompatiblePerm_3",        "instance": "m_6",  "cycles": 1},
+    {"stage": 7,  "module": "CompatiblePerm_4",        "instance": "m_7",  "cycles": 1},
+    {"stage": 8,  "module": "CNGate5QubitVector8bit", "instance": "m_8",  "cycles": 1},
+    {"stage": 9,  "module": "CompatiblePerm_5",        "instance": "m_9",  "cycles": 1},
+    {"stage": 10, "module": "CompatiblePerm_6",        "instance": "m_10", "cycles": 1},
+    {"stage": 11, "module": "CNGate5QubitVector8bit", "instance": "m_11", "cycles": 1},
+    {"stage": 12, "module": "CompatiblePerm_1",        "instance": "m_12", "cycles": 1},
+    {"stage": 13, "module": "CompatiblePerm_4",        "instance": "m_13", "cycles": 1},
+    {"stage": 14, "module": "CompatiblePerm_9",        "instance": "m_14", "cycles": 1},
+    {"stage": 15, "module": "CompatiblePerm_10",       "instance": "m_15", "cycles": 1}
+  ],
+  "total_pipeline_cycles": 20,
+  "source_note": "Transcribed directly from ShorCircuit_8bit_NC.sv's top-level instantiation list (Downloads/ShorCircuit_8bit_NC.sv), not hand-derived. Matches H(q0) followed by a CNOT ladder q0->q1->q2->q3->q4, with a cascade of CompatiblePerm variants routing each successive control/target pair into the wrapper's fixed position and, after the final CNOT, four perm stages restoring the final amplitude ordering."
+}

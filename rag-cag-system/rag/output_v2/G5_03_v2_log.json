@@ -1,0 +1,24 @@
+{
+  "circuit": "G5_03",
+  "family": "shor-5qubit-8bit",
+  "backend": "gemini",
+  "example": "Shor",
+  "attempts": [
+    {
+      "n": 1,
+      "usage": {
+        "in": 9314,
+        "out": 22227,
+        "think": 7769
+      },
+      "lines": 745,
+      "lint_errors": 2,
+      "findings": [
+        "[error] PORTS: instance `stage3_inst` (CompatiblePerm_2) leaves required ports unconnected: ['io_out_QSV_28_0', 'io_out_QSV_28_1', 'io_out_QSV_29_0', 'io_out_QSV_29_1', 'io_out_QSV_30_0', 'io_out_QSV_30_1', 'io_out_QSV_31_0', 'io_out_QSV_31_1', 'io_out_valid']",
+        "[error] CHAIN: last instance `stage3_inst` must drive the top-level outputs io_out_QSV_*, got ['stage3_QSV_0_0', 'stage3_QSV_0_1', 'stage3_QSV_1_0']..."
+      ]
+    }
+  ],
+  "final_lint_errors": 2,
+  "attempts_used": 1
+}

@@ -1,0 +1,7 @@
+qubits: 2
+family: 2qubit-16bit
+depth: 3
+gates:
+  h(q0)
+  cx(q0,1)
+  sx(q0)

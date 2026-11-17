@@ -1,0 +1,313 @@
+[
+  {
+    "circuit": "GEN_01",
+    "spec": "new_circuits\\specs\\GEN_01.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_17",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3787,
+        "out": 3071,
+        "think": 4701
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_02",
+    "spec": "new_circuits\\specs\\GEN_02.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_3",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3827,
+        "out": 3832,
+        "think": 6432
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "FAIL",
+    "category": "2-wrong-statevector",
+    "checks_ok": 6,
+    "checks_failed": 2,
+    "mismatches": [
+      [
+        "QSV_0_0",
+        "87c3",
+        "2d41"
+      ],
+      [
+        "QSV_1_0",
+        "87c3",
+        "2d41"
+      ]
+    ],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_03",
+    "spec": "new_circuits\\specs\\GEN_03.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_17",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3801,
+        "out": 6100,
+        "think": 9316
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_05",
+    "spec": "new_circuits\\specs\\GEN_05.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_5",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3837,
+        "out": 4594,
+        "think": 7548
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_06",
+    "spec": "new_circuits\\specs\\GEN_06.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_5",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3846,
+        "out": 5354,
+        "think": 4036
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_07",
+    "spec": "new_circuits\\specs\\GEN_07.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_06",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3690,
+        "out": 1563,
+        "think": 5180
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_08",
+    "spec": "new_circuits\\specs\\GEN_08.py",
+    "h_safe": true,
+    "input": "11",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_06",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3699,
+        "out": 3832,
+        "think": 7168
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_09",
+    "spec": "new_circuits\\specs\\GEN_09.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_17",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3805,
+        "out": 4593,
+        "think": 3816
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_10",
+    "spec": "new_circuits\\specs\\GEN_10.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit1_45",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3803,
+        "out": 3085,
+        "think": 4550
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_11",
+    "spec": "new_circuits\\specs\\GEN_11.py",
+    "h_safe": true,
+    "input": "01",
+    "family": "2qubit-16bit",
+    "example": "Circuit1_0167",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3766,
+        "out": 5340,
+        "think": 8037
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_12",
+    "spec": "new_circuits\\specs\\GEN_12.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit1_0167",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3775,
+        "out": 4593,
+        "think": 3585
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "GEN_14",
+    "spec": "new_circuits\\specs\\GEN_14.py",
+    "h_safe": false,
+    "input": "10",
+    "family": "2qubit-16bit",
+    "example": "Circuit1_23",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3796,
+        "out": 2323,
+        "think": 3628
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  }
+]

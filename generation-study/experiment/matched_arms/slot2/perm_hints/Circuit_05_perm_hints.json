@@ -1,0 +1,9 @@
+{
+  "circuit_name": "Circuit_05",
+  "perm_hints": [
+    {"step": 0, "gate": "h",    "qubits": [0],    "perm_required": false, "reason": "H targets qubit 0 — no permutation needed"},
+    {"step": 1, "gate": "x",    "qubits": [1],    "perm_required": true,  "reason": "X targets qubit 1 — opens a CompatiblePerm bracket shared with the following SX-dagger"},
+    {"step": 2, "gate": "sxdg", "qubits": [1],    "perm_required": true,  "reason": "SqrtX-dagger targets qubit 1 — shares the CompatiblePerm bracket opened before the X (one bracket, not two)"},
+    {"step": 3, "gate": "swap", "qubits": [0, 1], "perm_required": false, "reason": "SWAP operates across the full vector — no permutation needed"}
+  ]
+}

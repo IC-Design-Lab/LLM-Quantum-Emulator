@@ -1,0 +1,312 @@
+[
+  {
+    "circuit": "U3_0",
+    "spec": "new_circuits/specs/U3.qpy#0",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4259,
+        "out": 6962,
+        "think": 13964
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "U3_1",
+    "spec": "new_circuits/specs/U3.qpy#1",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4262,
+        "out": 6803,
+        "think": 11199
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "U3_2",
+    "spec": "new_circuits/specs/U3.qpy#2",
+    "h_safe": true,
+    "input": "010",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4257,
+        "out": 6966,
+        "think": 11639
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "U3_3",
+    "spec": "new_circuits/specs/U3.qpy#3",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4262,
+        "out": 10982,
+        "think": 20013
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "U3_4",
+    "spec": "new_circuits/specs/U3.qpy#4",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4253,
+        "out": 9616,
+        "think": 15202
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "U3_5",
+    "spec": "new_circuits/specs/U3.qpy#5",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4266,
+        "out": 8718,
+        "think": 12525
+      }
+    ],
+    "top_module": "quantum_circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_0",
+    "spec": "new_circuits/specs/V5.qpy#0",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 3,
+    "lint_errors_final": 0,
+    "lint_errors_first": 2,
+    "usage": [
+      {
+        "in": 9305,
+        "out": 32423,
+        "think": 6767
+      },
+      {
+        "in": 41872,
+        "out": 32423,
+        "think": 5598
+      },
+      {
+        "in": 41831,
+        "out": 32424,
+        "think": 2313
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_1",
+    "spec": "new_circuits/specs/V5.qpy#1",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9314,
+        "out": 26402,
+        "think": 8123
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_2",
+    "spec": "new_circuits/specs/V5.qpy#2",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9305,
+        "out": 26731,
+        "think": 12303
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_4",
+    "spec": "new_circuits/specs/V5.qpy#4",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9305,
+        "out": 18937,
+        "think": 6595
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_5",
+    "spec": "new_circuits/specs/V5.qpy#5",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9305,
+        "out": 27014,
+        "think": 11853
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_6",
+    "spec": "new_circuits/specs/V5.qpy#6",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9310,
+        "out": 46489,
+        "think": 10194
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  }
+]

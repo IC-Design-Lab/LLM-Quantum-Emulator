@@ -1,0 +1,39 @@
+{
+  "circuit_name": "Circuit0_17",
+  "qubits": [
+    {
+      "id": 0,
+      "name": "q0"
+    },
+    {
+      "id": 1,
+      "name": "q1"
+    }
+  ],
+  "operations": [
+    {
+      "step": 0,
+      "gate": "H",
+      "targets": [
+        0,
+        1
+      ]
+    },
+    {
+      "step": 1,
+      "gate": "X",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "step": 2,
+      "gate": "SWAP",
+      "targets": [
+        0,
+        1
+      ]
+    }
+  ],
+  "module_name": "Circuit0_17"
+}

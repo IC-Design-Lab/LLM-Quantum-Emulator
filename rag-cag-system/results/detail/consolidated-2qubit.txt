@@ -1,0 +1,74 @@
+================================================================================================
+corpus_v2 — 2qubit-16bit family, consolidated
+================================================================================================
+
+--- CORPUS  (leave-one-out) ---
+  circuit        profile                      att verdict   attribution
+  Circuit_00     ['free2']                      1 PASS      matches rulebook exactly
+  Circuit_01     ['free1', 'brk1', 'free1']     1 PASS      matches rulebook exactly
+  Circuit_02     ['free1', 'brk1', 'free1']     1 PASS      matches rulebook exactly
+  Circuit_03     ['free1', 'brk2', 'free1']     1 PASS      matches rulebook exactly
+  Circuit_04     ['free1', 'brk1', 'free1']     1 PASS      matches rulebook exactly
+  Circuit_05     ['free1', 'brk2', 'free1']     1 PASS      matches rulebook exactly
+  Circuit_06     ['free1', 'brk1']              1 PASS      matches rulebook exactly
+  Circuit_07     ['free1', 'brk1', 'free1']     1 PASS      matches rulebook exactly
+  Circuit_08     ['free1', 'brk1', 'free1']     1 PASS      matches rulebook exactly
+
+--- HELD-OUT (NC, independent) ---
+  circuit        profile                      att verdict   attribution
+  NC_01          ['free1', 'brk1', 'free1']     1 PASS      matches rulebook exactly
+  NC_02          -                              - EXCLUDED  hardware H-bug: no H-safe discriminating input
+  NC_03          ['free2', 'brk1']              1 PASS      matches rulebook exactly
+  NC_04          ['free1', 'brk2']              1 PASS      matches rulebook exactly
+  NC_05          ['free2']                      1 PASS      matches rulebook exactly
+  NC_06          ['free1', 'brk1', 'free1', 'brk1']   1 PASS      matches rulebook exactly
+  NC_07          ['free2']                      1 PASS      matches rulebook exactly
+  NC_08          ['free2']                      1 PASS      matches rulebook exactly
+  NC_09          ['brk1', 'free1']              1 PASS      matches rulebook exactly
+  NC_10          ['free1', 'brk2']              1 PASS      matches rulebook exactly
+
+--- NOVEL   (GEN, profile-covering) ---
+  circuit        profile                      att verdict   attribution
+  GEN_01         ['brk1', 'free1']              1 PASS      matches rulebook exactly
+  GEN_02         ['brk2', 'free1']              1 FAIL      HARDWARE — hardware sx.sxdg = -I, and that negative 
+  GEN_03         ['free1', 'brk1', 'free1', 'brk1']   1 PASS      matches rulebook exactly
+  GEN_05         ['free1', 'brk3']              1 PASS      matches rulebook exactly
+  GEN_06         ['free1', 'brk3', 'free1']     1 PASS      matches rulebook exactly
+  GEN_07         ['free2']                      1 PASS      matches rulebook exactly
+  GEN_08         ['free2', 'brk1']              1 PASS      matches rulebook exactly
+  GEN_09         ['free2', 'brk1', 'free1']     1 PASS      matches rulebook exactly
+  GEN_10         ['free4']                      1 PASS      matches rulebook exactly
+  GEN_11         ['brk1', 'free1', 'brk1']      1 PASS      matches rulebook exactly
+  GEN_12         ['free1', 'brk1', 'free2']     1 PASS      matches rulebook exactly
+  GEN_14         ['free3']                      1 PASS      matches rulebook exactly
+
+================================================================================================
+TOTALS — 2qubit-16bit
+================================================================================================
+  circuits scored                : 30
+  functional PASS                : 29/30   (97%)
+  failures attributed to HARDWARE: 1
+  failures attributed to GENERATION: 0
+  excluded before scoring        : 1 (H-unsafe / no hardware)
+  PASS excluding hardware defects: 29/29   (100%)
+  generation attempts / circuit  : 1.00   (1.00 = no repair was ever needed)
+  cost  in 113,439  out 110,439  thinking 165,944   output-rate 276,383
+
+  DISTINCT BRACKET PROFILES COVERED: 16
+  (the 9 corpus circuits span only 4 of these)
+    ['free1', 'brk1', 'free1']      6  Circuit_01, Circuit_02, Circuit_04, Circuit_07, Circuit_
+    ['free2']                       5  Circuit_00, GEN_07, NC_05, NC_07, NC_08
+    ['free1', 'brk2', 'free1']      2  Circuit_03, Circuit_05
+    ['free2', 'brk1']               2  GEN_08, NC_03
+    ['free1', 'brk2']               2  NC_04, NC_10
+    ['free1', 'brk1', 'free1', 'brk1']  2  GEN_03, NC_06
+    ['brk1', 'free1']               2  GEN_01, NC_09
+    ['free1', 'brk1']               1  Circuit_06
+    ['brk2', 'free1']               1  GEN_02
+    ['free1', 'brk3']               1  GEN_05
+    ['free1', 'brk3', 'free1']      1  GEN_06
+    ['free2', 'brk1', 'free1']      1  GEN_09
+    ['free4']                       1  GEN_10
+    ['brk1', 'free1', 'brk1']       1  GEN_11
+    ['free1', 'brk1', 'free2']      1  GEN_12
+    ['free3']                       1  GEN_14

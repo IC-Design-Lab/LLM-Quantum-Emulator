@@ -1,0 +1,34 @@
+{
+  "circuit": "V5_1_no_rulebook",
+  "family": "shor-5qubit-8bit",
+  "backend": "gemini",
+  "example": "Shor",
+  "attempts": [
+    {
+      "n": 1,
+      "usage": {
+        "in": 8278,
+        "out": 47209,
+        "think": 17645
+      },
+      "lines": 1392,
+      "lint_errors": 1,
+      "findings": [
+        "[error] PORTS: instance `m_3` (CompatiblePerm_2) leaves required ports unconnected: ['io_in_QSV_30_1']"
+      ]
+    },
+    {
+      "n": 2,
+      "usage": {
+        "in": 55561,
+        "out": 47210,
+        "think": 1971
+      },
+      "lines": 1392,
+      "lint_errors": 0,
+      "findings": []
+    }
+  ],
+  "final_lint_errors": 0,
+  "attempts_used": 2
+}

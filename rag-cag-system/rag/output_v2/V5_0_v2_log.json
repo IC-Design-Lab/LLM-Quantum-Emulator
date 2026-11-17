@@ -1,0 +1,49 @@
+{
+  "circuit": "V5_0",
+  "family": "shor-5qubit-8bit",
+  "backend": "gemini",
+  "example": "Shor",
+  "attempts": [
+    {
+      "n": 1,
+      "usage": {
+        "in": 9305,
+        "out": 32423,
+        "think": 6767
+      },
+      "lines": 1127,
+      "lint_errors": 2,
+      "findings": [
+        "[error] PORTS: instance `m5` (CompatiblePerm_1) leaves required ports unconnected: ['io_in_QSV_30_1']",
+        "[error] CHAIN: last instance `m5` must drive the top-level outputs io_out_QSV_*, got ['_m4_io_out_QSV_30_1', 'io_out_QSV_0_0', 'io_out_QSV_0_1']..."
+      ]
+    },
+    {
+      "n": 2,
+      "usage": {
+        "in": 41872,
+        "out": 32423,
+        "think": 5598
+      },
+      "lines": 1127,
+      "lint_errors": 2,
+      "findings": [
+        "[error] PORTS: instance `m2` (CompatiblePerm_4) leaves required ports unconnected: ['io_out_valid']",
+        "[error] PORTS: instance `m3` (CNGate5QubitVector8bit) leaves required ports unconnected: ['io_out_valid']"
+      ]
+    },
+    {
+      "n": 3,
+      "usage": {
+        "in": 41831,
+        "out": 32424,
+        "think": 2313
+      },
+      "lines": 1127,
+      "lint_errors": 0,
+      "findings": []
+    }
+  ],
+  "final_lint_errors": 0,
+  "attempts_used": 3
+}

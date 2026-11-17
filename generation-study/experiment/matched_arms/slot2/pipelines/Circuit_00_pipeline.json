@@ -1,0 +1,8 @@
+{
+  "circuit_name": "Circuit_00",
+  "pipeline": [
+    {"stage": 0, "module": "HGate2QubitVector16bit",  "instance": "m",   "cycles": 5},
+    {"stage": 1, "module": "SWGate2QubitVector16bit", "instance": "m_1", "cycles": 1}
+  ],
+  "total_pipeline_cycles": 6
+}

@@ -1,0 +1,312 @@
+[
+  {
+    "circuit": "Circuit_00",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_00.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit1_0167",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3759,
+        "out": 1562,
+        "think": 4391
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "Circuit_01",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_01.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_2",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3795,
+        "out": 3831,
+        "think": 2761
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "Circuit_02",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_02.py",
+    "h_safe": false,
+    "input": "10",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_17",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3796,
+        "out": 3831,
+        "think": 9373
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "Circuit_03",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_03.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_5",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3837,
+        "out": 4593,
+        "think": 6333
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "Circuit_04",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_04.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_17",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3798,
+        "out": 3832,
+        "think": 5854
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "Circuit_05",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_05.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_3",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3836,
+        "out": 4593,
+        "think": 6900
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "Circuit_06",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_06.py",
+    "h_safe": true,
+    "input": "11",
+    "family": "2qubit-16bit",
+    "example": "Circuit1_23",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3789,
+        "out": 3070,
+        "think": 7591
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "Circuit_07",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_07.py",
+    "h_safe": false,
+    "input": "10",
+    "family": "2qubit-16bit",
+    "example": "Circuit1_45",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3796,
+        "out": 3831,
+        "think": 5169
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "Circuit_08",
+    "spec": "generation-study\\experiment\\matched_arms\\python_specs\\Circuit_08.py",
+    "h_safe": true,
+    "input": "01",
+    "family": "2qubit-16bit",
+    "example": "Circuit1_23",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3796,
+        "out": 3831,
+        "think": 3168
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "G5_05",
+    "spec": "new_circuits\\specs\\G5_05.py",
+    "h_safe": true,
+    "input": "00010",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 3,
+    "lint_errors_final": 0,
+    "lint_errors_first": 3,
+    "usage": [
+      {
+        "in": 9085,
+        "out": 36672,
+        "think": 7160
+      },
+      {
+        "in": 46062,
+        "out": 36674,
+        "think": 4705
+      },
+      {
+        "in": 45889,
+        "out": 36676,
+        "think": 3189
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "U3_5",
+    "spec": "new_circuits/specs/U3.qpy#5",
+    "h_safe": true,
+    "input": "000",
+    "family": "qft-3qubit-8bit",
+    "example": "QFT",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 4266,
+        "out": 8718,
+        "think": 12525
+      }
+    ],
+    "top_module": "quantum_circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 16,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_6",
+    "spec": "new_circuits/specs/V5.qpy#6",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9310,
+        "out": 46489,
+        "think": 10194
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  }
+]

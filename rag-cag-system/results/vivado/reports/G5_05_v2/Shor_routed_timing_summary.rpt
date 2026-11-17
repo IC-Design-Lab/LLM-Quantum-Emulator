@@ -1,0 +1,1224 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2.1 (lin64) Build 6403652 Thu Mar 19 13:47:00 MDT 2026
+| Date              : Mon Sep  7 10:12:25 2026
+| Host              : rhodey running 64-bit Ubuntu 22.04.5 LTS
+| Command           : report_timing_summary -max_paths 10 -file /scratch/buchanans6348/krishna_reports/G5_05_v2_reports/Shor_routed_timing_summary.rpt
+| Design            : Shor
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (514)
+6. checking no_output_delay (513)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (514)
+--------------------------------
+ There are 514 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (513)
+---------------------------------
+ There are 513 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      2.135        0.000                      0                 7624        0.042        0.000                      0                 7624        1.725        0.000                       0                  4169  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock  Waveform(ns)         Period(ns)      Frequency(MHz)
+-----  ------------         ----------      --------------
+clk    {0.000 2.000}        4.000           250.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk                 2.135        0.000                      0                 7624        0.042        0.000                      0                 7624        1.725        0.000                       0                  4169  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk
+  To Clock:  clk
+
+Setup :            0  Failing Endpoints,  Worst Slack        2.135ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.042ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        1.725ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             2.135ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/adder/AdderReal/full_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.816ns  (logic 0.647ns (35.636%)  route 1.169ns (64.364%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.021ns = ( 4.021 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 f  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 r  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.337     1.348    m/gate_9/gate/multiplier_0/clock_3
+    SLICE_X73Y783        LUT6 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.050     1.398 r  m/gate_9/gate/multiplier_0/full0_carry_i_8__7/O
+                         net (fo=1, routed)           0.211     1.609    m/gate_9/gate/adder/AdderReal/S[0]
+    SLICE_X72Y783        CARRY8 (Prop_CARRY8_SLICEM_S[0]_O[7])
+                                                      0.241     1.850 r  m/gate_9/gate/adder/AdderReal/full0_carry/O[7]
+                         net (fo=1, routed)           0.026     1.876    m/gate_9/gate/adder/AdderReal/full0_carry_n_8
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.021     4.021    m/gate_9/gate/adder/AdderReal/clock
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[7]/C
+                         clock pessimism              0.000     4.021    
+                         clock uncertainty           -0.035     3.986    
+    SLICE_X72Y783        FDRE (Setup_HFF_SLICEM_C_D)
+                                                      0.025     4.011    m/gate_9/gate/adder/AdderReal/full_reg[7]
+  -------------------------------------------------------------------
+                         required time                          4.011    
+                         arrival time                          -1.876    
+  -------------------------------------------------------------------
+                         slack                                  2.135    
+
+Slack (MET) :             2.137ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/adder/AdderReal/full_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.814ns  (logic 0.646ns (35.620%)  route 1.168ns (64.380%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.021ns = ( 4.021 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 f  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 r  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.337     1.348    m/gate_9/gate/multiplier_0/clock_3
+    SLICE_X73Y783        LUT6 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.050     1.398 r  m/gate_9/gate/multiplier_0/full0_carry_i_8__7/O
+                         net (fo=1, routed)           0.211     1.609    m/gate_9/gate/adder/AdderReal/S[0]
+    SLICE_X72Y783        CARRY8 (Prop_CARRY8_SLICEM_S[0]_O[5])
+                                                      0.240     1.849 r  m/gate_9/gate/adder/AdderReal/full0_carry/O[5]
+                         net (fo=1, routed)           0.025     1.874    m/gate_9/gate/adder/AdderReal/full0_carry_n_10
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.021     4.021    m/gate_9/gate/adder/AdderReal/clock
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[5]/C
+                         clock pessimism              0.000     4.021    
+                         clock uncertainty           -0.035     3.986    
+    SLICE_X72Y783        FDRE (Setup_FFF_SLICEM_C_D)
+                                                      0.025     4.011    m/gate_9/gate/adder/AdderReal/full_reg[5]
+  -------------------------------------------------------------------
+                         required time                          4.011    
+                         arrival time                          -1.874    
+  -------------------------------------------------------------------
+                         slack                                  2.137    
+
+Slack (MET) :             2.150ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/adder/AdderReal/full_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.801ns  (logic 0.632ns (35.100%)  route 1.169ns (64.900%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.021ns = ( 4.021 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 f  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 r  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.337     1.348    m/gate_9/gate/multiplier_0/clock_3
+    SLICE_X73Y783        LUT6 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.050     1.398 r  m/gate_9/gate/multiplier_0/full0_carry_i_8__7/O
+                         net (fo=1, routed)           0.211     1.609    m/gate_9/gate/adder/AdderReal/S[0]
+    SLICE_X72Y783        CARRY8 (Prop_CARRY8_SLICEM_S[0]_O[6])
+                                                      0.226     1.835 r  m/gate_9/gate/adder/AdderReal/full0_carry/O[6]
+                         net (fo=1, routed)           0.026     1.861    m/gate_9/gate/adder/AdderReal/full0_carry_n_9
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.021     4.021    m/gate_9/gate/adder/AdderReal/clock
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[6]/C
+                         clock pessimism              0.000     4.021    
+                         clock uncertainty           -0.035     3.986    
+    SLICE_X72Y783        FDRE (Setup_GFF_SLICEM_C_D)
+                                                      0.025     4.011    m/gate_9/gate/adder/AdderReal/full_reg[6]
+  -------------------------------------------------------------------
+                         required time                          4.011    
+                         arrival time                          -1.861    
+  -------------------------------------------------------------------
+                         slack                                  2.150    
+
+Slack (MET) :             2.171ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/adder/AdderReal/full_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.780ns  (logic 0.612ns (34.390%)  route 1.168ns (65.610%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.021ns = ( 4.021 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 f  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 r  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.337     1.348    m/gate_9/gate/multiplier_0/clock_3
+    SLICE_X73Y783        LUT6 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.050     1.398 r  m/gate_9/gate/multiplier_0/full0_carry_i_8__7/O
+                         net (fo=1, routed)           0.211     1.609    m/gate_9/gate/adder/AdderReal/S[0]
+    SLICE_X72Y783        CARRY8 (Prop_CARRY8_SLICEM_S[0]_O[4])
+                                                      0.206     1.815 r  m/gate_9/gate/adder/AdderReal/full0_carry/O[4]
+                         net (fo=1, routed)           0.025     1.840    m/gate_9/gate/adder/AdderReal/full0_carry_n_11
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.021     4.021    m/gate_9/gate/adder/AdderReal/clock
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[4]/C
+                         clock pessimism              0.000     4.021    
+                         clock uncertainty           -0.035     3.986    
+    SLICE_X72Y783        FDRE (Setup_EFF_SLICEM_C_D)
+                                                      0.025     4.011    m/gate_9/gate/adder/AdderReal/full_reg[4]
+  -------------------------------------------------------------------
+                         required time                          4.011    
+                         arrival time                          -1.840    
+  -------------------------------------------------------------------
+                         slack                                  2.171    
+
+Slack (MET) :             2.182ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/subber/SubberReal/full_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.768ns  (logic 0.649ns (36.717%)  route 1.119ns (63.283%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.020ns = ( 4.020 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 f  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.341     1.352    m/gate_9/gate/multiplier_2/full_reg[7]_2
+    SLICE_X73Y783        LUT5 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.098     1.450 r  m/gate_9/gate/multiplier_2/full0__0_carry_i_6__17/O
+                         net (fo=1, routed)           0.157     1.607    m/gate_9/gate/subber/SubberReal/DI[1]
+    SLICE_X73Y782        CARRY8 (Prop_CARRY8_SLICEL_DI[1]_O[7])
+                                                      0.195     1.802 r  m/gate_9/gate/subber/SubberReal/full0__0_carry/O[7]
+                         net (fo=1, routed)           0.026     1.828    m/gate_9/gate/subber/SubberReal/full0[7]
+    SLICE_X73Y782        FDRE                                         r  m/gate_9/gate/subber/SubberReal/full_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.020     4.020    m/gate_9/gate/subber/SubberReal/clock
+    SLICE_X73Y782        FDRE                                         r  m/gate_9/gate/subber/SubberReal/full_reg[7]/C
+                         clock pessimism              0.000     4.020    
+                         clock uncertainty           -0.035     3.985    
+    SLICE_X73Y782        FDRE (Setup_HFF_SLICEL_C_D)
+                                                      0.025     4.010    m/gate_9/gate/subber/SubberReal/full_reg[7]
+  -------------------------------------------------------------------
+                         required time                          4.010    
+                         arrival time                          -1.828    
+  -------------------------------------------------------------------
+                         slack                                  2.182    
+
+Slack (MET) :             2.185ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/subber/SubberReal/full_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.765ns  (logic 0.647ns (36.666%)  route 1.118ns (63.334%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.020ns = ( 4.020 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 f  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.341     1.352    m/gate_9/gate/multiplier_2/full_reg[7]_2
+    SLICE_X73Y783        LUT5 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.098     1.450 r  m/gate_9/gate/multiplier_2/full0__0_carry_i_6__17/O
+                         net (fo=1, routed)           0.157     1.607    m/gate_9/gate/subber/SubberReal/DI[1]
+    SLICE_X73Y782        CARRY8 (Prop_CARRY8_SLICEL_DI[1]_O[5])
+                                                      0.193     1.800 r  m/gate_9/gate/subber/SubberReal/full0__0_carry/O[5]
+                         net (fo=1, routed)           0.025     1.825    m/gate_9/gate/subber/SubberReal/full0[5]
+    SLICE_X73Y782        FDRE                                         r  m/gate_9/gate/subber/SubberReal/full_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.020     4.020    m/gate_9/gate/subber/SubberReal/clock
+    SLICE_X73Y782        FDRE                                         r  m/gate_9/gate/subber/SubberReal/full_reg[5]/C
+                         clock pessimism              0.000     4.020    
+                         clock uncertainty           -0.035     3.985    
+    SLICE_X73Y782        FDRE (Setup_FFF_SLICEL_C_D)
+                                                      0.025     4.010    m/gate_9/gate/subber/SubberReal/full_reg[5]
+  -------------------------------------------------------------------
+                         required time                          4.010    
+                         arrival time                          -1.825    
+  -------------------------------------------------------------------
+                         slack                                  2.185    
+
+Slack (MET) :             2.196ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/subber/SubberReal/full_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.754ns  (logic 0.635ns (36.211%)  route 1.119ns (63.789%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.020ns = ( 4.020 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 f  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.341     1.352    m/gate_9/gate/multiplier_2/full_reg[7]_2
+    SLICE_X73Y783        LUT5 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.098     1.450 r  m/gate_9/gate/multiplier_2/full0__0_carry_i_6__17/O
+                         net (fo=1, routed)           0.157     1.607    m/gate_9/gate/subber/SubberReal/DI[1]
+    SLICE_X73Y782        CARRY8 (Prop_CARRY8_SLICEL_DI[1]_O[6])
+                                                      0.181     1.788 r  m/gate_9/gate/subber/SubberReal/full0__0_carry/O[6]
+                         net (fo=1, routed)           0.026     1.814    m/gate_9/gate/subber/SubberReal/full0[6]
+    SLICE_X73Y782        FDRE                                         r  m/gate_9/gate/subber/SubberReal/full_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.020     4.020    m/gate_9/gate/subber/SubberReal/clock
+    SLICE_X73Y782        FDRE                                         r  m/gate_9/gate/subber/SubberReal/full_reg[6]/C
+                         clock pessimism              0.000     4.020    
+                         clock uncertainty           -0.035     3.985    
+    SLICE_X73Y782        FDRE (Setup_GFF_SLICEL_C_D)
+                                                      0.025     4.010    m/gate_9/gate/subber/SubberReal/full_reg[6]
+  -------------------------------------------------------------------
+                         required time                          4.010    
+                         arrival time                          -1.814    
+  -------------------------------------------------------------------
+                         slack                                  2.196    
+
+Slack (MET) :             2.218ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/subber/SubberReal/full_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.732ns  (logic 0.614ns (35.459%)  route 1.118ns (64.541%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        -0.040ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.020ns = ( 4.020 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 f  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.341     1.352    m/gate_9/gate/multiplier_2/full_reg[7]_2
+    SLICE_X73Y783        LUT5 (Prop_B6LUT_SLICEL_I0_O)
+                                                      0.098     1.450 r  m/gate_9/gate/multiplier_2/full0__0_carry_i_6__17/O
+                         net (fo=1, routed)           0.157     1.607    m/gate_9/gate/subber/SubberReal/DI[1]
+    SLICE_X73Y782        CARRY8 (Prop_CARRY8_SLICEL_DI[1]_O[4])
+                                                      0.160     1.767 r  m/gate_9/gate/subber/SubberReal/full0__0_carry/O[4]
+                         net (fo=1, routed)           0.025     1.792    m/gate_9/gate/subber/SubberReal/full0[4]
+    SLICE_X73Y782        FDRE                                         r  m/gate_9/gate/subber/SubberReal/full_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.020     4.020    m/gate_9/gate/subber/SubberReal/clock
+    SLICE_X73Y782        FDRE                                         r  m/gate_9/gate/subber/SubberReal/full_reg[4]/C
+                         clock pessimism              0.000     4.020    
+                         clock uncertainty           -0.035     3.985    
+    SLICE_X73Y782        FDRE (Setup_EFF_SLICEL_C_D)
+                                                      0.025     4.010    m/gate_9/gate/subber/SubberReal/full_reg[4]
+  -------------------------------------------------------------------
+                         required time                          4.010    
+                         arrival time                          -1.792    
+  -------------------------------------------------------------------
+                         slack                                  2.218    
+
+Slack (MET) :             2.237ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/adder/AdderReal/full_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.714ns  (logic 0.545ns (31.805%)  route 1.169ns (68.195%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.021ns = ( 4.021 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 f  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 r  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.337     1.348    m/gate_9/gate/multiplier_0/clock_3
+    SLICE_X73Y783        LUT6 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.050     1.398 r  m/gate_9/gate/multiplier_0/full0_carry_i_8__7/O
+                         net (fo=1, routed)           0.211     1.609    m/gate_9/gate/adder/AdderReal/S[0]
+    SLICE_X72Y783        CARRY8 (Prop_CARRY8_SLICEM_S[0]_O[3])
+                                                      0.139     1.748 r  m/gate_9/gate/adder/AdderReal/full0_carry/O[3]
+                         net (fo=1, routed)           0.026     1.774    m/gate_9/gate/adder/AdderReal/full0_carry_n_12
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.021     4.021    m/gate_9/gate/adder/AdderReal/clock
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[3]/C
+                         clock pessimism              0.000     4.021    
+                         clock uncertainty           -0.035     3.986    
+    SLICE_X72Y783        FDRE (Setup_DFF_SLICEM_C_D)
+                                                      0.025     4.011    m/gate_9/gate/adder/AdderReal/full_reg[3]
+  -------------------------------------------------------------------
+                         required time                          4.011    
+                         arrival time                          -1.774    
+  -------------------------------------------------------------------
+                         slack                                  2.237    
+
+Slack (MET) :             2.242ns  (required time - arrival time)
+  Source:                 m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+                            (rising edge-triggered cell DSP_OUTPUT clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m/gate_9/gate/adder/AdderReal/full_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.709ns  (logic 0.540ns (31.605%)  route 1.169ns (68.395%))
+  Logic Levels:           3  (CARRY8=1 LUT4=1 LUT6=1)
+  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.021ns = ( 4.021 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.060ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.060     0.060    m/gate_9/gate/multiplier_0/acc_reg/CLK
+    DSP48E2_X9Y312       DSP_OUTPUT                                   r  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X9Y312       DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_CLK_P[7])
+                                                      0.199     0.259 f  m/gate_9/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/P[7]
+                         net (fo=5, routed)           0.594     0.853    m/gate_9/gate/multiplier_0/P[0]
+    SLICE_X73Y783        LUT4 (Prop_D5LUT_SLICEL_I1_O)
+                                                      0.157     1.010 r  m/gate_9/gate/multiplier_0/full0_carry_i_9__7/O
+                         net (fo=4, routed)           0.337     1.348    m/gate_9/gate/multiplier_0/clock_3
+    SLICE_X73Y783        LUT6 (Prop_C6LUT_SLICEL_I1_O)
+                                                      0.050     1.398 r  m/gate_9/gate/multiplier_0/full0_carry_i_8__7/O
+                         net (fo=1, routed)           0.211     1.609    m/gate_9/gate/adder/AdderReal/S[0]
+    SLICE_X72Y783        CARRY8 (Prop_CARRY8_SLICEM_S[0]_O[2])
+                                                      0.134     1.743 r  m/gate_9/gate/adder/AdderReal/full0_carry/O[2]
+                         net (fo=1, routed)           0.026     1.769    m/gate_9/gate/adder/AdderReal/full0_carry_n_13
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=4488, unset)         0.021     4.021    m/gate_9/gate/adder/AdderReal/clock
+    SLICE_X72Y783        FDRE                                         r  m/gate_9/gate/adder/AdderReal/full_reg[2]/C
+                         clock pessimism              0.000     4.021    
+                         clock uncertainty           -0.035     3.986    
+    SLICE_X72Y783        FDRE (Setup_CFF_SLICEM_C_D)
+                                                      0.025     4.011    m/gate_9/gate/adder/AdderReal/full_reg[2]
+  -------------------------------------------------------------------
+                         required time                          4.011    
+                         arrival time                          -1.769    
+  -------------------------------------------------------------------
+                         slack                                  2.242    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 m/gate_10/gate/adder/AdderReal/io_out_REG_reg[2]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_1/perm/outReg_20_0_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.094ns  (logic 0.038ns (40.426%)  route 0.056ns (59.574%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.005ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.013     0.013    m/gate_10/gate/adder/AdderReal/clock
+    SLICE_X77Y768        FDSE                                         r  m/gate_10/gate/adder/AdderReal/io_out_REG_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X77Y768        FDSE (Prop_CFF_SLICEM_C_Q)
+                                                      0.038     0.051 r  m/gate_10/gate/adder/AdderReal/io_out_REG_reg[2]/Q
+                         net (fo=1, routed)           0.056     0.107    m_1/perm/outReg_20_0_reg[7]_1[2]
+    SLICE_X78Y768        FDRE                                         r  m_1/perm/outReg_20_0_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.018     0.018    m_1/perm/clock
+    SLICE_X78Y768        FDRE                                         r  m_1/perm/outReg_20_0_reg[2]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X78Y768        FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.047     0.065    m_1/perm/outReg_20_0_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.107    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.042ns  (arrival time - required time)
+  Source:                 m/gate_10/gate/subber/SubberReal/io_out_REG_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_1/perm/outReg_22_0_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.095ns  (logic 0.037ns (38.947%)  route 0.058ns (61.053%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.013     0.013    m/gate_10/gate/subber/SubberReal/clock
+    SLICE_X77Y765        FDSE                                         r  m/gate_10/gate/subber/SubberReal/io_out_REG_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X77Y765        FDSE (Prop_FFF_SLICEM_C_Q)
+                                                      0.037     0.050 r  m/gate_10/gate/subber/SubberReal/io_out_REG_reg[6]/Q
+                         net (fo=1, routed)           0.058     0.108    m_1/perm/outReg_22_0_reg[7]_1[6]
+    SLICE_X78Y765        FDRE                                         r  m_1/perm/outReg_22_0_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.019     0.019    m_1/perm/clock
+    SLICE_X78Y765        FDRE                                         r  m_1/perm/outReg_22_0_reg[6]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X78Y765        FDRE (Hold_EFF2_SLICEL_C_D)
+                                                      0.047     0.066    m_1/perm/outReg_22_0_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.108    
+  -------------------------------------------------------------------
+                         slack                                  0.042    
+
+Slack (MET) :             0.043ns  (arrival time - required time)
+  Source:                 m/gate_7/gate/subber/SubberImag/io_out_REG_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_1/perm/outReg_15_1_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.096ns  (logic 0.039ns (40.625%)  route 0.057ns (59.375%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.013     0.013    m/gate_7/gate/subber/SubberImag/clock
+    SLICE_X72Y791        FDSE                                         r  m/gate_7/gate/subber/SubberImag/io_out_REG_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X72Y791        FDSE (Prop_HFF_SLICEM_C_Q)
+                                                      0.039     0.052 r  m/gate_7/gate/subber/SubberImag/io_out_REG_reg[6]/Q
+                         net (fo=1, routed)           0.057     0.109    m_1/perm/outReg_15_1_reg[7]_1[6]
+    SLICE_X73Y791        FDRE                                         r  m_1/perm/outReg_15_1_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.019     0.019    m_1/perm/clock
+    SLICE_X73Y791        FDRE                                         r  m_1/perm/outReg_15_1_reg[6]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X73Y791        FDRE (Hold_EFF2_SLICEL_C_D)
+                                                      0.047     0.066    m_1/perm/outReg_15_1_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.109    
+  -------------------------------------------------------------------
+                         slack                                  0.043    
+
+Slack (MET) :             0.043ns  (arrival time - required time)
+  Source:                 m/gate_9/gate/subber/SubberReal/io_out_REG_reg[2]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_1/perm/outReg_19_0_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.096ns  (logic 0.039ns (40.625%)  route 0.057ns (59.375%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.013     0.013    m/gate_9/gate/subber/SubberReal/clock
+    SLICE_X73Y781        FDSE                                         r  m/gate_9/gate/subber/SubberReal/io_out_REG_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X73Y781        FDSE (Prop_HFF_SLICEL_C_Q)
+                                                      0.039     0.052 r  m/gate_9/gate/subber/SubberReal/io_out_REG_reg[2]/Q
+                         net (fo=1, routed)           0.057     0.109    m_1/perm/outReg_19_0_reg[7]_1[2]
+    SLICE_X73Y780        FDRE                                         r  m_1/perm/outReg_19_0_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.019     0.019    m_1/perm/clock
+    SLICE_X73Y780        FDRE                                         r  m_1/perm/outReg_19_0_reg[2]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X73Y780        FDRE (Hold_EFF2_SLICEL_C_D)
+                                                      0.047     0.066    m_1/perm/outReg_19_0_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.109    
+  -------------------------------------------------------------------
+                         slack                                  0.043    
+
+Slack (MET) :             0.043ns  (arrival time - required time)
+  Source:                 m_4/perm/outReg_14_0_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_5/gate_3/gate/reg_3_0_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.097ns  (logic 0.039ns (40.206%)  route 0.058ns (59.794%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.007ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.012     0.012    m_4/perm/clock
+    SLICE_X79Y791        FDRE                                         r  m_4/perm/outReg_14_0_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X79Y791        FDRE (Prop_CFF_SLICEL_C_Q)
+                                                      0.039     0.051 r  m_4/perm/outReg_14_0_reg[3]/Q
+                         net (fo=1, routed)           0.058     0.109    m_5/gate_3/gate/reg_3_0_reg[7]_1[3]
+    SLICE_X79Y791        FDRE                                         r  m_5/gate_3/gate/reg_3_0_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.019     0.019    m_5/gate_3/gate/clock
+    SLICE_X79Y791        FDRE                                         r  m_5/gate_3/gate/reg_3_0_reg[3]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X79Y791        FDRE (Hold_FFF2_SLICEL_C_D)
+                                                      0.047     0.066    m_5/gate_3/gate/reg_3_0_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.109    
+  -------------------------------------------------------------------
+                         slack                                  0.043    
+
+Slack (MET) :             0.043ns  (arrival time - required time)
+  Source:                 m_4/perm/outReg_24_0_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_5/gate_6/gate/reg_0_0_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.097ns  (logic 0.039ns (40.206%)  route 0.058ns (59.794%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.007ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.012     0.012    m_4/perm/clock
+    SLICE_X75Y798        FDRE                                         r  m_4/perm/outReg_24_0_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X75Y798        FDRE (Prop_CFF_SLICEL_C_Q)
+                                                      0.039     0.051 r  m_4/perm/outReg_24_0_reg[7]/Q
+                         net (fo=1, routed)           0.058     0.109    m_5/gate_6/gate/reg_0_0_reg[7]_1[7]
+    SLICE_X75Y798        FDRE                                         r  m_5/gate_6/gate/reg_0_0_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.019     0.019    m_5/gate_6/gate/clock
+    SLICE_X75Y798        FDRE                                         r  m_5/gate_6/gate/reg_0_0_reg[7]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X75Y798        FDRE (Hold_FFF2_SLICEL_C_D)
+                                                      0.047     0.066    m_5/gate_6/gate/reg_0_0_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.109    
+  -------------------------------------------------------------------
+                         slack                                  0.043    
+
+Slack (MET) :             0.044ns  (arrival time - required time)
+  Source:                 m/gate_7/gate/adder/AdderImag/io_out_REG_reg[4]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_1/perm/outReg_13_1_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.097ns  (logic 0.039ns (40.206%)  route 0.058ns (59.794%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.013     0.013    m/gate_7/gate/adder/AdderImag/clock
+    SLICE_X72Y790        FDSE                                         r  m/gate_7/gate/adder/AdderImag/io_out_REG_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X72Y790        FDSE (Prop_GFF_SLICEM_C_Q)
+                                                      0.039     0.052 r  m/gate_7/gate/adder/AdderImag/io_out_REG_reg[4]/Q
+                         net (fo=1, routed)           0.058     0.110    m_1/perm/outReg_13_1_reg[7]_1[4]
+    SLICE_X73Y790        FDRE                                         r  m_1/perm/outReg_13_1_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.019     0.019    m_1/perm/clock
+    SLICE_X73Y790        FDRE                                         r  m_1/perm/outReg_13_1_reg[4]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X73Y790        FDRE (Hold_EFF2_SLICEL_C_D)
+                                                      0.047     0.066    m_1/perm/outReg_13_1_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.110    
+  -------------------------------------------------------------------
+                         slack                                  0.044    
+
+Slack (MET) :             0.044ns  (arrival time - required time)
+  Source:                 m/gate_11/gate/subber/SubberReal/io_out_REG_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_1/perm/outReg_23_0_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.097ns  (logic 0.041ns (42.268%)  route 0.056ns (57.732%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.019ns
+    Source Clock Delay      (SCD):    0.013ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.013     0.013    m/gate_11/gate/subber/SubberReal/clock
+    SLICE_X61Y744        FDRE                                         r  m/gate_11/gate/subber/SubberReal/io_out_REG_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X61Y744        FDRE (Prop_DFF2_SLICEM_C_Q)
+                                                      0.041     0.054 r  m/gate_11/gate/subber/SubberReal/io_out_REG_reg[7]/Q
+                         net (fo=1, routed)           0.056     0.110    m_1/perm/outReg_23_0_reg[7]_1[7]
+    SLICE_X62Y744        FDRE                                         r  m_1/perm/outReg_23_0_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.019     0.019    m_1/perm/clock
+    SLICE_X62Y744        FDRE                                         r  m_1/perm/outReg_23_0_reg[7]/C
+                         clock pessimism              0.000     0.019    
+    SLICE_X62Y744        FDRE (Hold_EFF2_SLICEL_C_D)
+                                                      0.047     0.066    m_1/perm/outReg_23_0_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -0.066    
+                         arrival time                           0.110    
+  -------------------------------------------------------------------
+                         slack                                  0.044    
+
+Slack (MET) :             0.044ns  (arrival time - required time)
+  Source:                 m/gate_3/gate/subber/SubberImag/io_out_REG_reg[3]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_1/perm/outReg_7_1_reg[3]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.097ns  (logic 0.039ns (40.206%)  route 0.058ns (59.794%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.012     0.012    m/gate_3/gate/subber/SubberImag/clock
+    SLICE_X73Y761        FDSE                                         r  m/gate_3/gate/subber/SubberImag/io_out_REG_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X73Y761        FDSE (Prop_DFF_SLICEL_C_Q)
+                                                      0.039     0.051 r  m/gate_3/gate/subber/SubberImag/io_out_REG_reg[3]/Q
+                         net (fo=1, routed)           0.058     0.109    m_1/perm/outReg_7_1_reg[7]_1[3]
+    SLICE_X73Y762        FDRE                                         r  m_1/perm/outReg_7_1_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.018     0.018    m_1/perm/clock
+    SLICE_X73Y762        FDRE                                         r  m_1/perm/outReg_7_1_reg[3]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X73Y762        FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.047     0.065    m_1/perm/outReg_7_1_reg[3]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.109    
+  -------------------------------------------------------------------
+                         slack                                  0.044    
+
+Slack (MET) :             0.044ns  (arrival time - required time)
+  Source:                 m/gate_4/gate/adder/AdderReal/io_out_REG_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m_1/perm/outReg_8_0_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.097ns  (logic 0.039ns (40.206%)  route 0.058ns (59.794%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.018ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.012     0.012    m/gate_4/gate/adder/AdderReal/clock
+    SLICE_X79Y790        FDRE                                         r  m/gate_4/gate/adder/AdderReal/io_out_REG_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X79Y790        FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.039     0.051 r  m/gate_4/gate/adder/AdderReal/io_out_REG_reg[7]/Q
+                         net (fo=1, routed)           0.058     0.109    m_1/perm/outReg_8_0_reg[7]_1[7]
+    SLICE_X79Y791        FDRE                                         r  m_1/perm/outReg_8_0_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=4488, unset)         0.018     0.018    m_1/perm/clock
+    SLICE_X79Y791        FDRE                                         r  m_1/perm/outReg_8_0_reg[7]/C
+                         clock pessimism              0.000     0.018    
+    SLICE_X79Y791        FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.047     0.065    m_1/perm/outReg_8_0_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -0.065    
+                         arrival time                           0.109    
+  -------------------------------------------------------------------
+                         slack                                  0.044    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk
+Waveform(ns):       { 0.000 2.000 }
+Period(ns):         4.000
+Sources:            { clock }
+
+Check Type        Corner  Lib Pin         Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X11Y316  m/gate_0/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X8Y303   m/gate_0/gate/multiplier_1/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X11Y318  m/gate_0/gate/multiplier_2/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X7Y304   m/gate_0/gate/multiplier_3/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X12Y312  m/gate_1/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X11Y298  m/gate_1/gate/multiplier_1/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X12Y313  m/gate_1/gate/multiplier_2/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X11Y299  m/gate_1/gate/multiplier_3/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X10Y306  m/gate_10/gate/multiplier_0/acc_reg/DSP_OUTPUT_INST/CLK
+Min Period        n/a     DSP_OUTPUT/CLK  n/a            0.650         4.000       3.350      DSP48E2_X7Y307   m/gate_10/gate/multiplier_1/acc_reg/DSP_OUTPUT_INST/CLK
+Low Pulse Width   Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[0]/C
+Low Pulse Width   Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[0]/C
+Low Pulse Width   Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[1]/C
+Low Pulse Width   Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[1]/C
+Low Pulse Width   Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[2]/C
+Low Pulse Width   Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[2]/C
+Low Pulse Width   Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[3]/C
+Low Pulse Width   Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[3]/C
+Low Pulse Width   Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[4]/C
+Low Pulse Width   Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[4]/C
+High Pulse Width  Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[0]/C
+High Pulse Width  Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[0]/C
+High Pulse Width  Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[1]/C
+High Pulse Width  Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[1]/C
+High Pulse Width  Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[2]/C
+High Pulse Width  Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[2]/C
+High Pulse Width  Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[3]/C
+High Pulse Width  Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[3]/C
+High Pulse Width  Slow    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[4]/C
+High Pulse Width  Fast    FDRE/C          n/a            0.275         2.000       1.725      SLICE_X61Y758    m/gate_0/gate/adder/AdderImag/full_reg[4]/C
+
+
+

@@ -1,0 +1,29 @@
+{
+  "circuit_name": "Circuit_04",
+  "num_qubits": 2,
+  "operations": [
+    {
+      "step": 0,
+      "gate": "h",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "gate": "sxdg",
+      "qubits": [
+        1
+      ]
+    },
+    {
+      "step": 2,
+      "gate": "swap",
+      "qubits": [
+        0,
+        1
+      ]
+    }
+  ],
+  "module_name": "Circuit_04"
+}

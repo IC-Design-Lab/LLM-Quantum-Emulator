@@ -1,0 +1,17 @@
+\begin{table}[ht]
+\centering
+\caption{Generated \texttt{V5\_6} Against a Copy with the Route Removed.}
+\label{tab:route}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Design & Input & Within tol. & Max err. (LSB) & Verdict \\
+\midrule
+Generated & $|00000\rangle$ & 64/64 & 0 & PASS \\
+Generated & $|00100\rangle$ & 60/64 & 2 & FAIL \\
+Generated & $|01000\rangle$ & 64/64 & 1 & PASS \\
+Route removed & $|00000\rangle$ & 64/64 & 0 & PASS \\
+Route removed & $|00100\rangle$ & 58/64 & 92 & FAIL \\
+Route removed & $|01000\rangle$ & 60/64 & 91 & FAIL \\
+\bottomrule
+\end{tabular}
+\end{table}

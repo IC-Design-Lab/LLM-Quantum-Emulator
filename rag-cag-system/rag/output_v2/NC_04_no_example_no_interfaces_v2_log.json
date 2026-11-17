@@ -1,0 +1,45 @@
+{
+  "circuit": "NC_04_no_example_no_interfaces",
+  "family": "2qubit-16bit",
+  "backend": "gemini",
+  "example": "Circuit0_3",
+  "attempts": [
+    {
+      "n": 1,
+      "usage": {
+        "in": 2647,
+        "out": 3740,
+        "think": 12535
+      },
+      "lines": 179,
+      "lint_errors": 11,
+      "findings": [
+        "[error] IFACE: top module `QCircuit` is missing required ports: ['io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1']",
+        "[warn] IFACE: top module `QCircuit` declares unexpected ports: ['io_in_QSV_0_real', 'io_in_QSV_0_imag', 'io_in_QSV_1_real', 'io_in_QSV_1_imag', 'io_in_QSV_2_real', 'io_in_QSV_2_imag', 'io_in_QSV_3_real', 'io_in_QSV_3_imag', 'io_out_QSV_0_real', 'io_out_QSV_0_imag', 'io_out_QSV_1_real', 'io_out_QSV_1_imag', 'io_out_QSV_2_real', 'io_out_QSV_2_imag', 'io_out_QSV_3_real', 'io_out_QSV_3_imag']",
+        "[error] PORTS: instance `m` (HGate2QubitVector16bit) connects ports that do not exist on that module: ['io_in_QSV_0_real', 'io_in_QSV_0_imag', 'io_in_QSV_1_real', 'io_in_QSV_1_imag', 'io_in_QSV_2_real', 'io_in_QSV_2_imag', 'io_in_QSV_3_real', 'io_in_QSV_3_imag', 'io_out_QSV_0_real', 'io_out_QSV_0_imag', 'io_out_QSV_1_real', 'io_out_QSV_1_imag', 'io_out_QSV_2_real', 'io_out_QSV_2_imag', 'io_out_QSV_3_real', 'io_out_QSV_3_imag']. Its actual ports are: ['clock', 'reset', 'io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_in_valid', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1', 'io_out_valid']",
+        "[error] PORTS: instance `m` (HGate2QubitVector16bit) leaves required ports unconnected: ['io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1']",
+        "[error] PORTS: instance `m_1` (CompatiblePerm) connects ports that do not exist on that module: ['io_in_QSV_0_real', 'io_in_QSV_0_imag', 'io_in_QSV_1_real', 'io_in_QSV_1_imag', 'io_in_QSV_2_real', 'io_in_QSV_2_imag', 'io_in_QSV_3_real', 'io_in_QSV_3_imag', 'io_out_QSV_0_real', 'io_out_QSV_0_imag', 'io_out_QSV_1_real', 'io_out_QSV_1_imag', 'io_out_QSV_2_real', 'io_out_QSV_2_imag', 'io_out_QSV_3_real', 'io_out_QSV_3_imag']. Its actual ports are: ['clock', 'reset', 'io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_in_valid', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1', 'io_out_valid']",
+        "[error] PORTS: instance `m_1` (CompatiblePerm) leaves required ports unconnected: ['io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1']",
+        "[error] PORTS: instance `m_2` (XGate2QubitVector16bit) connects ports that do not exist on that module: ['io_in_QSV_0_real', 'io_in_QSV_0_imag', 'io_in_QSV_1_real', 'io_in_QSV_1_imag', 'io_in_QSV_2_real', 'io_in_QSV_2_imag', 'io_in_QSV_3_real', 'io_in_QSV_3_imag', 'io_out_QSV_0_real', 'io_out_QSV_0_imag', 'io_out_QSV_1_real', 'io_out_QSV_1_imag', 'io_out_QSV_2_real', 'io_out_QSV_2_imag', 'io_out_QSV_3_real', 'io_out_QSV_3_imag']. Its actual ports are: ['clock', 'reset', 'io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_in_valid', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1', 'io_out_valid']",
+        "[error] PORTS: instance `m_2` (XGate2QubitVector16bit) leaves required ports unconnected: ['io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1']",
+        "[error] PORTS: instance `m_3` (CNGate2QubitVector16bit) connects ports that do not exist on that module: ['io_in_QSV_0_real', 'io_in_QSV_0_imag', 'io_in_QSV_1_real', 'io_in_QSV_1_imag', 'io_in_QSV_2_real', 'io_in_QSV_2_imag', 'io_in_QSV_3_real', 'io_in_QSV_3_imag', 'io_out_QSV_0_real', 'io_out_QSV_0_imag', 'io_out_QSV_1_real', 'io_out_QSV_1_imag', 'io_out_QSV_2_real', 'io_out_QSV_2_imag', 'io_out_QSV_3_real', 'io_out_QSV_3_imag']. Its actual ports are: ['clock', 'reset', 'io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_in_valid', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1', 'io_out_valid']",
+        "[error] PORTS: instance `m_3` (CNGate2QubitVector16bit) leaves required ports unconnected: ['io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1']",
+        "[error] PORTS: instance `m_4` (CompatiblePerm) connects ports that do not exist on that module: ['io_in_QSV_0_real', 'io_in_QSV_0_imag', 'io_in_QSV_1_real', 'io_in_QSV_1_imag', 'io_in_QSV_2_real', 'io_in_QSV_2_imag', 'io_in_QSV_3_real', 'io_in_QSV_3_imag', 'io_out_QSV_0_real', 'io_out_QSV_0_imag', 'io_out_QSV_1_real', 'io_out_QSV_1_imag', 'io_out_QSV_2_real', 'io_out_QSV_2_imag', 'io_out_QSV_3_real', 'io_out_QSV_3_imag']. Its actual ports are: ['clock', 'reset', 'io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_in_valid', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1', 'io_out_valid']",
+        "[error] PORTS: instance `m_4` (CompatiblePerm) leaves required ports unconnected: ['io_in_QSV_0_0', 'io_in_QSV_0_1', 'io_in_QSV_1_0', 'io_in_QSV_1_1', 'io_in_QSV_2_0', 'io_in_QSV_2_1', 'io_in_QSV_3_0', 'io_in_QSV_3_1', 'io_out_QSV_0_0', 'io_out_QSV_0_1', 'io_out_QSV_1_0', 'io_out_QSV_1_1', 'io_out_QSV_2_0', 'io_out_QSV_2_1', 'io_out_QSV_3_0', 'io_out_QSV_3_1']"
+      ]
+    },
+    {
+      "n": 2,
+      "usage": {
+        "in": 10143,
+        "out": 3740,
+        "think": 5843
+      },
+      "lines": 179,
+      "lint_errors": 0,
+      "findings": []
+    }
+  ],
+  "final_lint_errors": 0,
+  "attempts_used": 2
+}

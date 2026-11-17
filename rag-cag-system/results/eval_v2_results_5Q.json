@@ -1,0 +1,146 @@
+[
+  {
+    "circuit": "G5_01",
+    "spec": "new_circuits\\specs\\G5_01.py",
+    "h_safe": true,
+    "input": "00011",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9076,
+        "out": 21252,
+        "think": 8333
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G5_02",
+    "spec": "new_circuits\\specs\\G5_02.py",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9076,
+        "out": 21252,
+        "think": 7416
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G5_03",
+    "spec": "new_circuits\\specs\\G5_03.py",
+    "h_safe": true,
+    "input": "00011",
+    "verdict": "ERROR",
+    "category": "generation produced no log",
+    "detail": "^^^^^\n  File \"<python>\\Lib\\contextlib.py\", line 158, in __exit__\n    self.gen.throw(value)\n  File \"<python>\\Lib\\site-packages\\httpx\\_transports\\default.py\", line 118, in map_httpcore_exceptions\n    raise mapped_exc(message) from exc\nhttpx.RemoteProtocolError: Server disconnected without sending a response.\n"
+  },
+  {
+    "circuit": "G5_04",
+    "spec": "new_circuits\\specs\\G5_04.py",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9076,
+        "out": 27015,
+        "think": 6599
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G5_05",
+    "spec": "new_circuits\\specs\\G5_05.py",
+    "h_safe": true,
+    "input": "00010",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 3,
+    "lint_errors_final": 0,
+    "lint_errors_first": 3,
+    "usage": [
+      {
+        "in": 9085,
+        "out": 36672,
+        "think": 7160
+      },
+      {
+        "in": 46062,
+        "out": 36674,
+        "think": 4705
+      },
+      {
+        "in": 45889,
+        "out": 36676,
+        "think": 3189
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "G5_06",
+    "spec": "new_circuits\\specs\\G5_06.py",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 9076,
+        "out": 22762,
+        "think": 4396
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  }
+]

@@ -1,0 +1,107 @@
+module Circuit_01 (
+    input wire clock,
+    input wire reset,
+    input wire [15:0] io_in_QSV_0_0,
+    input wire [15:0] io_in_QSV_0_1,
+    input wire [15:0] io_in_QSV_1_0,
+    input wire [15:0] io_in_QSV_1_1,
+    input wire [15:0] io_in_QSV_2_0,
+    input wire [15:0] io_in_QSV_2_1,
+    input wire [15:0] io_in_QSV_3_0,
+    input wire [15:0] io_in_QSV_3_1,
+    input wire io_in_valid,
+    output wire [15:0] io_out_QSV_0_0,
+    output wire [15:0] io_out_QSV_0_1,
+    output wire [15:0] io_out_QSV_1_0,
+    output wire [15:0] io_out_QSV_1_1,
+    output wire [15:0] io_out_QSV_2_0,
+    output wire [15:0] io_out_QSV_2_1,
+    output wire [15:0] io_out_QSV_3_0,
+    output wire [15:0] io_out_QSV_3_1,
+    output wire io_out_valid
+);
+
+    wire [15:0] m_0_out_QSV_0_0, m_0_out_QSV_0_1, m_0_out_QSV_1_0, m_0_out_QSV_1_1, m_0_out_QSV_2_0, m_0_out_QSV_2_1, m_0_out_QSV_3_0, m_0_out_QSV_3_1;
+    wire m_0_out_valid;
+
+    wire [15:0] m_perm1_out_QSV_0_0, m_perm1_out_QSV_0_1, m_perm1_out_QSV_1_0, m_perm1_out_QSV_1_1, m_perm1_out_QSV_2_0, m_perm1_out_QSV_2_1, m_perm1_out_QSV_3_0, m_perm1_out_QSV_3_1;
+    wire m_perm1_out_valid;
+
+    wire [15:0] m_1_out_QSV_0_0, m_1_out_QSV_0_1, m_1_out_QSV_1_0, m_1_out_QSV_1_1, m_1_out_QSV_2_0, m_1_out_QSV_2_1, m_1_out_QSV_3_0, m_1_out_QSV_3_1;
+    wire m_1_out_valid;
+
+    wire [15:0] m_perm2_out_QSV_0_0, m_perm2_out_QSV_0_1, m_perm2_out_QSV_1_0, m_perm2_out_QSV_1_1, m_perm2_out_QSV_2_0, m_perm2_out_QSV_2_1, m_perm2_out_QSV_3_0, m_perm2_out_QSV_3_1;
+    wire m_perm2_out_valid;
+
+    HGate2QubitVector16bit m_0 (
+        .clock(clock),
+        .reset(reset),
+        .io_in_QSV_0_0(io_in_QSV_0_0), .io_in_QSV_0_1(io_in_QSV_0_1),
+        .io_in_QSV_1_0(io_in_QSV_1_0), .io_in_QSV_1_1(io_in_QSV_1_1),
+        .io_in_QSV_2_0(io_in_QSV_2_0), .io_in_QSV_2_1(io_in_QSV_2_1),
+        .io_in_QSV_3_0(io_in_QSV_3_0), .io_in_QSV_3_1(io_in_QSV_3_1),
+        .io_in_valid(io_in_valid),
+        .io_out_QSV_0_0(m_0_out_QSV_0_0), .io_out_QSV_0_1(m_0_out_QSV_0_1),
+        .io_out_QSV_1_0(m_0_out_QSV_1_0), .io_out_QSV_1_1(m_0_out_QSV_1_1),
+        .io_out_QSV_2_0(m_0_out_QSV_2_0), .io_out_QSV_2_1(m_0_out_QSV_2_1),
+        .io_out_QSV_3_0(m_0_out_QSV_3_0), .io_out_QSV_3_1(m_0_out_QSV_3_1),
+        .io_out_valid(m_0_out_valid)
+    );
+
+    CompatiblePerm m_perm1 (
+        .clock(clock), .reset(reset),
+        .io_in_QSV_0_0(m_0_out_QSV_0_0), .io_in_QSV_0_1(m_0_out_QSV_0_1),
+        .io_in_QSV_1_0(m_0_out_QSV_1_0), .io_in_QSV_1_1(m_0_out_QSV_1_1),
+        .io_in_QSV_2_0(m_0_out_QSV_2_0), .io_in_QSV_2_1(m_0_out_QSV_2_1),
+        .io_in_QSV_3_0(m_0_out_QSV_3_0), .io_in_QSV_3_1(m_0_out_QSV_3_1),
+        .io_in_valid(m_0_out_valid),
+        .io_out_QSV_0_0(m_perm1_out_QSV_0_0), .io_out_QSV_0_1(m_perm1_out_QSV_0_1),
+        .io_out_QSV_1_0(m_perm1_out_QSV_1_0), .io_out_QSV_1_1(m_perm1_out_QSV_1_1),
+        .io_out_QSV_2_0(m_perm1_out_QSV_2_0), .io_out_QSV_2_1(m_perm1_out_QSV_2_1),
+        .io_out_QSV_3_0(m_perm1_out_QSV_3_0), .io_out_QSV_3_1(m_perm1_out_QSV_3_1),
+        .io_out_valid(m_perm1_out_valid)
+    );
+
+    XGate2QubitVector16bit m_1 (
+        .clock(clock), .reset(reset),
+        .io_in_QSV_0_0(m_perm1_out_QSV_0_0), .io_in_QSV_0_1(m_perm1_out_QSV_0_1),
+        .io_in_QSV_1_0(m_perm1_out_QSV_1_0), .io_in_QSV_1_1(m_perm1_out_QSV_1_1),
+        .io_in_QSV_2_0(m_perm1_out_QSV_2_0), .io_in_QSV_2_1(m_perm1_out_QSV_2_1),
+        .io_in_QSV_3_0(m_perm1_out_QSV_3_0), .io_in_QSV_3_1(m_perm1_out_QSV_3_1),
+        .io_in_valid(m_perm1_out_valid),
+        .io_out_QSV_0_0(m_1_out_QSV_0_0), .io_out_QSV_0_1(m_1_out_QSV_0_1),
+        .io_out_QSV_1_0(m_1_out_QSV_1_0), .io_out_QSV_1_1(m_1_out_QSV_1_1),
+        .io_out_QSV_2_0(m_1_out_QSV_2_0), .io_out_QSV_2_1(m_1_out_QSV_2_1),
+        .io_out_QSV_3_0(m_1_out_QSV_3_0), .io_out_QSV_3_1(m_1_out_QSV_3_1),
+        .io_out_valid(m_1_out_valid)
+    );
+
+    CompatiblePerm m_perm2 (
+        .clock(clock), .reset(reset),
+        .io_in_QSV_0_0(m_1_out_QSV_0_0), .io_in_QSV_0_1(m_1_out_QSV_0_1),
+        .io_in_QSV_1_0(m_1_out_QSV_1_0), .io_in_QSV_1_1(m_1_out_QSV_1_1),
+        .io_in_QSV_2_0(m_1_out_QSV_2_0), .io_in_QSV_2_1(m_1_out_QSV_2_1),
+        .io_in_QSV_3_0(m_1_out_QSV_3_0), .io_in_QSV_3_1(m_1_out_QSV_3_1),
+        .io_in_valid(m_1_out_valid),
+        .io_out_QSV_0_0(m_perm2_out_QSV_0_0), .io_out_QSV_0_1(m_perm2_out_QSV_0_1),
+        .io_out_QSV_1_0(m_perm2_out_QSV_1_0), .io_out_QSV_1_1(m_perm2_out_QSV_1_1),
+        .io_out_QSV_2_0(m_perm2_out_QSV_2_0), .io_out_QSV_2_1(m_perm2_out_QSV_2_1),
+        .io_out_QSV_3_0(m_perm2_out_QSV_3_0), .io_out_QSV_3_1(m_perm2_out_QSV_3_1),
+        .io_out_valid(m_perm2_out_valid)
+    );
+
+    SWGate2QubitVector16bit m_2 (
+        .clock(clock), .reset(reset),
+        .io_in_QSV_0_0(m_perm2_out_QSV_0_0), .io_in_QSV_0_1(m_perm2_out_QSV_0_1),
+        .io_in_QSV_1_0(m_perm2_out_QSV_1_0), .io_in_QSV_1_1(m_perm2_out_QSV_1_1),
+        .io_in_QSV_2_0(m_perm2_out_QSV_2_0), .io_in_QSV_2_1(m_perm2_out_QSV_2_1),
+        .io_in_QSV_3_0(m_perm2_out_QSV_3_0), .io_in_QSV_3_1(m_perm2_out_QSV_3_1),
+        .io_in_valid(m_perm2_out_valid),
+        .io_out_QSV_0_0(io_out_QSV_0_0), .io_out_QSV_0_1(io_out_QSV_0_1),
+        .io_out_QSV_1_0(io_out_QSV_1_0), .io_out_QSV_1_1(io_out_QSV_1_1),
+        .io_out_QSV_2_0(io_out_QSV_2_0), .io_out_QSV_2_1(io_out_QSV_2_1),
+        .io_out_QSV_3_0(io_out_QSV_3_0), .io_out_QSV_3_1(io_out_QSV_3_1),
+        .io_out_valid(io_out_valid)
+    );
+
+endmodule

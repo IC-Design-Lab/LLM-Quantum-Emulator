@@ -1,0 +1,235 @@
+[
+  {
+    "circuit": "NC_01_no_example",
+    "spec": "new_circuits\\specs\\NC_01.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_17",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3260,
+        "out": 3772,
+        "think": 6452
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "NC_02_no_example",
+    "spec": "new_circuits\\specs\\NC_02.py",
+    "h_safe": false,
+    "input": null,
+    "verdict": "EXCLUDED",
+    "category": "hardware H-bug: no H-safe discriminating input"
+  },
+  {
+    "circuit": "NC_03_no_example",
+    "spec": "new_circuits\\specs\\NC_03.py",
+    "h_safe": true,
+    "input": "11",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_06",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3260,
+        "out": 3772,
+        "think": 5669
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "NC_04_no_example",
+    "spec": "new_circuits\\specs\\NC_04.py",
+    "h_safe": true,
+    "input": "01",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_3",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3260,
+        "out": 3772,
+        "think": 6846
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "NC_05_no_example",
+    "spec": "new_circuits\\specs\\NC_05.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_06",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3253,
+        "out": 1539,
+        "think": 4012
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "NC_06_no_example",
+    "spec": "new_circuits\\specs\\NC_06.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_17",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3267,
+        "out": 6038,
+        "think": 9528
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "NC_07_no_example",
+    "spec": "new_circuits\\specs\\NC_07.py",
+    "h_safe": false,
+    "input": "10",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_06",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3251,
+        "out": 1539,
+        "think": 2609
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "NC_08_no_example",
+    "spec": "new_circuits\\specs\\NC_08.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_06",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3251,
+        "out": 1547,
+        "think": 3354
+      }
+    ],
+    "top_module": "QuantumCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "NC_09_no_example",
+    "spec": "new_circuits\\specs\\NC_09.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_17",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3251,
+        "out": 3023,
+        "think": 4551
+      }
+    ],
+    "top_module": "TopLevel",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  },
+  {
+    "circuit": "NC_10_no_example",
+    "spec": "new_circuits\\specs\\NC_10.py",
+    "h_safe": true,
+    "input": "00",
+    "family": "2qubit-16bit",
+    "example": "Circuit0_3",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 3262,
+        "out": 3772,
+        "think": 6128
+      }
+    ],
+    "top_module": "Circuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 8,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "matches rulebook exactly"
+  }
+]

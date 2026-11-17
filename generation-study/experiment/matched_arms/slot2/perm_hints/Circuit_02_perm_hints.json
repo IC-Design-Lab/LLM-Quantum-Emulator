@@ -1,0 +1,8 @@
+{
+  "circuit_name": "Circuit_02",
+  "perm_hints": [
+    {"step": 0, "gate": "h",    "qubits": [0],    "perm_required": false, "reason": "H targets qubit 0 — no permutation needed"},
+    {"step": 1, "gate": "h",    "qubits": [1],    "perm_required": true,  "reason": "This H targets qubit 1 (not qubit 0) — CompatiblePerm required before and after"},
+    {"step": 2, "gate": "swap", "qubits": [0, 1], "perm_required": false, "reason": "SWAP operates across the full vector — no permutation needed"}
+  ]
+}

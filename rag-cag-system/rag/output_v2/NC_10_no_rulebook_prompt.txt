@@ -1,0 +1,158 @@
+# SECTION 1 — GATE REFERENCE (all families)
+
+# Gate reference — all families
+
+One line per gate. Module names are harvested from verified hardware; a dash means
+the gate DOES NOT EXIST in that family and a circuit using it there cannot be built.
+
+| gate token | semantics | 2qubit-16bit | qft-3qubit-8bit | shor-5qubit-8bit |
+|---|---|---|---|---|
+| `h(qN)` | Hadamard on qubit N | `HGate2QubitVector16bit` | `HGate3QubitVector8bit` | `HGate5QubitVector8bit` |
+| `x(qN)` | Pauli-X (NOT) | `XGate2QubitVector16bit` | — | — |
+| `sx(qN)` | sqrt(X) | `SXGate2QubitVector16bit` | — | — |
+| `sxdg(qN)` | sqrt(X)-dagger | `SXDGate2QubitVector16bit` | — | — |
+| `swap(qA,B)` | exchange two qubits | `SWGate2QubitVector16bit` | `SWGate3QubitVector8bit` | — |
+| `cx(qC,T)` | CNOT, control C target T | `CNGate2QubitVector16bit` | — | `CNGate5QubitVector8bit` |
+| `cs(qA,B)` | controlled-S (phase i on \|11>) | — | `CSGate3QubitVector8bit` | — |
+| `cp(pi/4)@qA,B` | controlled-T (phase e^{i pi/4} on \|11>) | — | `CTGate3QubitVector8bit` | — |
+
+## Native orientations (verified against ground truth + ModelSim)
+
+- `CNGate2QubitVector16bit` implements **cx(control=q1, target=q0)** natively.
+  A spec `cx(q1,0)` instantiates it bare; a spec `cx(q0,1)` requires the
+  CompatiblePerm bracket. (ModelSim-confirmed on circuit NC_05 — bracketing a
+  cx(1,0) silently builds the OPPOSITE gate.)
+- `SWGate2QubitVector16bit` implements swap(q0,q1) natively — never bracketed
+  (a 2-qubit swap is position-symmetric).
+- Single-qubit gate modules act on **qubit 0** natively; targeting any other
+  qubit requires a permutation bracket.
+- `cs`/`cp` are symmetric in their two qubits (phase gates); what matters is
+  WHICH qubit pair, not direction. Native pair and 3q/5q orientation rules:
+  see the family composition rulebook.
+
+## Fixed-point formats
+
+- `2qubit-16bit`: Q2.14 — 1.0 = 0x4000, 1/sqrt(2) = 0x2D41
+- `qft-3qubit-8bit`, `shor-5qubit-8bit`: Q1.7 — 1.0 = 0x80, 1/sqrt(2) = 0x5B
+
+# SECTION 2 — MODULE INTERFACES for `2qubit-16bit` (exact, harvested)
+
+# Module interfaces — family `2qubit-16bit`
+
+State vector: 4 basis states x (real, imag), 16-bit fixed point Q2.14 (1.0 = 0x4000).
+
+## The ONLY modules a top-level circuit instantiates
+
+Gates: `CNGate2QubitVector16bit`, `HGate2QubitVector16bit`, `SWGate2QubitVector16bit`, `SXDGate2QubitVector16bit`, `SXGate2QubitVector16bit`, `XGate2QubitVector16bit`
+Permutations: `CompatiblePerm`
+
+## Their single shared interface (exact, harvested from verified hardware)
+
+Every module above uses EXACTLY this port list. Any other port name fails
+to elaborate.
+
+```
+  input          clock
+  input          reset
+  input  [15:0]  io_in_QSV_0_0
+  input  [15:0]  io_in_QSV_0_1
+  input  [15:0]  io_in_QSV_1_0
+  input  [15:0]  io_in_QSV_1_1
+  input  [15:0]  io_in_QSV_2_0
+  input  [15:0]  io_in_QSV_2_1
+  input  [15:0]  io_in_QSV_3_0
+  input  [15:0]  io_in_QSV_3_1
+  input          io_in_valid
+  output [15:0]  io_out_QSV_0_0
+  output [15:0]  io_out_QSV_0_1
+  output [15:0]  io_out_QSV_1_0
+  output [15:0]  io_out_QSV_1_1
+  output [15:0]  io_out_QSV_2_0
+  output [15:0]  io_out_QSV_2_1
+  output [15:0]  io_out_QSV_3_0
+  output [15:0]  io_out_QSV_3_1
+  output         io_out_valid
+```
+
+## CRITICAL — the permutation adapter rule
+
+`SwapPosition*` and `rearrangeTo1stPosition*` modules exist in the library
+but use a DIFFERENT interface (`io_in_ket_*`/`io_out_ket_*`) and are
+internal. NEVER instantiate them in a top-level circuit. `CompatiblePerm`
+and its numbered variants are the top-level adapters: standard `io_*_QSV_*`
+interface, permutation wrapped inside.
+
+# SECTION 3 — COMPOSITION RULES for `2qubit-16bit`
+
+No validated rulebook exists for this family yet. Derive the composition from the worked example in SECTION 4, which is verified hardware: note which gates carry permutation wrappers, how many, and where. Permutation modules have NO counterpart in the specification — they are required by the hardware, not by the logical circuit.
+
+# SECTION 4 — WORKED REFERENCE EXAMPLE (verified hardware)
+
+## Circuit0_3
+
+### Its specification
+
+```
+qubits: 2
+family: 2qubit-16bit
+depth: 3
+gates:
+  h(q0)
+  x(q1)
+  h(q1)
+  swap(q0,1)
+```
+
+### Its verified composition — 6 instantiations, in order
+
+```
+  HGate2QubitVector16bit     m        <- top-level inputs       -> wires
+  CompatiblePerm             m_1      <- outputs of m           -> wires
+  XGate2QubitVector16bit     m_2      <- outputs of m_1         -> wires
+  HGate2QubitVector16bit     m_3      <- outputs of m_2         -> wires
+  CompatiblePerm             m_4      <- outputs of m_3         -> wires
+  SWGate2QubitVector16bit    m_5      <- outputs of m_4         -> top-level outputs
+```
+
+One block verbatim, as the exact formatting to follow:
+
+```verilog
+  HGate2QubitVector16bit m (	// \\src\\main\\scala\\QunatumLayers\\ArithmiticGates\\GeneratePipline.scala:34:23
+    .clock          (clock),
+    .reset          (reset),
+    .io_in_QSV_0_0  (io_in_QSV_0_0),
+    .io_in_QSV_0_1  (io_in_QSV_0_1),
+    .io_in_QSV_1_0  (io_in_QSV_1_0),
+    .io_in_QSV_1_1  (io_in_QSV_1_1),
+    .io_in_QSV_2_0  (io_in_QSV_2_0),
+    .io_in_QSV_2_1  (io_in_QSV_2_1),
+    .io_in_QSV_3_0  (io_in_QSV_3_0),
+    .io_in_QSV_3_1  (io_in_QSV_3_1),
+    .io_in_valid    (io_in_valid),
+    .io_out_QSV_0_0 (_m_io_out_QSV_0_0),
+    .io_out_QSV_0_1 (_m_io_out_QSV_0_1),
+    .io_out_QSV_1_0 (_m_io_out_QSV_1_0),
+    .io_out_QSV_1_1 (_m_io_out_QSV_1_1),
+    .io_out_QSV_2_0 (_m_io_out_QSV_2_0),
+    .io_out_QSV_2_1 (_m_io_out_QSV_2_1),
+    .io_out_QSV_3_0 (_m_io_out_QSV_3_0),
+    .io_out_QSV_3_1 (_m_io_out_QSV_3_1),
+    .io_out_valid   (_m_io_out_valid)
+  );
+```
+
+# SECTION 5 — CIRCUIT TO IMPLEMENT
+
+```
+qubits: 2
+family: 2qubit-16bit
+depth: 3
+gates:
+  h(q0)
+  cx(q0,1)
+  cx(q0,1)
+```
+
+# TASK
+
+Emit the complete top-level SystemVerilog module implementing the SECTION 5 circuit. Apply the SECTION 3 composition rules to decide the module sequence, and the SECTION 2 interfaces for every port name. Verilog source only.

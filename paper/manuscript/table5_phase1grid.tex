@@ -1,0 +1,18 @@
+\begin{table}[ht]
+\centering
+\caption{Prompt-only study: designs passing simulation, by model and prompt level, over all 661 runs. }
+\label{tab:phase1grid}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Model & Full & Medium & Medium-strict & Sparse \\
+\midrule
+3.1-flash-lite & 35/42 & 51/78 & 21/78 & 0/40 \\
+3.5-flash & 68/74 & 54/74 & 85/110 & 45/110 \\
+3.1-pro-preview & 9/11 & 0/20 & 4/20 & 0/4 \\
+\midrule
+All models & 112/127 & 105/172 & 110/208 & 45/154 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%Cells are unevenly filled because not every cell of the grid was completed, and the three models therefore carry very different totals (238, 368 and 55 runs); the counts are given so each cell can be read with its own $n$. Within every model the effect of prompt detail is in the same direction. We draw no ranking between models from this table: the model with the best full-prompt cell on the hard circuits, 3.1-pro-preview, has the weakest overall record (13/55).

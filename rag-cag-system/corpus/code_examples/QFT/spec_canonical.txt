@@ -1,0 +1,11 @@
+qubits: 3
+family: qft-3qubit-8bit
+depth: 6
+gates:
+  h(q0)
+  cs(q1,0)
+  cp(pi/4)@q2,0
+  h(q1)
+  cs(q2,1)
+  h(q2)
+  swap(q0,2)

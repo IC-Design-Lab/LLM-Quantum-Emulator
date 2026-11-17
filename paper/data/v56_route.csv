@@ -1,0 +1,7 @@
+design,input,verdict,checks,within_tol,max_err_lsb,unknown,file
+generated,00000,PASS,64,64,0,0,rag-cag-system/rag/output_v2/V5_6_v2.v
+generated,00100,FAIL,64,60,2,0,rag-cag-system/rag/output_v2/V5_6_v2.v
+generated,01000,PASS,64,64,1,0,rag-cag-system/rag/output_v2/V5_6_v2.v
+route_removed,00000,PASS,64,64,0,0,paper/data/controls/V5_6_noroute.v
+route_removed,00100,FAIL,64,58,92,0,paper/data/controls/V5_6_noroute.v
+route_removed,01000,FAIL,64,60,91,0,paper/data/controls/V5_6_noroute.v

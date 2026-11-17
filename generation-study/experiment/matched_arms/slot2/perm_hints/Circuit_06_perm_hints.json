@@ -1,0 +1,7 @@
+{
+  "circuit_name": "Circuit_06",
+  "perm_hints": [
+    {"step": 0, "gate": "h",  "qubits": [0],    "perm_required": false, "reason": "H targets qubit 0 — no permutation needed"},
+    {"step": 1, "gate": "cx", "qubits": [0, 1], "perm_required": true,  "reason": "CX has control=qubit 0, target=qubit 1 (not qubit 0) — CompatiblePerm required before and after"}
+  ]
+}

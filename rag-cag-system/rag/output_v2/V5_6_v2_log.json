@@ -1,0 +1,21 @@
+{
+  "circuit": "V5_6",
+  "family": "shor-5qubit-8bit",
+  "backend": "gemini",
+  "example": "Shor",
+  "attempts": [
+    {
+      "n": 1,
+      "usage": {
+        "in": 9310,
+        "out": 46489,
+        "think": 10194
+      },
+      "lines": 1448,
+      "lint_errors": 0,
+      "findings": []
+    }
+  ],
+  "final_lint_errors": 0,
+  "attempts_used": 1
+}

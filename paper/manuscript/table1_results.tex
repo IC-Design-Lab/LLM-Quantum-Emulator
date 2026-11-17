@@ -1,0 +1,19 @@
+\begin{table}[ht]
+\centering
+\caption{Functional results by evaluation set. }
+\label{tab:results}
+\begin{tabular}{@{}llrr@{}}
+\toprule
+Evaluation set & Family & Circuits & Passed \\
+\midrule
+Corpus (leave-one-out) & 2-qubit & 9 & 9 \\
+Held-out (NC, independent) & 2-qubit & 9 & 9 \\
+Novel (GEN, profile-covering) & 2-qubit & 12 & 11 \\
+Novel (G3, qft family) & 3-qubit & 8 & 7 \\
+Novel (G5, GHZ family) & 5-qubit & 5 & 5 \\
+Supplied (.qpy, user-authored) & 3-qubit + 5-qubit & 12 & 12 \\
+\midrule
+Total & & 55 & 53 \\
+\bottomrule
+\end{tabular}
+\end{table}

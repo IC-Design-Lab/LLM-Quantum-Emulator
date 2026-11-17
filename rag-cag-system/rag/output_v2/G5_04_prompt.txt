@@ -1,0 +1,468 @@
+# SECTION 1 — GATE REFERENCE (all families)
+
+# Gate reference — all families
+
+One line per gate. Module names are harvested from verified hardware; a dash means
+the gate DOES NOT EXIST in that family and a circuit using it there cannot be built.
+
+| gate token | semantics | 2qubit-16bit | qft-3qubit-8bit | shor-5qubit-8bit |
+|---|---|---|---|---|
+| `h(qN)` | Hadamard on qubit N | `HGate2QubitVector16bit` | `HGate3QubitVector8bit` | `HGate5QubitVector8bit` |
+| `x(qN)` | Pauli-X (NOT) | `XGate2QubitVector16bit` | — | — |
+| `sx(qN)` | sqrt(X) | `SXGate2QubitVector16bit` | — | — |
+| `sxdg(qN)` | sqrt(X)-dagger | `SXDGate2QubitVector16bit` | — | — |
+| `swap(qA,B)` | exchange two qubits | `SWGate2QubitVector16bit` | `SWGate3QubitVector8bit` | — |
+| `cx(qC,T)` | CNOT, control C target T | `CNGate2QubitVector16bit` | — | `CNGate5QubitVector8bit` |
+| `cs(qA,B)` | controlled-S (phase i on \|11>) | — | `CSGate3QubitVector8bit` | — |
+| `cp(pi/4)@qA,B` | controlled-T (phase e^{i pi/4} on \|11>) | — | `CTGate3QubitVector8bit` | — |
+
+## Native orientations (verified against ground truth + ModelSim)
+
+- `CNGate2QubitVector16bit` implements **cx(control=q1, target=q0)** natively.
+  A spec `cx(q1,0)` instantiates it bare; a spec `cx(q0,1)` requires the
+  CompatiblePerm bracket. (ModelSim-confirmed on circuit NC_05 — bracketing a
+  cx(1,0) silently builds the OPPOSITE gate.)
+- `SWGate2QubitVector16bit` implements swap(q0,q1) natively — never bracketed
+  (a 2-qubit swap is position-symmetric).
+- Single-qubit gate modules act on **qubit 0** natively; targeting any other
+  qubit requires a permutation bracket.
+- `cs`/`cp` are symmetric in their two qubits (phase gates); what matters is
+  WHICH qubit pair, not direction. Native pair and 3q/5q orientation rules:
+  see the family composition rulebook.
+
+## Fixed-point formats
+
+- `2qubit-16bit`: Q2.14 — 1.0 = 0x4000, 1/sqrt(2) = 0x2D41
+- `qft-3qubit-8bit`, `shor-5qubit-8bit`: Q1.7 — 1.0 = 0x80, 1/sqrt(2) = 0x5B
+
+# SECTION 2 — MODULE INTERFACES for `shor-5qubit-8bit` (exact, harvested)
+
+# Module interfaces — family `shor-5qubit-8bit`
+
+State vector: 32 basis states x (real, imag), 8-bit fixed point Q1.7 (1.0 = 0x80).
+
+## The ONLY modules a top-level circuit instantiates
+
+Gates: `CNGate5QubitVector8bit`, `HGate5QubitVector8bit`
+Permutations: `CompatiblePerm`, `CompatiblePerm_1`, `CompatiblePerm_10`, `CompatiblePerm_2`, `CompatiblePerm_3`, `CompatiblePerm_4`, `CompatiblePerm_5`, `CompatiblePerm_6`, `CompatiblePerm_9`
+
+## Their single shared interface (exact, harvested from verified hardware)
+
+Every module above uses EXACTLY this port list. Any other port name fails
+to elaborate.
+
+```
+  input          clock
+  input          reset
+  input  [7:0]   io_in_QSV_0_0
+  input  [7:0]   io_in_QSV_0_1
+  input  [7:0]   io_in_QSV_1_0
+  input  [7:0]   io_in_QSV_1_1
+  input  [7:0]   io_in_QSV_2_0
+  input  [7:0]   io_in_QSV_2_1
+  input  [7:0]   io_in_QSV_3_0
+  input  [7:0]   io_in_QSV_3_1
+  input  [7:0]   io_in_QSV_4_0
+  input  [7:0]   io_in_QSV_4_1
+  input  [7:0]   io_in_QSV_5_0
+  input  [7:0]   io_in_QSV_5_1
+  input  [7:0]   io_in_QSV_6_0
+  input  [7:0]   io_in_QSV_6_1
+  input  [7:0]   io_in_QSV_7_0
+  input  [7:0]   io_in_QSV_7_1
+  input  [7:0]   io_in_QSV_8_0
+  input  [7:0]   io_in_QSV_8_1
+  input  [7:0]   io_in_QSV_9_0
+  input  [7:0]   io_in_QSV_9_1
+  input  [7:0]   io_in_QSV_10_0
+  input  [7:0]   io_in_QSV_10_1
+  input  [7:0]   io_in_QSV_11_0
+  input  [7:0]   io_in_QSV_11_1
+  input  [7:0]   io_in_QSV_12_0
+  input  [7:0]   io_in_QSV_12_1
+  input  [7:0]   io_in_QSV_13_0
+  input  [7:0]   io_in_QSV_13_1
+  input  [7:0]   io_in_QSV_14_0
+  input  [7:0]   io_in_QSV_14_1
+  input  [7:0]   io_in_QSV_15_0
+  input  [7:0]   io_in_QSV_15_1
+  input  [7:0]   io_in_QSV_16_0
+  input  [7:0]   io_in_QSV_16_1
+  input  [7:0]   io_in_QSV_17_0
+  input  [7:0]   io_in_QSV_17_1
+  input  [7:0]   io_in_QSV_18_0
+  input  [7:0]   io_in_QSV_18_1
+  input  [7:0]   io_in_QSV_19_0
+  input  [7:0]   io_in_QSV_19_1
+  input  [7:0]   io_in_QSV_20_0
+  input  [7:0]   io_in_QSV_20_1
+  input  [7:0]   io_in_QSV_21_0
+  input  [7:0]   io_in_QSV_21_1
+  input  [7:0]   io_in_QSV_22_0
+  input  [7:0]   io_in_QSV_22_1
+  input  [7:0]   io_in_QSV_23_0
+  input  [7:0]   io_in_QSV_23_1
+  input  [7:0]   io_in_QSV_24_0
+  input  [7:0]   io_in_QSV_24_1
+  input  [7:0]   io_in_QSV_25_0
+  input  [7:0]   io_in_QSV_25_1
+  input  [7:0]   io_in_QSV_26_0
+  input  [7:0]   io_in_QSV_26_1
+  input  [7:0]   io_in_QSV_27_0
+  input  [7:0]   io_in_QSV_27_1
+  input  [7:0]   io_in_QSV_28_0
+  input  [7:0]   io_in_QSV_28_1
+  input  [7:0]   io_in_QSV_29_0
+  input  [7:0]   io_in_QSV_29_1
+  input  [7:0]   io_in_QSV_30_0
+  input  [7:0]   io_in_QSV_30_1
+  input  [7:0]   io_in_QSV_31_0
+  input  [7:0]   io_in_QSV_31_1
+  input          io_in_valid
+  output [7:0]   io_out_QSV_0_0
+  output [7:0]   io_out_QSV_0_1
+  output [7:0]   io_out_QSV_1_0
+  output [7:0]   io_out_QSV_1_1
+  output [7:0]   io_out_QSV_2_0
+  output [7:0]   io_out_QSV_2_1
+  output [7:0]   io_out_QSV_3_0
+  output [7:0]   io_out_QSV_3_1
+  output [7:0]   io_out_QSV_4_0
+  output [7:0]   io_out_QSV_4_1
+  output [7:0]   io_out_QSV_5_0
+  output [7:0]   io_out_QSV_5_1
+  output [7:0]   io_out_QSV_6_0
+  output [7:0]   io_out_QSV_6_1
+  output [7:0]   io_out_QSV_7_0
+  output [7:0]   io_out_QSV_7_1
+  output [7:0]   io_out_QSV_8_0
+  output [7:0]   io_out_QSV_8_1
+  output [7:0]   io_out_QSV_9_0
+  output [7:0]   io_out_QSV_9_1
+  output [7:0]   io_out_QSV_10_0
+  output [7:0]   io_out_QSV_10_1
+  output [7:0]   io_out_QSV_11_0
+  output [7:0]   io_out_QSV_11_1
+  output [7:0]   io_out_QSV_12_0
+  output [7:0]   io_out_QSV_12_1
+  output [7:0]   io_out_QSV_13_0
+  output [7:0]   io_out_QSV_13_1
+  output [7:0]   io_out_QSV_14_0
+  output [7:0]   io_out_QSV_14_1
+  output [7:0]   io_out_QSV_15_0
+  output [7:0]   io_out_QSV_15_1
+  output [7:0]   io_out_QSV_16_0
+  output [7:0]   io_out_QSV_16_1
+  output [7:0]   io_out_QSV_17_0
+  output [7:0]   io_out_QSV_17_1
+  output [7:0]   io_out_QSV_18_0
+  output [7:0]   io_out_QSV_18_1
+  output [7:0]   io_out_QSV_19_0
+  output [7:0]   io_out_QSV_19_1
+  output [7:0]   io_out_QSV_20_0
+  output [7:0]   io_out_QSV_20_1
+  output [7:0]   io_out_QSV_21_0
+  output [7:0]   io_out_QSV_21_1
+  output [7:0]   io_out_QSV_22_0
+  output [7:0]   io_out_QSV_22_1
+  output [7:0]   io_out_QSV_23_0
+  output [7:0]   io_out_QSV_23_1
+  output [7:0]   io_out_QSV_24_0
+  output [7:0]   io_out_QSV_24_1
+  output [7:0]   io_out_QSV_25_0
+  output [7:0]   io_out_QSV_25_1
+  output [7:0]   io_out_QSV_26_0
+  output [7:0]   io_out_QSV_26_1
+  output [7:0]   io_out_QSV_27_0
+  output [7:0]   io_out_QSV_27_1
+  output [7:0]   io_out_QSV_28_0
+  output [7:0]   io_out_QSV_28_1
+  output [7:0]   io_out_QSV_29_0
+  output [7:0]   io_out_QSV_29_1
+  output [7:0]   io_out_QSV_30_0
+  output [7:0]   io_out_QSV_30_1
+  output [7:0]   io_out_QSV_31_0
+  output [7:0]   io_out_QSV_31_1
+  output         io_out_valid
+```
+
+## CRITICAL — the permutation adapter rule
+
+`SwapPosition*` and `rearrangeTo1stPosition*` modules exist in the library
+but use a DIFFERENT interface (`io_in_ket_*`/`io_out_ket_*`) and are
+internal. NEVER instantiate them in a top-level circuit. `CompatiblePerm`
+and its numbered variants are the top-level adapters: standard `io_*_QSV_*`
+interface, permutation wrapped inside.
+
+# SECTION 3 — COMPOSITION RULES for `shor-5qubit-8bit`
+
+# Composition rules — family `shor-5qubit-8bit`
+
+Every fact below is MEASURED from the verified hardware: each permutation was
+recovered by driving a distinct tag into every state index and reading where it
+landed, and the native gate positions were recovered by replaying the reference
+circuit while tracking the qubit layout.
+
+## The model
+
+The state vector is a fixed array of amplitudes. A gate module is hard-wired to
+act on FIXED PHYSICAL SLOTS. To apply a gate to logical qubits that are not
+currently in those slots, permute them in, apply the gate, and (when needed)
+permute back. `CompatiblePerm` variants are the only way to move qubits.
+
+## Native positions (which physical slots each gate module acts on)
+
+- `h` acts natively on physical position(s) **(0,)**
+- `cx` acts natively on physical position(s) **(1,0)**
+
+Physical position 0 is the least-significant qubit index, matching Qiskit.
+
+## Permutation catalog (measured)
+
+| module | exchanges qubits |
+|---|---|
+| `CompatiblePerm` | 0 and 1 |
+| `CompatiblePerm_1` | 0 and 2 |
+| `CompatiblePerm_3` | 0 and 3 |
+| `CompatiblePerm_5` | 0 and 4 |
+| `CompatiblePerm_2` | 1 and 2 |
+| `CompatiblePerm_4` | 1 and 3 |
+| `CompatiblePerm_6` | 1 and 4 |
+| `CompatiblePerm_9` | 2 and 4 |
+| `CompatiblePerm_10` | 3 and 4 |
+
+## Procedure
+
+1. Start with the identity layout: logical qubit i sits at physical slot i.
+2. For each gate in spec order:
+   a. Find where its logical targets currently sit.
+   b. If they are already on the native slots, instantiate the gate module bare.
+   c. Otherwise instantiate the `CompatiblePerm` variants that move them onto
+      the native slots, then the gate module.
+3. After the last gate, append whatever permutations restore the IDENTITY
+   layout, so the output amplitudes are in the standard order.
+
+## `swap` is a GATE, not a layout change (read this carefully)
+
+Two different things can exchange qubits, and they must never be confused:
+
+- A `swap` GATE in the specification is part of the circuit's logic. It is realised by
+  instantiating the family's SW gate module. It does NOT change the layout bookkeeping
+  and must NOT be compensated for afterwards.
+- A `CompatiblePerm` is bookkeeping only. It exists solely to move logical qubits onto
+  the physical slots a gate module is hard-wired to use.
+
+Track the layout ONLY through the `CompatiblePerm` instantiations you add yourself.
+Applying a SW gate module leaves the layout exactly as it was.
+
+Appending a permutation "to undo" a specification `swap` produces hardware that
+computes the wrong state: the logical swap is cancelled and two amplitudes come out
+exchanged.
+
+## The identity requirement is not optional
+
+The final layout MUST be the identity. If it is not, the circuit computes the
+right state in the wrong basis order and every amplitude lands in the wrong
+output port.
+
+**The reference implementation gets this wrong.** `Shor_ground_truth.sv` ends with one permutation too many and leaves
+qubits 3 and 4 exchanged; ModelSim confirms it FAILS from input |10000>
+while the corrected 15-instantiation version passes. Do NOT copy its
+closing cascade. See corpus_v2/FINDING_shor_reference_bug.md.
+
+## Reference circuit
+
+`Shor` implements `h(q0) cx(q0,1) cx(q1,2) cx(q2,3) cx(q3,4)` in 16 instantiations (15 once corrected).
+
+# SECTION 4 — WORKED REFERENCE EXAMPLE (verified hardware)
+
+## Shor
+
+### Its specification
+
+```
+qubits: 5
+family: shor-5qubit-8bit
+depth: 5
+gates:
+  h(q0)
+  cx(q0,1)
+  cx(q1,2)
+  cx(q2,3)
+  cx(q3,4)
+```
+
+### Its verified composition — 16 instantiations, in order
+
+```
+  HGate5QubitVector8bit      m        <- top-level inputs       -> wires
+  CompatiblePerm             m_1      <- outputs of m           -> wires
+  CNGate5QubitVector8bit     m_2      <- outputs of m_1         -> wires
+  CompatiblePerm_1           m_3      <- outputs of m_2         -> wires
+  CompatiblePerm_2           m_4      <- outputs of m_3         -> wires
+  CNGate5QubitVector8bit     m_5      <- outputs of m_4         -> wires
+  CompatiblePerm_3           m_6      <- outputs of m_5         -> wires
+  CompatiblePerm_4           m_7      <- outputs of m_6         -> wires
+  CNGate5QubitVector8bit     m_8      <- outputs of m_7         -> wires
+  CompatiblePerm_5           m_9      <- outputs of m_8         -> wires
+  CompatiblePerm_6           m_10     <- outputs of m_9         -> wires
+  CNGate5QubitVector8bit     m_11     <- outputs of m_10        -> wires
+  CompatiblePerm_1           m_12     <- outputs of m_11        -> wires
+  CompatiblePerm_4           m_13     <- outputs of m_12        -> wires
+  CompatiblePerm_9           m_14     <- outputs of m_13        -> wires
+  CompatiblePerm_10          m_15     <- outputs of m_14        -> top-level outputs
+```
+
+One block verbatim, as the exact formatting to follow:
+
+```verilog
+  HGate5QubitVector8bit m (
+    .clock           (clock),
+    .reset           (reset),
+    .io_in_QSV_0_0   (io_in_QSV_0_0),
+    .io_in_QSV_0_1   (io_in_QSV_0_1),
+    .io_in_QSV_1_0   (io_in_QSV_1_0),
+    .io_in_QSV_1_1   (io_in_QSV_1_1),
+    .io_in_QSV_2_0   (io_in_QSV_2_0),
+    .io_in_QSV_2_1   (io_in_QSV_2_1),
+    .io_in_QSV_3_0   (io_in_QSV_3_0),
+    .io_in_QSV_3_1   (io_in_QSV_3_1),
+    .io_in_QSV_4_0   (io_in_QSV_4_0),
+    .io_in_QSV_4_1   (io_in_QSV_4_1),
+    .io_in_QSV_5_0   (io_in_QSV_5_0),
+    .io_in_QSV_5_1   (io_in_QSV_5_1),
+    .io_in_QSV_6_0   (io_in_QSV_6_0),
+    .io_in_QSV_6_1   (io_in_QSV_6_1),
+    .io_in_QSV_7_0   (io_in_QSV_7_0),
+    .io_in_QSV_7_1   (io_in_QSV_7_1),
+    .io_in_QSV_8_0   (io_in_QSV_8_0),
+    .io_in_QSV_8_1   (io_in_QSV_8_1),
+    .io_in_QSV_9_0   (io_in_QSV_9_0),
+    .io_in_QSV_9_1   (io_in_QSV_9_1),
+    .io_in_QSV_10_0  (io_in_QSV_10_0),
+    .io_in_QSV_10_1  (io_in_QSV_10_1),
+    .io_in_QSV_11_0  (io_in_QSV_11_0),
+    .io_in_QSV_11_1  (io_in_QSV_11_1),
+    .io_in_QSV_12_0  (io_in_QSV_12_0),
+    .io_in_QSV_12_1  (io_in_QSV_12_1),
+    .io_in_QSV_13_0  (io_in_QSV_13_0),
+    .io_in_QSV_13_1  (io_in_QSV_13_1),
+    .io_in_QSV_14_0  (io_in_QSV_14_0),
+    .io_in_QSV_14_1  (io_in_QSV_14_1),
+    .io_in_QSV_15_0  (io_in_QSV_15_0),
+    .io_in_QSV_15_1  (io_in_QSV_15_1),
+    .io_in_QSV_16_0  (io_in_QSV_16_0),
+    .io_in_QSV_16_1  (io_in_QSV_16_1),
+    .io_in_QSV_17_0  (io_in_QSV_17_0),
+    .io_in_QSV_17_1  (io_in_QSV_17_1),
+    .io_in_QSV_18_0  (io_in_QSV_18_0),
+    .io_in_QSV_18_1  (io_in_QSV_18_1),
+    .io_in_QSV_19_0  (io_in_QSV_19_0),
+    .io_in_QSV_19_1  (io_in_QSV_19_1),
+    .io_in_QSV_20_0  (io_in_QSV_20_0),
+    .io_in_QSV_20_1  (io_in_QSV_20_1),
+    .io_in_QSV_21_0  (io_in_QSV_21_0),
+    .io_in_QSV_21_1  (io_in_QSV_21_1),
+    .io_in_QSV_22_0  (io_in_QSV_22_0),
+    .io_in_QSV_22_1  (io_in_QSV_22_1),
+    .io_in_QSV_23_0  (io_in_QSV_23_0),
+    .io_in_QSV_23_1  (io_in_QSV_23_1),
+    .io_in_QSV_24_0  (io_in_QSV_24_0),
+    .io_in_QSV_24_1  (io_in_QSV_24_1),
+    .io_in_QSV_25_0  (io_in_QSV_25_0),
+    .io_in_QSV_25_1  (io_in_QSV_25_1),
+    .io_in_QSV_26_0  (io_in_QSV_26_0),
+    .io_in_QSV_26_1  (io_in_QSV_26_1),
+    .io_in_QSV_27_0  (io_in_QSV_27_0),
+    .io_in_QSV_27_1  (io_in_QSV_27_1),
+    .io_in_QSV_28_0  (io_in_QSV_28_0),
+    .io_in_QSV_28_1  (io_in_QSV_28_1),
+    .io_in_QSV_29_0  (io_in_QSV_29_0),
+    .io_in_QSV_29_1  (io_in_QSV_29_1),
+    .io_in_QSV_30_0  (io_in_QSV_30_0),
+    .io_in_QSV_30_1  (io_in_QSV_30_1),
+    .io_in_QSV_31_0  (io_in_QSV_31_0),
+    .io_in_QSV_31_1  (io_in_QSV_31_1),
+    .io_in_valid     (io_in_valid),
+    .io_out_QSV_0_0  (_m_io_out_QSV_0_0),
+    .io_out_QSV_0_1  (_m_io_out_QSV_0_1),
+    .io_out_QSV_1_0  (_m_io_out_QSV_1_0),
+    .io_out_QSV_1_1  (_m_io_out_QSV_1_1),
+    .io_out_QSV_2_0  (_m_io_out_QSV_2_0),
+    .io_out_QSV_2_1  (_m_io_out_QSV_2_1),
+    .io_out_QSV_3_0  (_m_io_out_QSV_3_0),
+    .io_out_QSV_3_1  (_m_io_out_QSV_3_1),
+    .io_out_QSV_4_0  (_m_io_out_QSV_4_0),
+    .io_out_QSV_4_1  (_m_io_out_QSV_4_1),
+    .io_out_QSV_5_0  (_m_io_out_QSV_5_0),
+    .io_out_QSV_5_1  (_m_io_out_QSV_5_1),
+    .io_out_QSV_6_0  (_m_io_out_QSV_6_0),
+    .io_out_QSV_6_1  (_m_io_out_QSV_6_1),
+    .io_out_QSV_7_0  (_m_io_out_QSV_7_0),
+    .io_out_QSV_7_1  (_m_io_out_QSV_7_1),
+    .io_out_QSV_8_0  (_m_io_out_QSV_8_0),
+    .io_out_QSV_8_1  (_m_io_out_QSV_8_1),
+    .io_out_QSV_9_0  (_m_io_out_QSV_9_0),
+    .io_out_QSV_9_1  (_m_io_out_QSV_9_1),
+    .io_out_QSV_10_0 (_m_io_out_QSV_10_0),
+    .io_out_QSV_10_1 (_m_io_out_QSV_10_1),
+    .io_out_QSV_11_0 (_m_io_out_QSV_11_0),
+    .io_out_QSV_11_1 (_m_io_out_QSV_11_1),
+    .io_out_QSV_12_0 (_m_io_out_QSV_12_0),
+    .io_out_QSV_12_1 (_m_io_out_QSV_12_1),
+    .io_out_QSV_13_0 (_m_io_out_QSV_13_0),
+    .io_out_QSV_13_1 (_m_io_out_QSV_13_1),
+    .io_out_QSV_14_0 (_m_io_out_QSV_14_0),
+    .io_out_QSV_14_1 (_m_io_out_QSV_14_1),
+    .io_out_QSV_15_0 (_m_io_out_QSV_15_0),
+    .io_out_QSV_15_1 (_m_io_out_QSV_15_1),
+    .io_out_QSV_16_0 (_m_io_out_QSV_16_0),
+    .io_out_QSV_16_1 (_m_io_out_QSV_16_1),
+    .io_out_QSV_17_0 (_m_io_out_QSV_17_0),
+    .io_out_QSV_17_1 (_m_io_out_QSV_17_1),
+    .io_out_QSV_18_0 (_m_io_out_QSV_18_0),
+    .io_out_QSV_18_1 (_m_io_out_QSV_18_1),
+    .io_out_QSV_19_0 (_m_io_out_QSV_19_0),
+    .io_out_QSV_19_1 (_m_io_out_QSV_19_1),
+    .io_out_QSV_20_0 (_m_io_out_QSV_20_0),
+    .io_out_QSV_20_1 (_m_io_out_QSV_20_1),
+    .io_out_QSV_21_0 (_m_io_out_QSV_21_0),
+    .io_out_QSV_21_1 (_m_io_out_QSV_21_1),
+    .io_out_QSV_22_0 (_m_io_out_QSV_22_0),
+    .io_out_QSV_22_1 (_m_io_out_QSV_22_1),
+    .io_out_QSV_23_0 (_m_io_out_QSV_23_0),
+    .io_out_QSV_23_1 (_m_io_out_QSV_23_1),
+    .io_out_QSV_24_0 (_m_io_out_QSV_24_0),
+    .io_out_QSV_24_1 (_m_io_out_QSV_24_1),
+    .io_out_QSV_25_0 (_m_io_out_QSV_25_0),
+    .io_out_QSV_25_1 (_m_io_out_QSV_25_1),
+    .io_out_QSV_26_0 (_m_io_out_QSV_26_0),
+    .io_out_QSV_26_1 (_m_io_out_QSV_26_1),
+    .io_out_QSV_27_0 (_m_io_out_QSV_27_0),
+    .io_out_QSV_27_1 (_m_io_out_QSV_27_1),
+    .io_out_QSV_28_0 (_m_io_out_QSV_28_0),
+    .io_out_QSV_28_1 (_m_io_out_QSV_28_1),
+    .io_out_QSV_29_0 (_m_io_out_QSV_29_0),
+    .io_out_QSV_29_1 (_m_io_out_QSV_29_1),
+    .io_out_QSV_30_0 (_m_io_out_QSV_30_0),
+    .io_out_QSV_30_1 (_m_io_out_QSV_30_1),
+    .io_out_QSV_31_0 (_m_io_out_QSV_31_0),
+    .io_out_QSV_31_1 (_m_io_out_QSV_31_1),
+    .io_out_valid    (_m_io_out_valid)
+  );
+```
+
+# SECTION 5 — CIRCUIT TO IMPLEMENT
+
+```
+qubits: 5
+family: shor-5qubit-8bit
+depth: 1
+gates:
+  h(q0)
+  cx(q3,4)
+```
+
+# TASK
+
+Emit the complete top-level SystemVerilog module implementing the SECTION 5 circuit. Apply the SECTION 3 composition rules to decide the module sequence, and the SECTION 2 interfaces for every port name. Verilog source only.

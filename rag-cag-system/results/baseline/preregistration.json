@@ -1,0 +1,409 @@
+{
+  "family": "2qubit-16bit",
+  "metric": "structural v2 (0.60 bracket-run / 0.30 target-seq / 0.10 gate-name)",
+  "model": "gemini-3.5-flash @ temperature 0 (determinism confirmed: the auto-selected Circuit0_3 run was byte-identical to the forced run)",
+  "n_circuits": 9,
+  "n_out_of_sample": 8,
+  "predicted_exact_match": 7,
+  "predicted_failure": 2,
+  "falsification_condition": "If all 9 produce an exact match, the copying hypothesis is FALSIFIED: the model would be deriving bracket structure from the manifest and conventions rather than from the worked example, making the example arm largely redundant. If the 2 profile-mismatch circuits fail in the named directions and the other 7 pass, the mechanism is confirmed.",
+  "circuits": [
+    {
+      "circuit": "Circuit0_06",
+      "spec_stem": "Circuit_00",
+      "out_of_sample": true,
+      "gates": [
+        "h(q0)",
+        "swap(q0,1)"
+      ],
+      "bracket_flags": [
+        "free",
+        "free"
+      ],
+      "bracket_runs": [
+        "free2"
+      ],
+      "n_bracket_runs": 0,
+      "predicted_instantiations": 2,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "SWGate2QubitVector16bit"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "SWGate2QubitVector16bit"
+      ],
+      "retrieved_example": "Circuit1_0167",
+      "retrieved_example_runs": [
+        "free1",
+        "brk1"
+      ],
+      "example_profile_matches": false,
+      "predicted_outcome": "FAILURE",
+      "prediction_reason": "retrieved example Circuit1_0167 has bracket profile ['free1', 'brk1'] != query ['free2']. SPURIOUS BRACKETS \u2014 the example brackets (1 run(s)) where the query needs 0; expect extra CompatiblePerm pairs and an instantiation count above 2"
+    },
+    {
+      "circuit": "Circuit0_17",
+      "spec_stem": "Circuit_01",
+      "out_of_sample": true,
+      "gates": [
+        "h(q0)",
+        "x(q1)",
+        "swap(q0,1)"
+      ],
+      "bracket_flags": [
+        "free",
+        "brk",
+        "free"
+      ],
+      "bracket_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "n_bracket_runs": 1,
+      "predicted_instantiations": 5,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "XGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "XGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "retrieved_example": "Circuit0_2",
+      "retrieved_example_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "example_profile_matches": true,
+      "predicted_outcome": "EXACT_MATCH",
+      "prediction_reason": "retrieved example Circuit0_2 has an identical bracket profile ['free1', 'brk1', 'free1']; copying it yields the correct structure"
+    },
+    {
+      "circuit": "Circuit0_2",
+      "spec_stem": "Circuit_02",
+      "out_of_sample": true,
+      "gates": [
+        "h(q0)",
+        "h(q1)",
+        "swap(q0,1)"
+      ],
+      "bracket_flags": [
+        "free",
+        "brk",
+        "free"
+      ],
+      "bracket_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "n_bracket_runs": 1,
+      "predicted_instantiations": 5,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "retrieved_example": "Circuit0_17",
+      "retrieved_example_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "example_profile_matches": true,
+      "predicted_outcome": "EXACT_MATCH",
+      "prediction_reason": "retrieved example Circuit0_17 has an identical bracket profile ['free1', 'brk1', 'free1']; copying it yields the correct structure"
+    },
+    {
+      "circuit": "Circuit0_3",
+      "spec_stem": "Circuit_03",
+      "out_of_sample": false,
+      "gates": [
+        "h(q0)",
+        "x(q1)",
+        "h(q1)",
+        "swap(q0,1)"
+      ],
+      "bracket_flags": [
+        "free",
+        "brk",
+        "brk",
+        "free"
+      ],
+      "bracket_runs": [
+        "free1",
+        "brk2",
+        "free1"
+      ],
+      "n_bracket_runs": 1,
+      "predicted_instantiations": 6,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "XGate2QubitVector16bit",
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "XGate2QubitVector16bit",
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "retrieved_example": "Circuit0_5",
+      "retrieved_example_runs": [
+        "free1",
+        "brk2",
+        "free1"
+      ],
+      "example_profile_matches": true,
+      "predicted_outcome": "EXACT_MATCH",
+      "prediction_reason": "retrieved example Circuit0_5 has an identical bracket profile ['free1', 'brk2', 'free1']; copying it yields the correct structure"
+    },
+    {
+      "circuit": "Circuit0_4",
+      "spec_stem": "Circuit_04",
+      "out_of_sample": true,
+      "gates": [
+        "h(q0)",
+        "sxdg(q1)",
+        "swap(q0,1)"
+      ],
+      "bracket_flags": [
+        "free",
+        "brk",
+        "free"
+      ],
+      "bracket_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "n_bracket_runs": 1,
+      "predicted_instantiations": 5,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SXDGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SXDGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "retrieved_example": "Circuit0_17",
+      "retrieved_example_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "example_profile_matches": true,
+      "predicted_outcome": "EXACT_MATCH",
+      "prediction_reason": "retrieved example Circuit0_17 has an identical bracket profile ['free1', 'brk1', 'free1']; copying it yields the correct structure"
+    },
+    {
+      "circuit": "Circuit0_5",
+      "spec_stem": "Circuit_05",
+      "out_of_sample": true,
+      "gates": [
+        "h(q0)",
+        "x(q1)",
+        "sxdg(q1)",
+        "swap(q0,1)"
+      ],
+      "bracket_flags": [
+        "free",
+        "brk",
+        "brk",
+        "free"
+      ],
+      "bracket_runs": [
+        "free1",
+        "brk2",
+        "free1"
+      ],
+      "n_bracket_runs": 1,
+      "predicted_instantiations": 6,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "XGate2QubitVector16bit",
+        "SXDGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "XGate2QubitVector16bit",
+        "SXDGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SWGate2QubitVector16bit"
+      ],
+      "retrieved_example": "Circuit0_3",
+      "retrieved_example_runs": [
+        "free1",
+        "brk2",
+        "free1"
+      ],
+      "example_profile_matches": true,
+      "predicted_outcome": "EXACT_MATCH",
+      "prediction_reason": "retrieved example Circuit0_3 has an identical bracket profile ['free1', 'brk2', 'free1']; copying it yields the correct structure"
+    },
+    {
+      "circuit": "Circuit1_0167",
+      "spec_stem": "Circuit_06",
+      "out_of_sample": true,
+      "gates": [
+        "h(q0)",
+        "cx(q0,1)"
+      ],
+      "bracket_flags": [
+        "free",
+        "brk"
+      ],
+      "bracket_runs": [
+        "free1",
+        "brk1"
+      ],
+      "n_bracket_runs": 1,
+      "predicted_instantiations": 4,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "CNGate2QubitVector16bit",
+        "CompatiblePerm"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "CNGate2QubitVector16bit",
+        "CompatiblePerm"
+      ],
+      "retrieved_example": "Circuit1_23",
+      "retrieved_example_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "example_profile_matches": false,
+      "predicted_outcome": "FAILURE",
+      "prediction_reason": "retrieved example Circuit1_23 has bracket profile ['free1', 'brk1', 'free1'] != query ['free1', 'brk1']. STRUCTURE TRANSPLANT \u2014 the example's gate/bracket layout differs in length; expect the count to drift toward the example's 5"
+    },
+    {
+      "circuit": "Circuit1_23",
+      "spec_stem": "Circuit_07",
+      "out_of_sample": true,
+      "gates": [
+        "h(q0)",
+        "cx(q0,1)",
+        "h(q0)"
+      ],
+      "bracket_flags": [
+        "free",
+        "brk",
+        "free"
+      ],
+      "bracket_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "n_bracket_runs": 1,
+      "predicted_instantiations": 5,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "CNGate2QubitVector16bit",
+        "CompatiblePerm",
+        "HGate2QubitVector16bit"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "CNGate2QubitVector16bit",
+        "CompatiblePerm",
+        "HGate2QubitVector16bit"
+      ],
+      "retrieved_example": "Circuit1_45",
+      "retrieved_example_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "example_profile_matches": true,
+      "predicted_outcome": "EXACT_MATCH",
+      "prediction_reason": "retrieved example Circuit1_45 has an identical bracket profile ['free1', 'brk1', 'free1']; copying it yields the correct structure"
+    },
+    {
+      "circuit": "Circuit1_45",
+      "spec_stem": "Circuit_08",
+      "out_of_sample": true,
+      "gates": [
+        "h(q0)",
+        "cx(q0,1)",
+        "sx(q0)"
+      ],
+      "bracket_flags": [
+        "free",
+        "brk",
+        "free"
+      ],
+      "bracket_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "n_bracket_runs": 1,
+      "predicted_instantiations": 5,
+      "predicted_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "CNGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SXGate2QubitVector16bit"
+      ],
+      "actual_gt_sequence": [
+        "HGate2QubitVector16bit",
+        "CompatiblePerm",
+        "CNGate2QubitVector16bit",
+        "CompatiblePerm",
+        "SXGate2QubitVector16bit"
+      ],
+      "retrieved_example": "Circuit1_23",
+      "retrieved_example_runs": [
+        "free1",
+        "brk1",
+        "free1"
+      ],
+      "example_profile_matches": true,
+      "predicted_outcome": "EXACT_MATCH",
+      "prediction_reason": "retrieved example Circuit1_23 has an identical bracket profile ['free1', 'brk1', 'free1']; copying it yields the correct structure"
+    }
+  ]
+}

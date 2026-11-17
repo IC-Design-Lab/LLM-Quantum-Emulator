@@ -1,0 +1,80 @@
+2026-07-22 11:28:54  QFT_python_full_gemini-3.5-flash_001                    PASS
+2026-07-22 11:31:26  QFT_python_medium_gemini-3.5-flash_001                  FAIL
+2026-07-22 11:34:08  QFT_python_medium_strict_gemini-3.5-flash_001           FAIL
+2026-07-22 11:35:17  QFT_python_sparse_gemini-3.5-flash_001                  FAIL
+2026-07-22 11:37:26  QFT_json_full_gemini-3.5-flash_001                      PASS
+2026-07-22 11:46:20  QFT_json_medium_gemini-3.5-flash_001                    FAIL  <<<< GAP: 8.9 min
+2026-07-22 11:48:27  QFT_json_medium_strict_gemini-3.5-flash_001             FAIL
+2026-07-22 11:49:41  QFT_json_sparse_gemini-3.5-flash_001                    FAIL
+2026-07-22 11:54:27  Shor_python_full_gemini-3.5-flash_001                   PASS
+2026-07-22 11:55:27  Shor_python_medium_gemini-3.5-flash_001                 FAIL
+2026-07-22 12:06:55  Shor_python_sparse_gemini-3.5-flash_001                 FAIL  <<<< GAP: 11.5 min
+2026-07-22 12:14:08  Shor_json_full_gemini-3.5-flash_001                     PASS  <<<< GAP: 7.2 min
+2026-07-22 12:21:52  Shor_json_medium_gemini-3.5-flash_001                   FAIL  <<<< GAP: 7.7 min
+2026-07-22 12:26:03  Shor_json_medium_strict_gemini-3.5-flash_001            FAIL
+2026-07-22 12:27:12  Shor_json_sparse_gemini-3.5-flash_001                   FAIL
+2026-07-22 12:35:17  Shor_python_medium_strict_gemini-3.5-flash_001          FAIL  <<<< GAP: 8.1 min
+2026-07-22 12:48:08  QFT_python_full_gemini-3.5-flash_002                    PASS  <<<< GAP: 12.8 min
+2026-07-22 12:50:23  QFT_python_full_gemini-3.5-flash_003                    FAIL
+2026-07-22 12:52:34  QFT_python_full_gemini-3.5-flash_004                    PASS
+2026-07-22 12:54:23  QFT_python_full_gemini-3.5-flash_005                    FAIL
+2026-07-22 12:56:33  QFT_json_full_gemini-3.5-flash_002                      PASS
+2026-07-22 12:58:29  QFT_json_full_gemini-3.5-flash_003                      PASS
+2026-07-22 13:00:37  QFT_json_full_gemini-3.5-flash_004                      FAIL
+2026-07-22 13:03:08  QFT_json_full_gemini-3.5-flash_005                      PASS
+2026-07-22 13:05:11  Shor_python_full_gemini-3.5-flash_002                   PASS
+2026-07-22 13:07:25  Shor_python_full_gemini-3.5-flash_003                   PASS
+2026-07-22 13:08:26  Shor_python_full_gemini-3.5-flash_004                   FAIL
+2026-07-22 13:13:37  Shor_python_full_gemini-3.5-flash_005                   PASS  <<<< GAP: 5.2 min
+2026-07-22 13:15:18  Shor_json_full_gemini-3.5-flash_002                     FAIL
+2026-07-22 13:16:53  Shor_json_full_gemini-3.5-flash_003                     PASS
+2026-07-22 13:18:16  Shor_json_full_gemini-3.5-flash_004                     FAIL
+2026-07-22 13:22:26  Shor_json_full_gemini-3.5-flash_005                     PASS
+2026-07-23 12:10:04  QFT_python_medium_gemini-3.5-flash_002                  FAIL  <<<< GAP: 1367.6 min
+2026-07-23 12:14:42  QFT_python_medium_gemini-3.5-flash_003                  FAIL
+2026-07-23 12:17:45  QFT_python_medium_gemini-3.5-flash_004                  FAIL
+2026-07-23 12:19:51  QFT_python_medium_strict_gemini-3.5-flash_002           FAIL
+2026-07-23 12:21:25  QFT_python_medium_strict_gemini-3.5-flash_003           FAIL
+2026-07-23 12:23:27  QFT_python_medium_strict_gemini-3.5-flash_004           FAIL
+2026-07-23 12:25:22  QFT_python_medium_strict_gemini-3.5-flash_005           FAIL
+2026-07-23 12:26:50  QFT_python_sparse_gemini-3.5-flash_002                  FAIL
+2026-07-23 12:28:14  QFT_python_sparse_gemini-3.5-flash_003                  FAIL
+2026-07-23 12:29:32  QFT_python_sparse_gemini-3.5-flash_004                  FAIL
+2026-07-23 12:32:25  QFT_python_sparse_gemini-3.5-flash_005                  FAIL
+2026-07-23 12:34:15  QFT_json_medium_gemini-3.5-flash_002                    FAIL
+2026-07-23 12:43:18  QFT_json_medium_gemini-3.5-flash_003                    FAIL  <<<< GAP: 9.1 min
+2026-07-23 12:49:10  QFT_json_medium_gemini-3.5-flash_004                    FAIL  <<<< GAP: 5.9 min
+2026-07-23 12:52:07  QFT_json_medium_gemini-3.5-flash_005                    FAIL
+2026-07-23 12:54:05  QFT_json_medium_strict_gemini-3.5-flash_002             FAIL
+2026-07-23 12:56:36  QFT_json_medium_strict_gemini-3.5-flash_003             FAIL
+2026-07-23 12:58:55  QFT_json_medium_strict_gemini-3.5-flash_004             FAIL
+2026-07-23 13:00:54  QFT_json_medium_strict_gemini-3.5-flash_005             FAIL
+2026-07-23 13:02:25  QFT_json_sparse_gemini-3.5-flash_002                    FAIL
+2026-07-23 13:04:05  QFT_json_sparse_gemini-3.5-flash_003                    FAIL
+2026-07-23 13:05:19  QFT_json_sparse_gemini-3.5-flash_004                    FAIL
+2026-07-23 13:06:35  QFT_json_sparse_gemini-3.5-flash_005                    FAIL
+2026-07-23 13:14:18  Shor_python_medium_gemini-3.5-flash_002                 FAIL  <<<< GAP: 7.7 min
+2026-07-23 13:16:26  Shor_python_medium_gemini-3.5-flash_003                 FAIL
+2026-07-23 13:17:57  Shor_python_medium_gemini-3.5-flash_004                 FAIL
+2026-07-23 13:19:23  Shor_python_medium_gemini-3.5-flash_005                 FAIL
+2026-07-23 13:21:30  Shor_python_medium_strict_gemini-3.5-flash_002          FAIL
+2026-07-23 13:26:24  Shor_python_medium_strict_gemini-3.5-flash_003          FAIL
+2026-07-23 13:30:38  Shor_python_medium_strict_gemini-3.5-flash_004          FAIL
+2026-07-23 13:31:47  Shor_python_medium_strict_gemini-3.5-flash_005          FAIL
+2026-07-23 13:33:21  Shor_python_sparse_gemini-3.5-flash_002                 FAIL
+2026-07-23 13:35:05  Shor_python_sparse_gemini-3.5-flash_003                 FAIL
+2026-07-23 13:36:30  Shor_python_sparse_gemini-3.5-flash_004                 FAIL
+2026-07-23 13:38:10  Shor_python_sparse_gemini-3.5-flash_005                 FAIL
+2026-07-23 13:39:56  Shor_json_medium_gemini-3.5-flash_002                   FAIL
+2026-07-23 13:45:09  Shor_json_medium_gemini-3.5-flash_003                   FAIL  <<<< GAP: 5.2 min
+2026-07-23 13:46:40  Shor_json_medium_gemini-3.5-flash_004                   FAIL
+2026-07-23 13:51:07  Shor_json_medium_gemini-3.5-flash_005                   FAIL
+2026-07-23 13:52:30  Shor_json_medium_strict_gemini-3.5-flash_002            FAIL
+2026-07-23 13:56:53  Shor_json_medium_strict_gemini-3.5-flash_003            FAIL
+2026-07-23 13:58:39  Shor_json_medium_strict_gemini-3.5-flash_004            FAIL
+2026-07-23 14:03:37  Shor_json_medium_strict_gemini-3.5-flash_005            FAIL
+2026-07-23 14:05:29  Shor_json_sparse_gemini-3.5-flash_002                   FAIL
+2026-07-23 14:06:50  Shor_json_sparse_gemini-3.5-flash_003                   FAIL
+2026-07-23 14:08:30  Shor_json_sparse_gemini-3.5-flash_004                   FAIL
+2026-07-23 14:09:57  Shor_json_sparse_gemini-3.5-flash_005                   FAIL
+2026-07-23 14:13:41  QFT_python_medium_gemini-3.5-flash_005                  FAIL

@@ -1,0 +1,1244 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2.1 (lin64) Build 6403652 Thu Mar 19 13:47:00 MDT 2026
+| Date              : Mon Sep  7 10:23:29 2026
+| Host              : rhodey running 64-bit Ubuntu 22.04.5 LTS
+| Command           : report_timing_summary -max_paths 10 -file /scratch/buchanans6348/krishna_reports/V5_6_v2_reports/Shor_synth_timing_summary.rpt
+| Design            : Shor
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Synthesized
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (514)
+6. checking no_output_delay (513)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (514)
+--------------------------------
+ There are 514 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (513)
+---------------------------------
+ There are 513 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      2.494        0.000                      0                28173        0.080        0.000                      0                28173        1.468        0.000                       0                  5838  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock  Waveform(ns)         Period(ns)      Frequency(MHz)
+-----  ------------         ----------      --------------
+clk    {0.000 2.000}        4.000           250.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk                 2.494        0.000                      0                28173        0.080        0.000                      0                28173        1.468        0.000                       0                  5838  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk
+  To Clock:  clk
+
+Setup :            0  Failing Endpoints,  Worst Slack        2.494ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.080ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        1.468ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[10]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[10])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[10]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<10>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[10]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[10])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[11]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[11])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[11]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<11>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[11]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[11])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[12]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[12])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[12]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<12>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[12]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[12])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[13]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[13])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[13]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<13>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[13]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[13])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[14]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[14])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[14]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<14>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[14]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[14])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[15]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[15])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[15]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<15>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[15]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[15])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[16]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[16])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[16]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<16>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[16]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[16])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[17]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[17])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[17]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<17>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[17]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[17])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[18]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[18])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[18]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<18>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[18]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[18])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+Slack (MET) :             2.494ns  (required time - arrival time)
+  Source:                 m1/perm/outReg_0_0_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[19]
+                            (rising edge-triggered cell DSP_M_DATA clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (clk rise@4.000ns - clk rise@0.000ns)
+  Data Path Delay:        1.500ns  (logic 1.022ns (68.133%)  route 0.478ns (31.867%))
+  Logic Levels:           5  (DSP_A_B_DATA=1 DSP_MULTIPLIER=1 DSP_PREADD_DATA=1 LUT4=1 LUT5=1)
+  Clock Path Skew:        0.015ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    0.043ns = ( 4.043 - 4.000 ) 
+    Source Clock Delay      (SCD):    0.028ns
+    Clock Pessimism Removal (CPR):    0.000ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.028     0.028    m1/perm/clock
+                         FDRE                                         r  m1/perm/outReg_0_0_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.077     0.105 r  m1/perm/outReg_0_0_reg[2]/Q
+                         net (fo=5, unplaced)         0.110     0.215    m2/gate_0/gate/multiplier_0/io_out_ket_0_0[2]
+                         LUT4 (Prop_LUT4_I0_O)        0.100     0.315 f  m2/gate_0/gate/multiplier_0/acc_reg_i_9/O
+                         net (fo=4, unplaced)         0.197     0.512    m2/gate_0/gate/multiplier_0/acc_reg_i_9_n_0
+                         LUT5 (Prop_LUT5_I4_O)        0.070     0.582 f  m2/gate_0/gate/multiplier_0/acc_reg_i_4/O
+                         net (fo=1, unplaced)         0.171     0.753    m2/gate_0/gate/multiplier_0/acc_reg/A[4]
+                         DSP_A_B_DATA (Prop_DSP_A_B_DATA_A[4]_A2_DATA[4])
+                                                      0.192     0.945 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA_INST/A2_DATA[4]
+                         net (fo=1, unplaced)         0.000     0.945    m2/gate_0/gate/multiplier_0/acc_reg/DSP_A_B_DATA.A2_DATA<4>
+                         DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_A2_DATA[4]_A2A1[4])
+                                                      0.076     1.021 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA_INST/A2A1[4]
+                         net (fo=1, unplaced)         0.000     1.021    m2/gate_0/gate/multiplier_0/acc_reg/DSP_PREADD_DATA.A2A1<4>
+                         DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_A2A1[4]_V[19])
+                                                      0.507     1.528 r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER_INST/V[19]
+                         net (fo=1, unplaced)         0.000     1.528    m2/gate_0/gate/multiplier_0/acc_reg/DSP_MULTIPLIER.V<19>
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/V[19]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        4.000     4.000 r  
+                                                      0.000     4.000 r  clock (IN)
+                         net (fo=6797, unset)         0.043     4.043    m2/gate_0/gate/multiplier_0/acc_reg/CLK
+                         DSP_M_DATA                                   r  m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST/CLK
+                         clock pessimism              0.000     4.043    
+                         clock uncertainty           -0.035     4.008    
+                         DSP_M_DATA (Setup_DSP_M_DATA_CLK_V[19])
+                                                      0.014     4.022    m2/gate_0/gate/multiplier_0/acc_reg/DSP_M_DATA_INST
+  -------------------------------------------------------------------
+                         required time                          4.022    
+                         arrival time                          -1.528    
+  -------------------------------------------------------------------
+                         slack                                  2.494    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_14/gate/subber/SubberReal/io_out_valid_REG_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/io_out_valid_r_reg_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_14/gate/subber/SubberReal/clock
+                         FDRE                                         r  m6/gate_14/gate/subber/SubberReal/io_out_valid_REG_reg/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.038     0.050 r  m6/gate_14/gate/subber/SubberReal/io_out_valid_REG_reg/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_gate_14_io_out_valid
+                         SRL16E                                       r  m8/perm/io_out_valid_r_reg_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/io_out_valid_r_reg_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/io_out_valid_r_reg_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_0_reg[0]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderReal/clock
+                         FDSE                                         r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[0]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_0[0]
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[0]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[0]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_0_reg[0]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[1]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_0_reg[1]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderReal/clock
+                         FDSE                                         r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[1]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_0[1]
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[1]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[1]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_0_reg[1]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[2]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_0_reg[2]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderReal/clock
+                         FDSE                                         r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[2]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_0[2]
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[2]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[2]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_0_reg[2]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[3]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_0_reg[3]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderReal/clock
+                         FDSE                                         r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[3]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_0[3]
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[3]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[3]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_0_reg[3]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[4]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_0_reg[4]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderReal/clock
+                         FDSE                                         r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[4]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_0[4]
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[4]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[4]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_0_reg[4]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[5]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_0_reg[5]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderReal/clock
+                         FDSE                                         r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[5]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_0[5]
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[5]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[5]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_0_reg[5]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[6]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_0_reg[6]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderReal/clock
+                         FDSE                                         r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[6]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_0[6]
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[6]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[6]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_0_reg[6]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_0_reg[7]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderReal/clock
+                         FDRE                                         r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+                         FDRE (Prop_FDRE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderReal/io_out_REG_reg[7]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_0[7]
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[7]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_0_reg[7]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_0_reg[7]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+Slack (MET) :             0.080ns  (arrival time - required time)
+  Source:                 m6/gate_0/gate/adder/AdderImag/io_out_REG_reg[0]/C
+                            (rising edge-triggered cell FDSE clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            m8/perm/outReg_0_1_reg[0]_srl2/D
+                            (rising edge-triggered cell SRL16E clocked by clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk rise@0.000ns - clk rise@0.000ns)
+  Data Path Delay:        0.124ns  (logic 0.038ns (30.645%)  route 0.086ns (69.355%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.027ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    0.039ns
+    Source Clock Delay      (SCD):    0.012ns
+    Clock Pessimism Removal (CPR):    -0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.012     0.012    m6/gate_0/gate/adder/AdderImag/clock
+                         FDSE                                         r  m6/gate_0/gate/adder/AdderImag/io_out_REG_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+                         FDSE (Prop_FDSE_C_Q)         0.038     0.050 r  m6/gate_0/gate/adder/AdderImag/io_out_REG_reg[0]/Q
+                         net (fo=1, unplaced)         0.086     0.136    m8/perm/_m6_io_out_QSV_0_1[0]
+                         SRL16E                                       r  m8/perm/outReg_0_1_reg[0]_srl2/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk rise edge)        0.000     0.000 r  
+                                                      0.000     0.000 r  clock (IN)
+                         net (fo=6797, unset)         0.039     0.039    m8/perm/clock
+                         SRL16E                                       r  m8/perm/outReg_0_1_reg[0]_srl2/CLK
+                         clock pessimism              0.000     0.039    
+                         SRL16E (Hold_SRL16E_CLK_D)
+                                                      0.017     0.056    m8/perm/outReg_0_1_reg[0]_srl2
+  -------------------------------------------------------------------
+                         required time                         -0.056    
+                         arrival time                           0.136    
+  -------------------------------------------------------------------
+                         slack                                  0.080    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk
+Waveform(ns):       { 0.000 2.000 }
+Period(ns):         4.000
+Sources:            { clock }
+
+Check Type        Corner  Lib Pin     Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/io_out_valid_r_reg_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_0_reg[0]_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_0_reg[1]_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_0_reg[2]_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_0_reg[3]_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_0_reg[4]_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_0_reg[5]_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_0_reg[6]_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_0_reg[7]_srl2/CLK
+Min Period        n/a     SRL16E/CLK  n/a            1.064         4.000       2.936                m8/perm/outReg_0_1_reg[0]_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/io_out_valid_r_reg_srl2/CLK
+Low Pulse Width   Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/io_out_valid_r_reg_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[0]_srl2/CLK
+Low Pulse Width   Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[0]_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[1]_srl2/CLK
+Low Pulse Width   Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[1]_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[2]_srl2/CLK
+Low Pulse Width   Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[2]_srl2/CLK
+Low Pulse Width   Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[3]_srl2/CLK
+Low Pulse Width   Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[3]_srl2/CLK
+High Pulse Width  Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/io_out_valid_r_reg_srl2/CLK
+High Pulse Width  Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/io_out_valid_r_reg_srl2/CLK
+High Pulse Width  Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[0]_srl2/CLK
+High Pulse Width  Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[0]_srl2/CLK
+High Pulse Width  Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[1]_srl2/CLK
+High Pulse Width  Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[1]_srl2/CLK
+High Pulse Width  Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[2]_srl2/CLK
+High Pulse Width  Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[2]_srl2/CLK
+High Pulse Width  Slow    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[3]_srl2/CLK
+High Pulse Width  Fast    SRL16E/CLK  n/a            0.532         2.000       1.468                m8/perm/outReg_0_0_reg[3]_srl2/CLK
+
+
+

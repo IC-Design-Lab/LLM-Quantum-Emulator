@@ -1,0 +1,9 @@
+qubits: 5
+family: shor-5qubit-8bit
+depth: 5
+gates:
+  h(q0)
+  cx(q0,1)
+  cx(q1,2)
+  cx(q2,3)
+  cx(q3,4)

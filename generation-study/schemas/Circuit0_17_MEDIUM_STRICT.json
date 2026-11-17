@@ -1,0 +1,222 @@
+{
+  "version": "1.0",
+  "circuit_name": "Circuit0_17",
+  "description": "Hadamard on all qubits, then X (NOT) on qubit 1 with permutation layers, then SWAP across both qubits",
+  "qubits": [
+    {
+      "id": 0,
+      "name": "q0"
+    },
+    {
+      "id": 1,
+      "name": "q1"
+    }
+  ],
+  "operations": [
+    {
+      "step": 0,
+      "gate": "H",
+      "targets": [
+        0,
+        1
+      ],
+      "module": "HGate2QubitVector16bit",
+      "pipeline_cycles": 5
+    },
+    {
+      "step": 1,
+      "gate": "X",
+      "targets": [
+        1
+      ],
+      "module": "XGate2QubitVector16bit",
+      "pipeline_cycles": 1
+    },
+    {
+      "step": 2,
+      "gate": "SWAP",
+      "targets": [
+        0,
+        1
+      ],
+      "module": "SWGate2QubitVector16bit",
+      "pipeline_cycles": 1
+    }
+  ],
+  "architecture_rules": {
+    "perm_rule": "Insert CompatiblePerm before AND after any gate whose target qubit is not qubit 0",
+    "perm_module": "CompatiblePerm",
+    "perm_cycles": 1,
+    "wrapper_rule": "Always use 2QubitVector16bit wrapper modules — never use primitive gates directly",
+    "wire_naming": "Intermediate wires named _m_N_io_out_QSV_X_Y where N is stage index starting at 0",
+    "valid_chain": "Each stage io_in_valid connects to previous stage io_out_valid",
+    "final_output": "Last stage outputs connect directly to top-level io_out ports",
+    "valid_output": "io_out_valid connects directly from last stage io_out_valid"
+  },
+  "gate_library": {
+    "available_modules": [
+      {
+        "gate": "H",
+        "module": "HGate2QubitVector16bit",
+        "pipeline_cycles": 5,
+        "ports": {
+          "inputs": [
+            "clock",
+            "reset",
+            "io_in_QSV_0_0",
+            "io_in_QSV_0_1",
+            "io_in_QSV_1_0",
+            "io_in_QSV_1_1",
+            "io_in_QSV_2_0",
+            "io_in_QSV_2_1",
+            "io_in_QSV_3_0",
+            "io_in_QSV_3_1",
+            "io_in_valid"
+          ],
+          "outputs": [
+            "io_out_QSV_0_0",
+            "io_out_QSV_0_1",
+            "io_out_QSV_1_0",
+            "io_out_QSV_1_1",
+            "io_out_QSV_2_0",
+            "io_out_QSV_2_1",
+            "io_out_QSV_3_0",
+            "io_out_QSV_3_1",
+            "io_out_valid"
+          ]
+        }
+      },
+      {
+        "gate": "X",
+        "module": "XGate2QubitVector16bit",
+        "pipeline_cycles": 1,
+        "ports": {
+          "inputs": [
+            "clock",
+            "reset",
+            "io_in_QSV_0_0",
+            "io_in_QSV_0_1",
+            "io_in_QSV_1_0",
+            "io_in_QSV_1_1",
+            "io_in_QSV_2_0",
+            "io_in_QSV_2_1",
+            "io_in_QSV_3_0",
+            "io_in_QSV_3_1",
+            "io_in_valid"
+          ],
+          "outputs": [
+            "io_out_QSV_0_0",
+            "io_out_QSV_0_1",
+            "io_out_QSV_1_0",
+            "io_out_QSV_1_1",
+            "io_out_QSV_2_0",
+            "io_out_QSV_2_1",
+            "io_out_QSV_3_0",
+            "io_out_QSV_3_1",
+            "io_out_valid"
+          ]
+        }
+      },
+      {
+        "gate": "SWAP",
+        "module": "SWGate2QubitVector16bit",
+        "pipeline_cycles": 1,
+        "ports": {
+          "inputs": [
+            "clock",
+            "reset",
+            "io_in_QSV_0_0",
+            "io_in_QSV_0_1",
+            "io_in_QSV_1_0",
+            "io_in_QSV_1_1",
+            "io_in_QSV_2_0",
+            "io_in_QSV_2_1",
+            "io_in_QSV_3_0",
+            "io_in_QSV_3_1",
+            "io_in_valid"
+          ],
+          "outputs": [
+            "io_out_QSV_0_0",
+            "io_out_QSV_0_1",
+            "io_out_QSV_1_0",
+            "io_out_QSV_1_1",
+            "io_out_QSV_2_0",
+            "io_out_QSV_2_1",
+            "io_out_QSV_3_0",
+            "io_out_QSV_3_1",
+            "io_out_valid"
+          ]
+        }
+      },
+      {
+        "gate": "PERM",
+        "module": "CompatiblePerm",
+        "pipeline_cycles": 1,
+        "purpose": "Qubit permutation layer. Insert before and after any gate targeting qubit != 0",
+        "ports": {
+          "inputs": [
+            "clock",
+            "reset",
+            "io_in_QSV_0_0",
+            "io_in_QSV_0_1",
+            "io_in_QSV_1_0",
+            "io_in_QSV_1_1",
+            "io_in_QSV_2_0",
+            "io_in_QSV_2_1",
+            "io_in_QSV_3_0",
+            "io_in_QSV_3_1",
+            "io_in_valid"
+          ],
+          "outputs": [
+            "io_out_QSV_0_0",
+            "io_out_QSV_0_1",
+            "io_out_QSV_1_0",
+            "io_out_QSV_1_1",
+            "io_out_QSV_2_0",
+            "io_out_QSV_2_1",
+            "io_out_QSV_3_0",
+            "io_out_QSV_3_1",
+            "io_out_valid"
+          ]
+        }
+      }
+    ]
+  },
+  "encoding": {
+    "format": "QSV — Quantum State Vector",
+    "num_qubits": 2,
+    "num_basis_states": 4,
+    "basis_states": {
+      "QSV_0": "|00> amplitude (real=_0, imag=_1)",
+      "QSV_1": "|01> amplitude (real=_0, imag=_1)",
+      "QSV_2": "|10> amplitude (real=_0, imag=_1)",
+      "QSV_3": "|11> amplitude (real=_0, imag=_1)"
+    },
+    "fixed_point": "Q1.15 signed — 1.0 = 0x4000, +1/sqrt(2) = 0x2D41, -1/sqrt(2) = 0xD2BF"
+  },
+  "verilog_requirements": {
+    "module_name": "Circuit0_17",
+    "top_level_ports": {
+      "inputs": [
+        "clock",
+        "reset",
+        "io_in_QSV_0_0 through io_in_QSV_3_1",
+        "io_in_valid"
+      ],
+      "outputs": [
+        "io_out_QSV_0_0 through io_out_QSV_3_1",
+        "io_out_valid"
+      ]
+    },
+    "port_mapping": "named only — never positional",
+    "valid_signal_rule": "io_out_valid connects directly from last stage io_out_valid",
+    "forbidden": [
+      "unused or dead wires",
+      "initial blocks",
+      "positional port mapping",
+      "hardcoded delays (#)",
+      "$display or $monitor statements",
+      "instantiating primitive gates directly instead of 2QubitVector16bit wrappers"
+    ]
+  }
+}

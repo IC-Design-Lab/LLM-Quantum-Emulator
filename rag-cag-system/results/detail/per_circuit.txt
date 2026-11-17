@@ -1,0 +1,87 @@
+================================================================================================
+corpus_v2 — all families, consolidated
+================================================================================================
+
+--- 2q CORPUS   (leave-one-out) ---
+  circuit        profile                      att verdict   attribution
+  Circuit_00     ?                              1 PASS      matches rulebook exactly
+  Circuit_01     ?                              1 PASS      matches rulebook exactly
+  Circuit_02     ?                              1 PASS      matches rulebook exactly
+  Circuit_03     ?                              1 PASS      matches rulebook exactly
+  Circuit_04     ?                              1 PASS      matches rulebook exactly
+  Circuit_05     ?                              1 PASS      matches rulebook exactly
+  Circuit_06     ?                              1 PASS      matches rulebook exactly
+  Circuit_07     ?                              1 PASS      matches rulebook exactly
+  Circuit_08     ?                              1 PASS      matches rulebook exactly
+
+--- 2q HELD-OUT (NC, independent) ---
+  circuit        profile                      att verdict   attribution
+  NC_01          ?                              1 PASS      matches rulebook exactly
+  NC_02          -                              - EXCLUDED  hardware H-bug: no H-safe discriminating input
+  NC_03          ?                              1 PASS      matches rulebook exactly
+  NC_04          ?                              1 PASS      matches rulebook exactly
+  NC_05          ?                              1 PASS      matches rulebook exactly
+  NC_06          ?                              1 PASS      matches rulebook exactly
+  NC_07          ?                              1 PASS      matches rulebook exactly
+  NC_08          ?                              1 PASS      matches rulebook exactly
+  NC_09          ?                              1 PASS      matches rulebook exactly
+  NC_10          ?                              1 PASS      matches rulebook exactly
+
+--- 2q NOVEL    (GEN, profile-covering) ---
+  circuit        profile                      att verdict   attribution
+  GEN_01         ?                              1 PASS      matches rulebook exactly
+  GEN_02         ?                              1 FAIL      HARDWARE — hardware sx.sxdg = -I, and that negative 
+  GEN_03         ?                              1 PASS      matches rulebook exactly
+  GEN_05         ?                              1 PASS      matches rulebook exactly
+  GEN_06         ?                              1 PASS      matches rulebook exactly
+  GEN_07         ?                              1 PASS      matches rulebook exactly
+  GEN_08         ?                              1 PASS      matches rulebook exactly
+  GEN_09         ?                              1 PASS      matches rulebook exactly
+  GEN_10         ?                              1 PASS      matches rulebook exactly
+  GEN_11         ?                              1 PASS      matches rulebook exactly
+  GEN_12         ?                              1 PASS      matches rulebook exactly
+  GEN_14         ?                              1 PASS      matches rulebook exactly
+
+--- 3q NOVEL    (G3, qft family) ---
+  circuit        profile                      att verdict   attribution
+  G3_01          -                              1 PASS      (no rulebook for this family yet)
+  G3_02          -                              3 PASS      (no rulebook for this family yet)
+  G3_03          -                              3 PASS      (no rulebook for this family yet)
+  G3_04          -                              1 PASS      (no rulebook for this family yet)
+  G3_05          -                              1 PASS      (no rulebook for this family yet)
+  G3_06          -                              1 PASS      (no rulebook for this family yet)
+  G3_07          -                              3 PASS      (no rulebook for this family yet)
+  G3_08          -                              1 PASS      (no rulebook for this family yet)
+
+--- 5q NOVEL    (G5, shor family) ---
+  circuit        profile                      att verdict   attribution
+  G5_01          -                              1 PASS      (no rulebook for this family yet)
+  G5_02          -                              1 PASS      (no rulebook for this family yet)
+  G5_03          -                              - ERROR     generation produced no log
+  G5_04          -                              1 PASS      (no rulebook for this family yet)
+  G5_05          -                              3 PASS      (no rulebook for this family yet)
+  G5_06          -                              1 PASS      (no rulebook for this family yet)
+
+================================================================================================
+PER SET
+================================================================================================
+  2q CORPUS   (leave-one-out)          9/9
+  2q HELD-OUT (NC, independent)        9/9
+  2q NOVEL    (GEN, profile-covering)  11/12
+  3q NOVEL    (G3, qft family)         8/8
+  5q NOVEL    (G5, shor family)        5/5
+================================================================================================
+TOTALS — all families
+================================================================================================
+  circuits scored                : 43
+  functional PASS                : 42/43   (98%)
+  failures attributed to HARDWARE: 1
+  failures attributed to GENERATION: 0
+  excluded before scoring        : 2 (H-unsafe / no hardware)
+  PASS excluding hardware defects: 42/42   (100%)
+  generation attempts / circuit  : 1.19   (1.00 = no repair was ever needed)
+  cost  in 337,034  out 382,149  thinking 402,755   output-rate 784,904
+
+  DISTINCT BRACKET PROFILES COVERED: 1
+  (the 9 corpus circuits span only 4 of these)
+    ?                              30  Circuit_00, Circuit_01, Circuit_02, Circuit_03, Circuit_

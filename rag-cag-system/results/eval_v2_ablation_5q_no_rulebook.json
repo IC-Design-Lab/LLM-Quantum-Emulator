@@ -1,0 +1,107 @@
+[
+  {
+    "circuit": "G5_01_no_rulebook",
+    "spec": "new_circuits\\specs\\G5_01.py",
+    "h_safe": true,
+    "input": "00011",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 8269,
+        "out": 21285,
+        "think": 10783
+      }
+    ],
+    "top_module": "Shor5Qubit8bit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_1_no_rulebook",
+    "spec": "new_circuits/specs/V5.qpy#1",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 2,
+    "lint_errors_final": 0,
+    "lint_errors_first": 1,
+    "usage": [
+      {
+        "in": 8278,
+        "out": 47209,
+        "think": 17645
+      },
+      {
+        "in": 55561,
+        "out": 47210,
+        "think": 1971
+      }
+    ],
+    "top_module": "Shor5Qubit8bit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_2_no_rulebook",
+    "spec": "new_circuits/specs/V5.qpy#2",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 8269,
+        "out": 32385,
+        "think": 18722
+      }
+    ],
+    "top_module": "Shor5Qubit8bitCircuit",
+    "verdict": "PASS",
+    "category": null,
+    "checks_ok": 64,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  },
+  {
+    "circuit": "V5_6_no_rulebook",
+    "spec": "new_circuits/specs/V5.qpy#6",
+    "h_safe": true,
+    "input": "00000",
+    "family": "shor-5qubit-8bit",
+    "example": "Shor",
+    "attempts": 1,
+    "lint_errors_final": 0,
+    "lint_errors_first": 0,
+    "usage": [
+      {
+        "in": 8274,
+        "out": 30830,
+        "think": 21679
+      }
+    ],
+    "top_module": "Shor",
+    "verdict": "FAIL",
+    "category": "1-compile-error",
+    "checks_ok": 0,
+    "checks_failed": 0,
+    "mismatches": [],
+    "diagnostic": "(no rulebook for this family yet)"
+  }
+]

@@ -1,0 +1,270 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2025.2.1 (lin64) Build 6403652 Thu Mar 19 13:47:00 MDT 2026
+| Date             : Mon Sep  7 10:21:21 2026
+| Host             : rhodey running 64-bit Ubuntu 22.04.5 LTS
+| Command          : report_power -file /scratch/buchanans6348/krishna_reports/ShorFixed_reports/ShorFixed_power.rpt
+| Design           : ShorFixed
+| Device           : xcu250-figd2104-2L-e
+| Design State     : routed
+| Grade            : extended
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 3.249        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.299        |
+| Device Static (W)        | 2.950        |
+| Effective TJA (C/W)      | 0.5          |
+| Max Ambient (C)          | 98.3         |
+| Junction Temperature (C) | 26.7         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++-------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
++-------------------------+-----------+----------+-----------+-----------------+
+| Clocks                  |     0.108 |        3 |       --- |             --- |
+| CLB Logic               |     0.083 |    10276 |       --- |             --- |
+|   LUT as Logic          |     0.031 |     1759 |   1728000 |            0.10 |
+|   LUT as Shift Register |     0.029 |      513 |    791040 |            0.06 |
+|   Register              |     0.022 |     7183 |   3456000 |            0.21 |
+|   CARRY8                |     0.001 |       64 |    216000 |            0.03 |
+|   BUFG                  |    <0.001 |        1 |       128 |            0.78 |
+|   Others                |     0.000 |      370 |       --- |             --- |
+| Signals                 |     0.073 |     8718 |       --- |             --- |
+| DSPs                    |     0.035 |       64 |     12288 |            0.52 |
+| Static Power            |     2.950 |          |           |                 |
+| Total                   |     3.249 |          |           |                 |
++-------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++------------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source           | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++------------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint           |       0.850 |     1.494 |       0.352 |      1.142 |       NA    | Unspecified | NA         |
+| Vccint_io        |       0.850 |     0.142 |       0.000 |      0.142 |       NA    | Unspecified | NA         |
+| Vccbram          |       0.850 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
+| Vccaux           |       1.800 |     0.887 |       0.000 |      0.887 |       NA    | Unspecified | NA         |
+| Vccaux_io        |       1.800 |     0.104 |       0.000 |      0.104 |       NA    | Unspecified | NA         |
+| Vcco33           |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco25           |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18           |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco15           |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco135          |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12           |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco10           |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc           |       1.800 |     0.032 |       0.000 |      0.032 |       NA    | Unspecified | NA         |
+| VMGTAVCC (GTY)   |       0.900 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| VMGTAVTT (GTY)   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| VMGTVCCAUX (GTY) |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
++------------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                        | Action                                                                                                     |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                               |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks         |                                                                                                            |
+| I/O nodes activity          | High       | User specified more than 95% of inputs         |                                                                                                            |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                   |                                                                                                            |
+|                             |            |                                                |                                                                                                            |
+| Overall confidence level    | Medium     |                                                |                                                                                                            |
++-----------------------------+------------+------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 0.5                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 0.7                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+| clk   | clock  |             4.0 |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-------------+-----------+
+| Name        | Power (W) |
++-------------+-----------+
+| ShorFixed   |     0.299 |
+|   m         |     0.114 |
+|     gate_0  |     0.007 |
+|       gate  |     0.007 |
+|     gate_1  |     0.007 |
+|       gate  |     0.007 |
+|     gate_10 |     0.007 |
+|       gate  |     0.007 |
+|     gate_11 |     0.007 |
+|       gate  |     0.007 |
+|     gate_12 |     0.007 |
+|       gate  |     0.007 |
+|     gate_13 |     0.007 |
+|       gate  |     0.007 |
+|     gate_14 |     0.007 |
+|       gate  |     0.007 |
+|     gate_15 |     0.007 |
+|       gate  |     0.007 |
+|     gate_2  |     0.007 |
+|       gate  |     0.007 |
+|     gate_3  |     0.007 |
+|       gate  |     0.007 |
+|     gate_4  |     0.007 |
+|       gate  |     0.007 |
+|     gate_5  |     0.007 |
+|       gate  |     0.007 |
+|     gate_6  |     0.007 |
+|       gate  |     0.007 |
+|     gate_7  |     0.007 |
+|       gate  |     0.007 |
+|     gate_8  |     0.007 |
+|       gate  |     0.007 |
+|     gate_9  |     0.007 |
+|       gate  |     0.007 |
+|   m_1       |     0.012 |
+|     perm    |     0.012 |
+|   m_10      |     0.013 |
+|     perm    |     0.013 |
+|   m_11      |     0.013 |
+|     gate_0  |     0.002 |
+|       gate  |     0.002 |
+|     gate_1  |     0.002 |
+|       gate  |     0.002 |
+|     gate_2  |     0.002 |
+|       gate  |     0.002 |
+|     gate_3  |     0.002 |
+|       gate  |     0.002 |
+|     gate_4  |     0.002 |
+|       gate  |     0.002 |
+|     gate_5  |     0.002 |
+|       gate  |     0.002 |
+|     gate_6  |     0.002 |
+|       gate  |     0.002 |
+|     gate_7  |     0.002 |
+|       gate  |     0.002 |
+|   m_13      |     0.039 |
+|     perm    |     0.039 |
+|   m_14      |     0.009 |
+|     perm    |     0.009 |
+|   m_2       |     0.013 |
+|     gate_0  |     0.002 |
+|       gate  |     0.002 |
+|     gate_1  |     0.002 |
+|       gate  |     0.002 |
+|     gate_2  |     0.002 |
+|       gate  |     0.002 |
+|     gate_3  |     0.002 |
+|       gate  |     0.002 |
+|     gate_4  |     0.002 |
+|       gate  |     0.002 |
+|     gate_5  |     0.002 |
+|       gate  |     0.002 |
+|     gate_6  |     0.002 |
+|       gate  |     0.002 |
+|     gate_7  |     0.002 |
+|       gate  |     0.002 |
+|   m_3       |     0.013 |
+|     perm    |     0.013 |
+|   m_4       |     0.012 |
+|     perm    |     0.012 |
+|   m_5       |     0.012 |
+|     gate_0  |     0.002 |
+|       gate  |     0.002 |
+|     gate_1  |     0.002 |
+|       gate  |     0.002 |
+|     gate_2  |     0.002 |
+|       gate  |     0.002 |
+|     gate_3  |     0.002 |
+|       gate  |     0.002 |
+|     gate_4  |     0.002 |
+|       gate  |     0.002 |
+|     gate_5  |     0.002 |
+|       gate  |     0.002 |
+|     gate_6  |     0.002 |
+|       gate  |     0.002 |
+|     gate_7  |     0.002 |
+|       gate  |     0.002 |
+|   m_6       |     0.013 |
+|     perm    |     0.013 |
+|   m_7       |     0.013 |
+|     perm    |     0.013 |
+|   m_8       |     0.012 |
+|     gate_0  |     0.002 |
+|       gate  |     0.002 |
+|     gate_1  |     0.002 |
+|       gate  |     0.002 |
+|     gate_2  |     0.002 |
+|       gate  |     0.002 |
+|     gate_3  |     0.002 |
+|       gate  |     0.002 |
+|     gate_4  |     0.002 |
+|       gate  |     0.002 |
+|     gate_5  |     0.002 |
+|       gate  |     0.002 |
+|     gate_6  |     0.002 |
+|       gate  |     0.002 |
+|     gate_7  |     0.002 |
+|       gate  |     0.002 |
+|   m_9       |     0.012 |
+|     perm    |     0.012 |
++-------------+-----------+
+
+

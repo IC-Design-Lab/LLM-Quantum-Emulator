@@ -1,0 +1,70 @@
+# Simulator output. ModelSim writes into its own scratch library and dumps a
+# waveform per run; the source study accumulated 830 MB of these. All rebuilt by
+# re-running the driver.
+modelsim_build/
+work/
+build/
+transcript
+*.vcd
+*.wlf
+# run_modelsim.ps1 copies each waveform to <sim>/../results/transcripts/,
+# creating a directory at the repo root. Anchored with a leading slash so it
+# cannot match the tracked generation-study/results/ or rag-cag-system/results/.
+/results/
+
+# Simulation scaffolding rebuilt on demand by verify_generated.py from the specs
+# and the ground-truth modules.
+# `**/` is required: a pattern containing a slash is anchored to THIS file's
+# directory, and these live under rag-cag-system/, not at the repository root.
+**/new_circuits/support/
+**/new_circuits/tb/
+
+# ModelSim drops a modelsim.ini wherever it is invoked. sim/modelsim.ini is the
+# real, tracked driver config; every other copy is scratch.
+modelsim.ini
+!sim/modelsim.ini
+
+# Per-run tool chatter. The verdicts these produced are recorded in results/;
+# the logs themselves are noise and carry local absolute paths.
+*_eval_generate.log
+*_eval_verify.log
+
+# Retrieval index, rebuilt by the baseline arm's build_index.py.
+**/rag/index_store/
+**/rag/last_prompt*.txt
+
+# Credentials and endpoints. sheets_webhook_url.txt holds a deployed Google Apps
+# Script /exec URL, which is a bearer capability: anyone holding it can write to
+# the backing spreadsheet.
+sheets_webhook_url.txt
+.env
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Editor and OS
+.DS_Store
+__MACOSX/
+*.bak
+*.swp
+.idea/
+.vscode/
+.pytest_cache/
+.ipynb_checkpoints/
+Thumbs.db
+
+# LaTeX build artifacts. Scoped to the manuscript: a bare *.log would also match
+# the ModelSim transcripts under paper/data/transcripts/, which are tracked evidence.
+paper/manuscript/*.aux
+paper/manuscript/*.log
+paper/manuscript/*.out
+paper/manuscript/*.bbl
+paper/manuscript/*.blg
+paper/manuscript/*.synctex.gz
+paper/manuscript/*.fdb_latexmk
+paper/manuscript/*.fls

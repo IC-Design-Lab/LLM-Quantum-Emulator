@@ -1,0 +1,539 @@
+{
+  "version": "1.1",
+  "description": "Quantum gate library reference — verified CIRCT/Chisel-generated primitive gate modules for QSV state-vector simulation hardware. Use this as the authoritative list of available gates, their primitive AND wrapper module names, ports, and behavior.",
+  "encoding": {
+    "format": "QSV — Quantum State Vector",
+    "amplitude": "Each amplitude is a complex pair of 16-bit signals: suffix _0 = real, _1 = imaginary",
+    "fixed_point": "Q1.15 signed — 1.0 = 0x4000, +1/sqrt2 = 0x2D41, -1/sqrt2 = 0xD2BF  (NOTE: confirm Q1.15 vs Q2.14 with library owner)",
+    "valid_protocol": "Every gate has io_in_valid / io_out_valid. Chain stages by connecting each stage's io_in_valid to the previous stage's io_out_valid. Gates handle valid internally — add no extra logic."
+  },
+  "gates": [
+    {
+      "name": "HadamardGate",
+      "symbol": "H",
+      "qubits": 1,
+      "arithmetic": true,
+      "behavior": "Creates superposition: |0> -> (|0>+|1>)/sqrt2, |1> -> (|0>-|1>)/sqrt2. Adder/subtractor layer + 1/sqrt2 constant multiplier.",
+      "latency_cycles": 5,
+      "latency_note": "CONFIRM: parent paper Table 1 says H=3; observed wrapper latency in sim was 5",
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "HadamardGate",
+      "wrapper_module": "HGate2QubitVector16bit",
+      "wrapper_status": "verified",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    },
+    {
+      "name": "XGate",
+      "symbol": "X",
+      "qubits": 1,
+      "arithmetic": false,
+      "behavior": "Pauli-X bit flip: swaps the |0> and |1> amplitudes. Pure wiring, no arithmetic.",
+      "latency_cycles": 1,
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "XGate",
+      "wrapper_module": "XGate2QubitVector16bit",
+      "wrapper_status": "verified",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    },
+    {
+      "name": "YGate",
+      "symbol": "Y",
+      "qubits": 1,
+      "arithmetic": false,
+      "behavior": "Pauli-Y: bit flip + phase flip. Swaps amplitudes with sign inversion and real/imag exchange (multiply by +/- i). Wiring + sign inversion only.",
+      "latency_cycles": 1,
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "YGate",
+      "wrapper_module": "YGate2QubitVector16bit",
+      "wrapper_status": "unconfirmed - no ground-truth circuit uses Y; name follows the XGate->XGate2QubitVector16bit pattern",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    },
+    {
+      "name": "ZGate",
+      "symbol": "Z",
+      "qubits": 1,
+      "arithmetic": false,
+      "behavior": "Pauli-Z phase flip: |0> unchanged, |1> amplitude negated. Sign inversion only.",
+      "latency_cycles": 1,
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "ZGate",
+      "wrapper_module": "ZGate2QubitVector16bit",
+      "wrapper_status": "unconfirmed - no ground-truth circuit uses Z",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    },
+    {
+      "name": "TGate",
+      "symbol": "T",
+      "qubits": 1,
+      "arithmetic": true,
+      "behavior": "T gate (pi/4 phase): |0> unchanged, |1> amplitude rotated by e^(i*pi/4) = (1+i)/sqrt2. Requires multiplier (contains SplitMultiplier).",
+      "latency_cycles": null,
+      "latency_note": "UNKNOWN — contains a SplitMultiplier so likely multi-cycle like H; confirm with library owner",
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "TGate",
+      "wrapper_module": "TGate2QubitVector16bit",
+      "wrapper_status": "unconfirmed - no ground-truth circuit uses T",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    },
+    {
+      "name": "SqrtXGate",
+      "symbol": "SX",
+      "qubits": 1,
+      "arithmetic": true,
+      "behavior": "Square root of X: 90-degree rotation about X axis. Complex coefficients (1+i)/2, (1-i)/2 — couples real and imaginary parts. Produces complex amplitudes. SX applied twice = X.",
+      "latency_cycles": 1,
+      "latency_note": "Parent paper Table 1: sqrt(X) = 2 cycles; confirm against wrapper",
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "SqrtXGate",
+      "wrapper_module": "SXGate2QubitVector16bit",
+      "wrapper_status": "unconfirmed - no plain-SX ground-truth circuit exists; confirm exact wrapper name with library owner",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    },
+    {
+      "name": "SqrtXDaggerGate",
+      "symbol": "SXdg",
+      "qubits": 1,
+      "arithmetic": true,
+      "behavior": "Inverse square root of X (Hermitian conjugate of SX): -90-degree rotation about X axis. Complex coefficients (1-i)/2, (1+i)/2. Produces complex amplitudes with opposite phase to SX.",
+      "latency_cycles": 1,
+      "latency_note": "Parent paper Table 1: sqrt(X)-dagger = 2 cycles; confirm against wrapper",
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "SqrtXDaggerGate",
+      "wrapper_module": "SXDGate2QubitVector16bit",
+      "wrapper_status": "verified - used by the SXdg circuits (Circuit0_4/0_5)",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    },
+    {
+      "name": "ControlledNotGate",
+      "symbol": "CX",
+      "qubits": 2,
+      "arithmetic": false,
+      "behavior": "CNOT: flips the target qubit iff the control qubit is |1>. Swaps the QSV_2 (|10>) and QSV_3 (|11>) amplitudes; QSV_0 and QSV_1 unchanged. Convention: first qubit = control, second = target. Pure wiring.",
+      "latency_cycles": 1,
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "ControlledNotGate",
+      "wrapper_module": "CNGate2QubitVector16bit",
+      "wrapper_status": "verified - used by Circuit1_0167 (Bell) and HCX* circuits",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    },
+    {
+      "name": "SwapGate",
+      "symbol": "SWAP",
+      "qubits": 2,
+      "arithmetic": false,
+      "behavior": "SWAP: exchanges the states of the two qubits. Exchanges the QSV_1 (|01>) and QSV_2 (|10>) amplitudes; QSV_0 and QSV_3 unchanged. Pure wiring.",
+      "latency_cycles": 1,
+      "ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      },
+      "primitive_module": "SwapGate",
+      "wrapper_module": "SWGate2QubitVector16bit",
+      "wrapper_status": "verified",
+      "wrapper_ports": {
+        "inputs": [
+          "clock",
+          "reset",
+          "io_in_QSV_0_0",
+          "io_in_QSV_0_1",
+          "io_in_QSV_1_0",
+          "io_in_QSV_1_1",
+          "io_in_QSV_2_0",
+          "io_in_QSV_2_1",
+          "io_in_QSV_3_0",
+          "io_in_QSV_3_1",
+          "io_in_valid"
+        ],
+        "outputs": [
+          "io_out_QSV_0_0",
+          "io_out_QSV_0_1",
+          "io_out_QSV_1_0",
+          "io_out_QSV_1_1",
+          "io_out_QSV_2_0",
+          "io_out_QSV_2_1",
+          "io_out_QSV_3_0",
+          "io_out_QSV_3_1",
+          "io_out_valid"
+        ]
+      }
+    }
+  ],
+  "usage_notes": {
+    "primitive_vs_wrapper": "Each gate has a PRIMITIVE module (listed as 'primitive_module') and a WRAPPER module (listed as 'wrapper_module'). Top-level circuits MUST instantiate the wrapper_module by its exact stated name (e.g. HadamardGate -> HGate2QubitVector16bit, SwapGate -> SWGate2QubitVector16bit) and MUST NOT instantiate the primitive directly. The wrapper applies the primitive across the full state vector and exposes the 'wrapper_ports' shown. Do not derive wrapper names from a pattern - use the exact wrapper_module value given for each gate.",
+    "file_naming_warning": "The .sv FILENAMES in the source folder do NOT match their contents (files were shuffled). Always identify a gate by its 'module <Name>' line, not by filename.",
+    "unconfirmed": [
+      "H latency (3 vs 5)",
+      "T gate latency",
+      "Q1.15 vs Q2.14 fixed-point format",
+      "SX/SXdg wrapper latency",
+      "Y/Z/T/SX wrapper module names (no ground-truth circuit exercises them; confirm with library owner)"
+    ],
+    "wrapper_naming_note": "Wrapper names are NOT a uniform suffix of the primitive name (HadamardGate->HGate..., SwapGate->SWGate..., ControlledNotGate->CNGate...). Always use the explicit wrapper_module field."
+  }
+}

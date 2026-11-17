@@ -1,0 +1,46 @@
+{
+  "circuit_name": "Shor",
+  "num_qubits": 5,
+  "operations": [
+    {
+      "step": 0,
+      "gate": "h",
+      "qubits": [
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "gate": "cx",
+      "qubits": [
+        0,
+        1
+      ]
+    },
+    {
+      "step": 2,
+      "gate": "cx",
+      "qubits": [
+        1,
+        2
+      ]
+    },
+    {
+      "step": 3,
+      "gate": "cx",
+      "qubits": [
+        2,
+        3
+      ]
+    },
+    {
+      "step": 4,
+      "gate": "cx",
+      "qubits": [
+        3,
+        4
+      ]
+    }
+  ],
+  "module_name": "Shor"
+}

@@ -1,0 +1,16 @@
+\begin{table}[ht]
+\centering
+\caption{Context ablation on the 9 held-out 2-qubit circuits, one section withheld per run at the same model and temperature. Only row 5 changes the outcome: interface knowledge is supplied twice, in the interfaces document and in the worked example, so withholding either alone leaves the other. Every condition reaches 9/9 after repair.}
+\label{tab:ablation}
+\begin{tabular}{@{}clrrr@{}}
+\toprule
+\# & Context withheld & pass@1 & Lint err. & Final \\
+\midrule
+1 & None (full context) & 9/9 & 0 & 9/9 \\
+2 & Module interfaces & 9/9 & 0 & 9/9 \\
+3 & Composition rulebook & 9/9 & 0 & 9/9 \\
+4 & Worked example & 9/9 & 0 & 9/9 \\
+5 & \textbf{Example \emph{and} interfaces} & \textbf{0/9} & \textbf{5--17} & \textbf{9/9} \\
+\bottomrule
+\end{tabular}
+\end{table}

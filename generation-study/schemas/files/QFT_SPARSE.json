@@ -1,0 +1,79 @@
+{
+  "circuit_name": "QFTcircuit_8bit_NC",
+  "qubits": [
+    {
+      "id": 0,
+      "name": "q0"
+    },
+    {
+      "id": 1,
+      "name": "q1"
+    },
+    {
+      "id": 2,
+      "name": "q2"
+    }
+  ],
+  "operations": [
+    {
+      "step": 0,
+      "gate": "H",
+      "targets": [
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "gate": "CS",
+      "targets": [
+        1
+      ],
+      "controls": [
+        0
+      ]
+    },
+    {
+      "step": 2,
+      "gate": "CT",
+      "targets": [
+        2
+      ],
+      "controls": [
+        0
+      ]
+    },
+    {
+      "step": 3,
+      "gate": "H",
+      "targets": [
+        1
+      ]
+    },
+    {
+      "step": 4,
+      "gate": "CS",
+      "targets": [
+        2
+      ],
+      "controls": [
+        1
+      ]
+    },
+    {
+      "step": 5,
+      "gate": "H",
+      "targets": [
+        2
+      ]
+    },
+    {
+      "step": 6,
+      "gate": "SWAP",
+      "targets": [
+        0,
+        2
+      ]
+    }
+  ],
+  "module_name": "QFTcircuit_8bit_NC"
+}

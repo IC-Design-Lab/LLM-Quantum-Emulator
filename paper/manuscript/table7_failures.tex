@@ -1,0 +1,22 @@
+\begin{table}[ht]
+\centering
+\caption{Prompt-only study: failure classes over the 289 failing runs. A run can carry several tags; four tags occurring once each are omitted. The full tally is the \texttt{error\_types} column of the study's run record, \texttt{runs\_matched\_arms.csv}.}
+\label{tab:failures}
+\begin{tabular}{@{}lr@{}}
+\toprule
+Failure class & Runs tagged \\
+\midrule
+Wrong output amplitudes & 169 \\
+Omitted permutation wrapper & 78 \\
+Module that does not exist & 67 \\
+Wrong gate decomposition & 27 \\
+Syntax error & 25 \\
+Mismatched port name & 11 \\
+Unstable valid protocol & 7 \\
+Implicit net declaration & 4 \\
+Multiply driven wire & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%One run can carry several tags, so the column sums past 289. Tagging was automatic where the log made the cause unambiguous and by hand otherwise. The second and third rows are the classes the system of Section~\ref{sec:system} targets: neither can be reasoned out from the circuit.

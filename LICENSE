@@ -1,0 +1,43 @@
+MIT License
+
+Copyright (c) 2026 Krishna Patel
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+SCOPE: this license covers the code, documentation and experimental records
+written for this project. It does NOT extend to the SystemVerilog below, which
+is output of the lab's Chisel generator or is derived from it:
+
+    generation-study/gate_library/*.sv
+    generation-study/ground_truth/*.sv
+    generation-study/experiment/ground_truth/*.sv
+    generation-study/experiment/matched_arms/ground_truth/_lib_shared.sv
+    generation-study/experiment/matched_arms/ground_truth/_lib_sx.sv
+    generation-study/experiment/matched_arms/ground_truth/gate_library_flat_07_08.sv
+    rag-cag-system/corpus/code_examples/*/*_ground_truth.sv
+    rag-cag-system/results/vivado/synthesis-inputs/support/*_gen_support.sv
+    rag-cag-system/rag/output_v2/ShorFixed.sv
+    rag-cag-system/results/vivado/synthesis-inputs/designs/ShorFixed.sv
+
+Everything else, including the generated designs in rag-cag-system/rag/output_v2/
+and the composed references in rag-cag-system/new_circuits/reference/, is covered
+by this license. docs/hardware-provenance.md classifies every .sv file by origin
+and lists the one file whose origin is not established.

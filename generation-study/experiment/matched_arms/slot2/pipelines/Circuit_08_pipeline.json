@@ -1,0 +1,11 @@
+{
+  "circuit_name": "Circuit_08",
+  "pipeline": [
+    {"stage": 0, "module": "HGate2QubitVector16bit",  "instance": "m",   "cycles": 5},
+    {"stage": 1, "module": "CompatiblePerm",          "instance": "m_1", "cycles": 1},
+    {"stage": 2, "module": "CNGate2QubitVector16bit", "instance": "m_2", "cycles": 1},
+    {"stage": 3, "module": "CompatiblePerm",          "instance": "m_3", "cycles": 1},
+    {"stage": 4, "module": "SXGate2QubitVector16bit", "instance": "m_4", "cycles": 1}
+  ],
+  "total_pipeline_cycles": 9
+}

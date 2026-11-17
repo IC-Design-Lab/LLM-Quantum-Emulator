@@ -1,0 +1,21 @@
+{
+  "circuit": "NC_07_no_example",
+  "family": "2qubit-16bit",
+  "backend": "gemini",
+  "example": "Circuit0_06",
+  "attempts": [
+    {
+      "n": 1,
+      "usage": {
+        "in": 3251,
+        "out": 1539,
+        "think": 2609
+      },
+      "lines": 80,
+      "lint_errors": 0,
+      "findings": []
+    }
+  ],
+  "final_lint_errors": 0,
+  "attempts_used": 1
+}

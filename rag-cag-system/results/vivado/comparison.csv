@@ -1,0 +1,12 @@
+poster_row,rag_design,chisel_cc,prompt_only_cc,rag_cc,cc_delta_vs_chisel,chisel_luts,prompt_only_luts,rag_luts,chisel_ffs,prompt_only_ffs,rag_ffs,chisel_dsps,prompt_only_dsps,rag_dsps
+Circuit0_06,Circuit_00_v2,4,4,4,0,128,128,128,261,261,261,16,16,16
+Circuit0_17,Circuit_01_v2,7,7,7,0,129,129,129,776,648,648,16,16,16
+Circuit0_2,Circuit_02_v2,9,10,10,1,257,257,257,651,651,651,32,32,32
+Circuit0_3,Circuit_03_v2,10,11,11,1,257,257,257,651,652,652,32,32,32
+Circuit0_4,Circuit_04_v2,8,8,8,0,417,449,449,889,825,825,16,16,16
+Circuit0_5,Circuit_05_v2,9,9,9,0,417,449,449,1146,954,954,16,16,16
+Circuit1_0167,Circuit_06_v2,6,6,6,0,130,130,130,705,517,517,16,16,16
+Circuit1_23,Circuit_07_v2,9,10,10,1,258,258,258,520,520,520,32,32,32
+Circuit1_45,Circuit_08_v2,8,8,8,0,433,450,450,1074,838,838,16,16,16
+QFT,QFT_v2,19,19,19,0,3573,1207,1273,2452,1860,1940,,52,52
+Shor,ShorFixed,17,17,16,-1,5218,2271,2272,7684,7183,7183,,64,64
